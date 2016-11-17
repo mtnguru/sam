@@ -1,0 +1,3 @@
+sam_db:
+  type: mysql
+  disk: 2048

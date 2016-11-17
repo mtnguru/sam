@@ -1,0 +1,53 @@
+# .platform.app.yaml
+
+# The name of this app. Must be unique within a project.
+name: 'sam'
+
+# The type key specifies the language and version for your application.
+type: 'php:7.0'
+
+# On PHP, there are multiple build flavors available. Pretty much everyone except
+# Drupal 7 users will want the composer flavor.
+build:
+  flavor: 'composer'
+
+# The relationships of the application with services or other applications.
+# The left-hand side is the name of the relationship as it will be exposed
+# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
+# side is in the form `<service name>:<endpoint name>`.
+relationships:
+    database: 'mysqldb:sam_db'
+
+# The configuration of app when it is exposed to the web.
+docroot:
+    locations:
+        '/':
+            # The public directory of the app, relative to its root.
+            root: 'docroot'
+            # The front-controller script to send non-static requests to.
+            passthru: '/app.php'
+        # Allow uploaded files to be served, but do not run scripts.
+        # Missing files get mapped to the front controller above.
+        '/files':
+            root: 'docroot/files'
+            scripts: false
+            allow: true
+            passthru: '/app.php'
+
+# The size of the persistent disk of the application (in MB).
+disk: 2048
+
+# The 'mounts' describe writable, persistent filesystem mounts in the application. The keys are
+# directory paths, relative to the application root. The values are strings such as
+# 'shared:files/NAME', where NAME is just a unique name for the mount.
+mounts:
+    '/docroot/files': 'shared:files/docroot-files'
+
+# The hooks that will be performed when the package is deployed.
+hooks:
+    # Build hooks can modify the application files on disk, but not access any services like databases.
+    build: |
+      rm docroot/app_dev.php
+    # Deploy hooks can access services, but the file system is now read-only.
+    deploy: |
+      app/console --env=prod cache:clear
