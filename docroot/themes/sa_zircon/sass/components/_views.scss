@@ -1,0 +1,73 @@
+.view-filters {
+  .form--inline .form-item {
+    margin-right: 1.5em;
+  }
+  .form-type-textfield,
+  .form-type-select {
+    label {
+      display: flex;
+      font-size: 120%;
+      font-weight: bold;
+    }
+    select#edit-og-group-ref-target-id {
+      height: 11em;
+    }
+    select::-webkit-scrollbar  {
+      display: none;
+    }
+  }
+  .form-checkboxes {
+    margin-top: .8em;
+    .form-type-checkbox {
+      margin: 0;
+    }
+    input[type="checkbox"] {
+      margin-top : 0;
+    }
+  }
+  .form-item-field-assigned-target-id,
+  .form-item-nid {
+    input {
+      width: 8em;
+    }
+  }
+}
+.view-content {
+  table {
+    td {
+      padding: 0 10px;
+      &.is-active {
+        background: #eaffff;
+      }
+    }
+    th {
+      font-size: 120%;
+      padding: 3px 10px;
+    }
+  }
+}
+
+.views-tasks {
+  .form-item-field-project-target-id,
+  .form-item-field-project-assigned-id,
+  .form-item-nid {
+    float: left;
+  }
+
+  // Task Status
+  .task-Proposed   { color: cyan; }
+  .task-Accepted   { color: blue; }
+  .task-Active     { color: blueviolet; }
+  .task-Hold       { color: red; }
+  .task-Completed  { color: green; }
+  .task-Postponed  { color: orange; }
+  .task-Duplicate  { color: grey; }
+  .task-Refused    { color: black; }
+  // Task Priority
+  .task-Critical   { color: red; }
+  .task-Major      { color: orange; }
+  .task-Minor      { color: blue; }
+  .task-Normal     { color: green; }
+}
+
+

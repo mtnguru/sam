@@ -1,0 +1,7 @@
+sites/default/files
+*.sass-cache*
+*.css.map
+*.scssc*
+.idea
+.git
+node_modules

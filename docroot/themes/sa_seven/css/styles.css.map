@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/_table.scss"],"names":[],"mappings":"AAAA,SAEI,gBAAkB,CACnB","file":"styles.css","sourcesContent":["table {\n  td {\n    padding: 2px 10px;\n  }\n}\n"]}
