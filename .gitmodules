@@ -1,6 +1,6 @@
 [submodule "docroot/docroot/modules/custom/atomizer"]
 	path = docroot/docroot/modules/custom/atomizer
-	url = git@github.com:mtnguru/ab
+	url = https://github.com/mtnguru/ab
 [submodule "docroot/modules/custom/imager"]
 	path = docroot/modules/custom/imager
-	url = git@github.com:mtnguru/imager
+	url = https://github.com/mtnguru/imager
