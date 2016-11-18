@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js" line="843" />
+    <bookmark url="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js" line="878" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e257d6e-5ce3-4d17-9e41-fa40ff31e031" name="Default" comment="" />
@@ -34,7 +34,7 @@
     <favorites_list name="docroot" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.36649215">
+    <splitter split-orientation="horizontal" split-proportion="0.5416499">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="346">
           <file leaf-file-name="atom_builder.yml" pinned="false" current-in-tab="false">
@@ -76,8 +76,8 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
                   <folding>
-                    <marker date="1478393854413" expanded="true" signature="0:695" placeholder="atomizer-js:" />
-                    <marker date="1478393854413" expanded="true" signature="606:619" placeholder="js/producers/prod_platonic_solids.js:" />
+                    <marker date="1479351617283" expanded="true" signature="0:695" placeholder="atomizer-js:" />
+                    <marker date="1479351617283" expanded="true" signature="606:619" placeholder="js/producers/prod_platonic_solids.js:" />
                   </folding>
                 </state>
               </provider>
@@ -101,7 +101,7 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
                   <folding>
-                    <marker date="1478394702204" expanded="true" signature="1655:1656" placeholder="defaults:" />
+                    <marker date="1479351617283" expanded="true" signature="1655:1656" placeholder="defaults:" />
                   </folding>
                 </state>
               </provider>
@@ -191,7 +191,7 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="514" column="19" selection-start-line="514" selection-start-column="19" selection-end-line="514" selection-end-column="19" />
                   <folding>
-                    <marker date="1479202980168" expanded="true" signature="819:852" placeholder="proton--scale:" />
+                    <marker date="1479351617616" expanded="true" signature="819:852" placeholder="proton--scale:" />
                   </folding>
                 </state>
               </provider>
@@ -210,14 +210,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="content_access.module" pinned="false" current-in-tab="false">
+          <file leaf-file-name="content_access.module" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modules/contrib/content_access/content_access.module">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="641" column="27" selection-start-line="641" selection-start-column="27" selection-end-line="641" selection-end-column="27" />
+                <state vertical-scroll-proportion="0.525">
+                  <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
                   <folding>
-                    <marker date="1469456676762" expanded="true" signature="14758:14812" placeholder="SELECT setti..." />
-                    <marker date="1469456676762" expanded="true" signature="21771:21816" placeholder="SELECT n.nid..." />
+                    <marker date="1479482029974" expanded="true" signature="14807:14861" placeholder="SELECT setti..." />
+                    <marker date="1479482029974" expanded="true" signature="21857:21902" placeholder="SELECT n.nid..." />
                   </folding>
                 </state>
               </provider>
@@ -243,13 +243,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nuclet_backbone_final.yml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="nuclet_backbone_final.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_backbone_final.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.10840336">
-                  <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="72" selection-end-column="11" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
                   <folding>
-                    <marker date="1479203088339" expanded="true" signature="147:202" placeholder="protons:" />
+                    <marker date="1479351617616" expanded="true" signature="147:202" placeholder="protons:" />
                   </folding>
                 </state>
               </provider>
@@ -269,7 +269,7 @@
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_beryllium.yml">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -319,7 +319,7 @@
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_lithium.yml">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -328,7 +328,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="542">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="723">
           <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/themes/sa_zircon/sass/base/_base.scss">
               <provider selected="true" editor-type-id="text-editor">
@@ -355,7 +355,7 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="17" column="60" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
                   <folding>
-                    <marker date="1478359587632" expanded="true" signature="464:735" placeholder="{...}" />
+                    <marker date="1479351617283" expanded="true" signature="464:735" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -371,11 +371,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="atomizer_atom.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="atomizer_atom.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_atom.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.17731093">
-                  <caret line="254" column="27" selection-start-line="254" selection-start-column="27" selection-end-line="265" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="472" column="35" selection-start-line="472" selection-start-column="35" selection-end-line="472" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -405,7 +405,7 @@
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="656" column="14" selection-start-line="656" selection-start-column="14" selection-end-line="656" selection-end-column="14" />
+                  <caret line="646" column="0" selection-start-line="646" selection-start-column="0" selection-end-line="646" selection-end-column="0" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -417,7 +417,7 @@
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_shapes.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="365" column="17" selection-start-line="365" selection-start-column="17" selection-end-line="365" selection-end-column="17" />
+                  <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -453,11 +453,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="atomSelect.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="atomSelect.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/sass/atomSelect.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                <state vertical-scroll-proportion="1.0862069">
+                  <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -497,7 +497,7 @@
             <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/producers/prod_atom_builder.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
+                  <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -535,13 +535,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modules/custom/atomizer/sass/atomizer.scss" />
-        <option value="$PROJECT_DIR$/core/themes/classy/templates/form/form-element.html.twig" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/config/nucleus/magnesium.yml" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/atomizer.module" />
         <option value="$PROJECT_DIR$/themes/sa_zircon/sass/base/_admin.scss" />
@@ -562,7 +560,6 @@
         <option value="$PROJECT_DIR$/themes/sa_zircon/sass/components/_table.scss" />
         <option value="$PROJECT_DIR$/themes/sa_zircon/sass/variables/_colors.scss" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/sass/variables.scss" />
-        <option value="$PROJECT_DIR$/modules/custom/atomizer/sass/atomSelect.scss" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/src/Form/AtomizerControlsForm.php" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/src/Form/AtomizerControlsForm.php" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/src/Utils/AtomizerControlBlock.php" />
@@ -582,15 +579,18 @@
         <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nucleus.js" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_base.js" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_controls.js" />
-        <option value="$PROJECT_DIR$/modules/custom/atomizer/js/producers/prod_atom_builder.js" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_sprites.js" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/config/style/atom_builder/base.yml" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_carbon.yml" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/config/controls/controls_atom_builder.yml" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_backbone_initial.yml" />
-        <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js" />
-        <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_atom.js" />
         <option value="$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_backbone_final.yml" />
+        <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_atom.js" />
+        <option value="$PROJECT_DIR$/modules/custom/atomizer/js/producers/prod_atom_builder.js" />
+        <option value="$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_beryllium.yml" />
+        <option value="$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js" />
+        <option value="$PROJECT_DIR$/modules/custom/atomizer/sass/atomSelect.scss" />
+        <option value="$PROJECT_DIR$/modules/contrib/content_access/content_access.module" />
       </list>
     </option>
   </component>
@@ -615,7 +615,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="913" />
-    <option name="y" value="39" />
+    <option name="y" value="41" />
     <option name="width" value="2527" />
     <option name="height" value="1282" />
   </component>
@@ -1205,6 +1205,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docroot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contrib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content_access" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -1212,7 +1234,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v6.3.0/bin/node" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
@@ -1233,7 +1255,7 @@
       <recent name="$PROJECT_DIR$/modules/custom/atom_builder/config" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Web Application.atom oxygen-16">
+  <component name="RunManager" selected="PHP Web Application.atom workbench">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -1326,28 +1348,48 @@
     <option name="totallyTimeSpent" value="223124000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="913" y="39" width="2527" height="1282" extended-state="1" />
-    <editor active="false" />
+    <frame x="913" y="41" width="2527" height="1282" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23822938" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23822938" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27504727" sideWeight="0.50162715" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299604" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22698413" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21318682" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21287726" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18430583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27478993" sideWeight="0.49837285" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18456532" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27504727" sideWeight="0.50162715" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22698413" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23822938" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299604" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27478993" sideWeight="0.49837285" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21287726" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18430583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1414,7 +1456,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js</url>
-          <line>659</line>
+          <line>694</line>
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint type="php">
@@ -1557,11 +1599,16 @@
           <line>100</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/contrib/content_access/content_access.module</url>
+          <line>696</line>
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="277" />
+      <option name="time" value="278" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1697,24 +1744,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/contrib/content_access/content_access.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="641" column="27" selection-start-line="641" selection-start-column="27" selection-end-line="641" selection-end-column="27" />
-          <folding>
-            <marker date="1469456676762" expanded="true" signature="14758:14812" placeholder="SELECT setti..." />
-            <marker date="1469456676762" expanded="true" signature="21771:21816" placeholder="SELECT n.nid..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/atomizer.libraries.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding>
-            <marker date="1478393854413" expanded="true" signature="0:695" placeholder="atomizer-js:" />
-            <marker date="1478393854413" expanded="true" signature="606:619" placeholder="js/producers/prod_platonic_solids.js:" />
+            <marker date="1479351617283" expanded="true" signature="0:695" placeholder="atomizer-js:" />
+            <marker date="1479351617283" expanded="true" signature="606:619" placeholder="js/producers/prod_platonic_solids.js:" />
           </folding>
         </state>
       </provider>
@@ -1754,14 +1790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/sass/atomSelect.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/sass/nucletForm.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1791,7 +1819,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="60" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <marker date="1478359587632" expanded="true" signature="464:735" placeholder="{...}" />
+            <marker date="1479351617283" expanded="true" signature="464:735" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1812,42 +1840,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_beryllium.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_boron.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_helium.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_lithium.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_shapes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="365" column="17" selection-start-line="365" selection-start-column="17" selection-end-line="365" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1913,7 +1909,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="514" column="19" selection-start-line="514" selection-start-column="19" selection-end-line="514" selection-end-column="19" />
           <folding>
-            <marker date="1479202980168" expanded="true" signature="819:852" placeholder="proton--scale:" />
+            <marker date="1479351617616" expanded="true" signature="819:852" placeholder="proton--scale:" />
           </folding>
         </state>
       </provider>
@@ -1926,37 +1922,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/producers/prod_atom_builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/controls/controls_atom_builder.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_carbon.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="656" column="14" selection-start-line="656" selection-start-column="14" selection-end-line="656" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1976,21 +1946,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_backbone_final.yml">
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_atom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10840336">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="72" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="472" column="35" selection-start-line="472" selection-start-column="35" selection-end-line="472" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/producers/prod_atom_builder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_lithium.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_beryllium.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_shapes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_nuclet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="646" column="0" selection-start-line="646" selection-start-column="0" selection-end-line="646" selection-end-column="0" />
           <folding>
-            <marker date="1479203088339" expanded="true" signature="147:202" placeholder="protons:" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/js/atomizer_atom.js">
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/sass/atomSelect.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17731093">
-          <caret line="254" column="27" selection-start-line="254" selection-start-column="27" selection-end-line="265" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.0862069">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_boron.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/controls/controls_atom_builder.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/custom/atomizer/config/nuclets/nuclet_backbone_final.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <marker date="1479351617616" expanded="true" signature="147:202" placeholder="protons:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contrib/content_access/content_access.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.525">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <marker date="1479482029974" expanded="true" signature="14807:14861" placeholder="SELECT setti..." />
+            <marker date="1479482029974" expanded="true" signature="21857:21902" placeholder="SELECT n.nid..." />
+          </folding>
         </state>
       </provider>
     </entry>
