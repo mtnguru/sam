@@ -1,1 +1,1 @@
-{"version":3,"sources":["components/_table.scss"],"names":[],"mappings":"AAAA,SAEI,gBAAkB,CACnB","file":"styles.css","sourcesContent":["table {\n  td {\n    padding: 2px 10px;\n  }\n}\n"]}
+{"version":3,"sources":["components/_table.scss"],"names":[],"mappings":"AAAA,SAEI,gBAAkB,CAFtB,oBAIM,QAAU,CACX","file":"styles.css","sourcesContent":["table {\n  td {\n    padding: 2px 10px;\n    .form-item {\n      margin: 0;\n    }\n  }\n}\n"]}

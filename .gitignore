@@ -11,4 +11,4 @@
 # Ignore Composer-managed dependencies.
 vendor/
 
-*/.idea/*
+/docroot/.idea

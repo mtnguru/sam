@@ -3,4 +3,3 @@ global-styling:
     base:
       css/styles.css: {}
       css/print.css: { media: print }
-  js:

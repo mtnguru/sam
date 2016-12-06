@@ -1,0 +1,375 @@
+<?php
+
+/**
+ * @file
+ * Contains glossary.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function glossary_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the glossary module.
+    case 'help.page.glossary':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Search text for glossary terms and automatically link them back to the appropriate taxonomy term.</p>');
+      return $output;
+
+    default:
+  }
+}
+
+
+function glossary_form_views_exposed_form_alter (&$form, FormStateInterface $form_state) {
+  if ($form['#id'] == 'views-exposed-form-view-select-nuclei-select-nuclei') {
+  }
+  return;
+}
+
+function glossary_form_alter (&$form, FormStateInterface $form_state) {
+  // Check for term here and 
+  return;
+}
+
+
+
+
+/**
+ * Implements hook_filter_FILTER_process().
+ */
+function glossary_filter_glossary_process($text, $filter, $format, $langcode, $cache, $cache_id) {
+  global $user;
+  $format = $format->format;
+
+  if (isset($user->glossary_disable_indicator) && $user->glossary_disable_indicator && variable_get('glossary_disable_indicator', FALSE)) {
+    return $text;
+  }
+
+  if (isset($_REQUEST['q']) && strcmp($_REQUEST['q'], 'fckeditor/xss') == 0) {
+    return $text;
+  }
+
+  $current_term = 0;
+  if (strcmp(arg(0), 'taxonomy') == 0 && strcmp(arg(1), 'term') == 0 && arg(2) > 0) {
+    $current_term = arg(2);
+  }
+
+  if (variable_get("glossary_vids_$format", 0)) {
+    $text = ' ' . $text . ' ';
+    $replace_mode = variable_get("glossary_replace_$format", 'superscript');
+    $link_style = variable_get("glossary_link_$format", 'normal');
+    $absolute_link = ($link_style == 'absolute');
+    $terms = _glossary_get_terms($format);
+    $vids = _glossary_get_filter_vids();
+    $terms_replace = array();
+    $tip_list = array();
+
+    foreach ($terms as $term) {
+      if ($current_term == $term->tid) {
+        continue;
+      }
+
+      $term_title = $term->description;
+      $fragment = NULL;
+      if ($term->nodes > 0) {
+        $linkto = taxonomy_term_path($term);
+      }
+      elseif (!empty($vids) && (variable_get('glossary_click_option', 0) == 1)) {
+        if (variable_get('glossary_hide_if_empty', 1) && empty($term_title)) {
+          continue;
+        }
+        if (variable_get('glossary_page_per_letter', FALSE)) {
+          $linkto = 'glossary/' . $term->vid . '/letter' . drupal_strtolower(drupal_substr($term->name, 0, 1));
+        }
+        else {
+          $linkto = 'glossary/' . $term->vid;
+        }
+        $fragment = 'term' . $term->tid;
+      }
+      else {
+        $linkto = 'glossary/term/' . $term->tid;
+      }
+      $ins_before = $ins_after = NULL;
+      $term_class = variable_get('glossary_term_class', 'glossary-term');
+
+      switch ($replace_mode) {
+        case 'superscript':
+          $ins_after = '<sup class="glossary-indicator" title="' . $term_title . '">';
+          if ($link_style == 'none') {
+            $ins_after .= variable_get("glossary_superscript_$format", 'i');
+          }
+          else {
+            $ins_after .= l(variable_get("glossary_superscript_$format", 'i'), $linkto, array(
+              'attributes' => array('title' => $term_title, 'class' => 'glossary-indicator'),
+              'fragment' => $fragment,
+              'absolute' => $absolute_link,
+            ));
+          }
+          $ins_after .= '</sup>';
+          break;
+
+        case 'abbr':
+          if ($link_style == 'none') {
+            $ins_before .= '<span class="' . $term_class . '" title="' . $term_title . '"><' . $replace_mode . ' title="' . $term_title . '">';
+            $ins_after .= '</' . $replace_mode . '></span>';
+          }
+          else {
+            $ins_before .= '<' . $replace_mode . ' title="' . $term_title . '"><a class="' . $term_class . '" href="' . url($linkto, array('fragment' => $fragment, 'absolute' => $absolute_link)) . '" title="' . $term_title . '">';
+            $ins_after .= '</a></' . $replace_mode . '>';
+          }
+          break;
+
+        // TODO: remove first case after a while.
+        case 'acronym link':
+          $replace_mode = 'acronym';
+
+        case 'acronym':
+        case 'cite':
+        case 'dfn':
+          if ($link_style == 'none') {
+            $ins_after .= '</' . $replace_mode . '>';
+          }
+          else {
+            $ins_before .= '<a class="glossary-term" href="' . url($linkto, array('fragment' => $fragment, 'absolute' => $absolute_link)) . '">';
+            $ins_after .= '</' . $replace_mode . '></a>';
+          }
+          $ins_before .= '<' . $replace_mode . ' title="' . $term_title . '">';
+          break;
+
+        case 'clicktip':
+        case 'hovertip':
+          if ($link_style == 'none') {
+            $ins_after .= '</span>';
+          }
+          else {
+            $ins_before = '<a class="' . $term_class . '" href="' .
+                url($linkto, array('fragment' => $fragment, 'absolute' => $absolute_link)) . '">';
+            $ins_after .= '</span></a>';
+          }
+          $ins_before .= "<span $replace_mode=$term->tid>";
+          if (!isset($tip_list[$term->tid])) {
+            $tip_list[$term->tid] = '<span class="' . $replace_mode . '" id="' . $term->tid . '">' . $term->image . $term_title . '</span>';
+          }
+          $ins_after .= $tip_list[$term->tid];
+          break;
+
+        case 'iconterm':
+          // Icon format, plus term link.
+          $img = '<img src="' . base_path() . variable_get("glossary_icon_$format", 'glossary.gif') . "\" />";
+          if ($link_style == 'none') {
+            $ins_after .= $img;
+          }
+          else {
+            $ins_before .= '<a class="glossary-term" href="' . url($linkto, array('fragment' => $fragment, 'absolute' => $absolute_link)) . '">';
+            $ins_after = $img . '</a>';
+          }
+          break;
+
+        default:
+          // Icon format.
+          $img = '<img src="' . base_path() . variable_get("glossary_icon_$format", 'glossary.gif') . "\" />";
+          if ($link_style == 'none') {
+            $ins_after .= $img;
+          }
+          else {
+            $ins_after = l($img, $linkto, array(
+              'attributes' => array('title' => $term_title, 'class' => 'glossary-icon'),
+              'fragment' => $fragment,
+              'absolute' => $absolute_link,
+              'html' => TRUE,
+            ));
+          }
+          break;
+      }
+
+      // Replace term with the desired new HTML code.
+      $terms_replace[] = array(
+        'ins_before' => $ins_before,
+        'ins_after' => $ins_after,
+      );
+    }
+    return _glossary_insertlink($format, $text, $terms_replace);
+  }
+  $msg = 'returning <pre>' . $text . '</pre>';
+  drupal_set_message(check_plain($msg));
+  return $text;
+}
+
+/**
+ * Insert glossary links to $text after every matching $terms[i]['synonyms'] that is not inside a blocking tag.
+ * $terms[i]['ins_before'] is prepended to the matches, $terms[i]['ins_after'] is appended to them.
+ * Match type and replace mode all depend on user settings.
+ * The text is scanned once for all blocking tags and matches, then those 'events' are sorted and handled one by one.
+ */
+function _glossary_insertlink($format, &$text, &$terms) {
+  $multibyte_enabled = extension_loaded('mbstring');
+  if ($multibyte_enabled) {
+    $mb_prefix = 'mb_';
+  }
+  else {
+    $mb_prefix = NULL;
+  }
+  $case_sensitive = variable_get("glossary_case_$format", '1');
+  $findfunc = $mb_prefix . 'strpos';
+  $findtagfunc = $mb_prefix . 'strpos';
+
+  $replaceall = variable_get("glossary_replace_all_$format", 0);
+
+  $events = array();
+
+  // Find blocking tags.
+  $open_tags = array('[no-glossary]', '<', '<a ', '[code');
+  $close_tags = array('[/no-glossary]', '>', '</a>', '[/code]');
+  // Use these always/when Codefilter module is on?.
+  // array('< ?php ', '[?php ', '<% ', '[% ', '[codefilter_');
+  // array('?'.'>', '?]', '%'.'>', '%]', '[/codefilter_');
+  $user_tags = explode(' ', variable_get("glossary_blocking_tags_$format", 'abbr acronym'));
+  foreach ($user_tags as $tag) {
+    if (!empty($tag)) {
+      if (ctype_alnum($tag)) {
+        $open_tags[] = "<$tag";
+        $close_tags[] = "</$tag>";
+      }
+      elseif ($tag[0] == '.') {
+        $open_tags[] = '<span class="' . drupal_substr($tag, 1);
+        $close_tags[] = "</span>";
+      }
+    }
+  }
+
+  $searchtext = $case_sensitive ? $text : drupal_strtolower($text);
+
+  foreach ($open_tags as $i => $tag) {
+    $offset = 0;
+    while (($offset = $findtagfunc($searchtext, $tag, $offset)) !== FALSE) {
+      // Longer tags will override shorter '<' on the same offset.
+      $events[$offset] = array(
+        'type' => 'open',
+        'which' => $i,
+      );
+      $offset += drupal_strlen($tag);
+    }
+  }
+
+  // Find match candidates.
+  // @TODO: We don't have synonyms any more.
+  foreach ($terms as $i => $term) {
+    foreach ($term['synonyms'] as $synonym) {
+      if (!$case_sensitive) {
+        $synonym = drupal_strtolower($synonym);
+      }
+      $offset = 0;
+      $first_match_found = FALSE;
+      while (($offset = $findfunc($searchtext, $synonym, $offset)) !== FALSE) {
+        $len = drupal_strlen($synonym);
+        $match = drupal_substr($text, $offset, $len);
+        // Only longer matches override shorter ones.
+        if (!isset($events[$offset]) || drupal_strlen($events[$offset]['match']) < drupal_strlen($match)) {
+          // Get synonym with case as in text.
+          $events[$offset] = array(
+            'type' => 'match',
+            'which' => $i,
+            'match' => $match,
+          );
+          if (!$replaceall) {
+            $first_match_found = TRUE;
+            break;
+          }
+        }
+        $offset += $len;
+      }
+      // TODO: remove this if we want different synonyms of the same term to
+      // be matched independently as 'first matches'.
+      if ($first_match_found && !$replaceall) {
+        break;
+      }
+    }
+  }
+
+  ksort($events);
+
+  $newtext = '';
+  // Text was parsed from chars 0 to $parsed (exclusive).
+  $parsed = 0;
+
+  foreach ($events as $place => $event) {
+    // Skip events inside blocking tag (they're already copied as is).
+    if ($place < $parsed) {
+      continue;
+    }
+    // Copy plain text (with no events).
+    $newtext .= drupal_substr($text, $parsed, ($place - $parsed));
+    $parsed = $place;
+    // If a blocking tag is opened, skip to closing tag.
+    if ($event['type'] == 'open') {
+      $skip = $findtagfunc($text, $close_tags[$event['which']], $place);
+      if ($skip === FALSE) {
+        $skip = drupal_strlen($text);
+      }
+      // If the tag is [no-glossary] - remove it with the closing tag
+      // (by incrementing $parsed without copying).
+      if ($event['which'] == 0) {
+        $parsed += drupal_strlen($open_tags[$event['which']]);
+        $newtext .= drupal_substr($text, $parsed, ($skip - $parsed));
+        $parsed = $skip + drupal_strlen($close_tags[$event['which']]);
+      }
+      // Copy text without changing it.
+      else {
+        $newtext .= drupal_substr($text, $parsed, ($skip - $parsed));
+        $parsed = $skip;
+      }
+    }
+    if ($event['type'] == 'match') {
+      $matchlen = drupal_strlen($event['match']);
+      $proper_match = FALSE;
+      switch (variable_get("glossary_match_$format", 'b')) {
+        // Require word break left or right.
+        case 'lr':
+          // $proper_match = (_glossary_is_boundary($text {$next - 1}) ||
+          // _glossary_is_boundary($text {$next + $matchlen}));
+          $proper_match = (_glossary_is_boundary(drupal_substr($text, $place - 1, 1)) ||
+              _glossary_is_boundary(drupal_substr($text, $place + $matchlen, 1)));
+          break;
+
+        // Require word break left and right.
+        case 'b':
+          // $proper_match = (_glossary_is_boundary($text {$next - 1})
+          // && _glossary_is_boundary($text {$next + $matchlen}));
+          $proper_match = (_glossary_is_boundary(drupal_substr($text, $place - 1, 1)) &&
+              _glossary_is_boundary(drupal_substr($text, $place + $matchlen, 1)));
+          break;
+
+        // Require word break left.
+        case 'l':
+          // $proper_match = _glossary_is_boundary($text {$next - 1});
+          $proper_match = _glossary_is_boundary(drupal_substr($text, $place - 1, 1));
+          break;
+
+        // Require word break right.
+        case 'r':
+          // $proper_match = _glossary_is_boundary($text {$next + $matchlen});
+          $proper_match = _glossary_is_boundary(drupal_substr($text, $place + $matchlen, 1));
+          break;
+
+        // Match any substring.
+        case 's':
+        default:
+          $proper_match = TRUE;
+          break;
+      }
+      if ($proper_match) {
+        $newtext .= $terms[$event['which']]['ins_before'] . $event['match'] . $terms[$event['which']]['ins_after'];
+        $parsed += $matchlen;
+      }
+    }
+  }
+
+  // Append remaining part.
+  return $newtext . drupal_substr($text, $parsed);
+}
+

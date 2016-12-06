@@ -1,0 +1,49 @@
+
+# In order to to create pages it is necessary to define routes for them.
+# A route maps a URL path to a controller. It defines what function
+# or method will be called when a URL is accessed.
+# If the user accesses http://drupal8.dev//atom/builder, the routing
+# system will look for a route with that path. In this case it will find a
+# match, and execute the _controller callback. In this case the callback is
+# defined as a classname
+# ("\Drupal\glossary\Controller\AtomizerController")
+# and a method ("atomBuilder").
+# glossary.glossary_controller_atomBuilder:
+#  path: '/atom/builder'
+#  defaults:
+#    _controller: '\Drupal\glossary\Controller\AtomizerController::atomBuilder'
+#    _title: 'Atomizer'
+#  requirements:
+#    _permission: 'access content'
+glossary.loadYml:
+  path: '/ajax-ab/loadYml'
+  defaults:
+    _controller: '\Drupal\glossary\Controller\AtomizerController::loadYml'
+  requirements:
+    _permission: 'access content'
+glossary.saveYml:
+  path: '/ajax-ab/saveYml'
+  defaults:
+    _controller: '\Drupal\glossary\Controller\AtomizerController::saveYml'
+  requirements:
+    _permission: 'access content'
+glossary.listDirectory:
+  path: '/ajax-ab/listDirectory'
+  defaults:
+    _controller: '\Drupal\glossary\Controller\AtomizerController::listDirectory'
+  requirements:
+    _permission: 'access content'
+glossary.loadAtomForm:
+  path: '/ajax-ab/loadAtomForm'
+  defaults:
+    _controller: '\Drupal\glossary\Controller\AtomizerController::loadAtomForm'
+  requirements:
+    _permission: 'access content'
+glossary.loadAtom:
+  path: '/ajax-ab/loadAtom'
+  defaults:
+    _controller: '\Drupal\glossary\Controller\AtomizerController::loadAtom'
+  requirements:
+    _permission: 'access content'
+
+

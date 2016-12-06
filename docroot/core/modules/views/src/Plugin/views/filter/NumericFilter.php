@@ -192,16 +192,22 @@ class NumericFilter extends FilterPluginBase {
     }
 
     if ($which == 'all' || $which == 'minmax') {
-      $form['value']['min'] = array(
+      $form['value']['minmax-wrapper'] = array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => array('minmax-wrapper'),
+        ),
+      );
+
+      $form['value']['minmax-wrapper']['min'] = array(
         '#type' => 'textfield',
-        '#title' => !$exposed ? $this->t('Min') : $this->exposedInfo()['label'],
         '#size' => 30,
         '#default_value' => $this->value['min'],
         '#description' => !$exposed ? '' : $this->exposedInfo()['description']
       );
-      $form['value']['max'] = array(
+      $form['value']['minmax-wrapper']['max'] = array(
         '#type' => 'textfield',
-        '#title' => !$exposed ? $this->t('And max') : $this->t('And'),
+        '#title' => !$exposed ? $this->t('and max') : $this->t('and'),
         '#size' => 30,
         '#default_value' => $this->value['max'],
       );
@@ -213,14 +219,14 @@ class NumericFilter extends FilterPluginBase {
             $source => array('value' => $operator),
           );
         }
-        $form['value']['min'] += $states;
-        $form['value']['max'] += $states;
+        $form['value']['minmax-wrapper']['min'] += $states;
+        $form['value']['minmax-wrapper']['max'] += $states;
       }
-      if ($exposed && !isset($user_input[$identifier]['min'])) {
+      if ($exposed && !isset($user_input[$identifier]['minmax-wrapper']['min'])) {
         $user_input[$identifier]['min'] = $this->value['min'];
       }
-      if ($exposed && !isset($user_input[$identifier]['max'])) {
-        $user_input[$identifier]['max'] = $this->value['max'];
+      if ($exposed && !isset($user_input[$identifier]['minmax-wrapper']['max'])) {
+        $user_input[$identifier]['minmax-wrapper']['max'] = $this->value['max'];
       }
 
       if (!isset($form['value'])) {
@@ -245,10 +251,10 @@ class NumericFilter extends FilterPluginBase {
 
   protected function opBetween($field) {
     if ($this->operator == 'between') {
-      $this->query->addWhere($this->options['group'], $field, array($this->value['min'], $this->value['max']), 'BETWEEN');
+      $this->query->addWhere($this->options['group'], $field, array($this->value['minmax-wrapper']['min'], $this->value['minmax-wrapper']['max']), 'BETWEEN');
     }
     else {
-      $this->query->addWhere($this->options['group'], $field, array($this->value['min'], $this->value['max']), 'NOT BETWEEN');
+      $this->query->addWhere($this->options['group'], $field, array($this->value['minmax-wrapper']['min'], $this->value['minmax-wrapper']['max']), 'NOT BETWEEN');
     }
   }
 
@@ -288,7 +294,7 @@ class NumericFilter extends FilterPluginBase {
     $options = $this->operatorOptions('short');
     $output = $options[$this->operator];
     if (in_array($this->operator, $this->operatorValues(2))) {
-      $output .= ' ' . $this->t('@min and @max', array('@min' => $this->value['min'], '@max' => $this->value['max']));
+      $output .= ' ' . $this->t('@min and @max', array('@min' => $this->value['minmax-wrapper']['min'], '@max' => $this->value['minmax-wrapper']['max']));
     }
     elseif (in_array($this->operator, $this->operatorValues(1))) {
       $output .= ' ' . $this->value['value'];
@@ -328,7 +334,7 @@ class NumericFilter extends FilterPluginBase {
             }
             break;
           case 2:
-            if ($value['min'] === '' && $value['max'] === '') {
+            if ($value['minmax-wrapper']['min'] === '' && $value['minmax-wrapper']['max'] === '') {
               return FALSE;
             }
             break;

@@ -1,0 +1,4 @@
+glossary display structure:
+  title: 'Atomizer Display Structure'
+  description: 'Display the structure of the atom on the Atom edit form.'
+  restrict access: TRUE

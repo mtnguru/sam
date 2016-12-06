@@ -1,0 +1,27 @@
+glossary-js:
+  js:
+    js/threejs/three.js: {}
+    js/threejs/renderers/Projector.js: {}
+    js/threejs/controls/TrackballControls.js: {}
+    js/threejs/controls/OrbitControls.js: {}
+    js/physijs/physi.js: {}
+    js/glossary_base.js: {}
+    js/glossary_viewer.js: {}
+    js/glossary_controls.js: {}
+    js/glossary_style.js: {}
+    js/glossary_sprites.js: {}
+    js/glossary_shapes.js: {}
+    js/glossary_nuclet.js: {}
+    js/glossary_atom.js: {}
+    js/producers/prod_atom_builder.js: {}
+    js/producers/prod_atom_viewer.js: {}
+    js/producers/prod_platonic_solids.js: {}
+#   js/producers/prod_backbone_builder.js: {}
+#   js/producers/prod_workbench.js: {}
+    js/glossary.js: {}
+  css:
+    component:
+      css/glossary.css: {}
+  dependencies:
+    - core/drupal.ajax
+

@@ -1,0 +1,44 @@
+@import "variables";
+
+// Atom Builder Controls form
+.block-atomizer-controls {
+  #hidden-nuclet {
+    position: absolute;
+    z-index: 100;
+    padding: 5px;
+    background: $color-nuclet-edit;
+    border: solid 2px $color-border;
+    border-radius: 8px;
+    .form-item {
+      margin: 0;
+    }
+    .az-name {
+      font-weight: normal;
+    }
+    .az-slider {
+      width: 43%;
+    }
+    .az-value {
+      background: inherit;
+    }
+    label {
+      margin: 0;
+    }
+    textarea#edit-field-atomic-structure-0-value {
+      font-family: "New Courier";
+    }
+    #edit-nuclet-grow-0,
+    #edit-nuclet-grow-1 {
+      label {
+        margin: 0 10px 0 5px;
+      }
+      .nuclet-list-button {
+        margin: 1px 0px;
+        padding: 1px 5px;
+        background: $color-button;
+        color: white;
+        border-radius: 6px;
+      }
+    }
+  }
+}

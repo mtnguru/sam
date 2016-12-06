@@ -1,0 +1,249 @@
+
+abbr.glossary_old-indicator,
+acronym.glossary_old-indicator,
+sup.glossary_old-indicator,
+span.glossary_old-indicator,
+a.glossary_old-indicator,
+a.glossary_old-icon,
+dfn.glossary_old-indicator,
+img.glossary_old-indicator {
+  cursor: help;
+}
+
+span.glossary_old-term {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+a.glossary_old-term {
+  text-decoration: none;
+  border-bottom: 1px dotted #080;
+  color: #080;
+  cursor: help;
+}
+
+dl.glossary_old-list > dt {
+  font-weight: bold;
+}
+
+dl.glossary_old-list > dd {
+  font-weight: normal;
+  font-size: 75%;
+  margin-left: 15px;
+}
+
+dl.glossary_old-list dt.depth1 {
+  padding-left: 10px;
+}
+
+dl.glossary_old-list dt.depth2 {
+  padding-left: 20px;
+}
+
+dl.glossary_old-list dt.depth3 {
+  padding-left: 30px;
+}
+
+.glossary_old-list dt {
+  padding-top: 7px;
+  clear: both;
+}
+
+td.glossary_old-list-description {
+  padding-left: 1em !important;
+  font-style: italic;
+  font-size: 90%;
+}
+
+a.glossary_old-edit-term {
+  font-size: 75%;
+  font-weight: normal;
+  margin-left: 2.0em;
+}
+
+a.glossary_old-search-term {
+  font-size: 75%;
+  font-weight: normal;
+  margin-left: 2.0em;
+}
+
+p.glossary_old-description {
+  margin: 0px 2.0em 0.5em 2.0em;
+  text-indent: 0;
+}
+
+div.glossary_old-letter {
+  clear: both;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.glossary_old-synonyms {
+  font-style: italic;
+  color: #888888;
+  margin-left: 1em;
+}
+
+.glossary_old-related {
+  font-style: italic;
+  color: green;
+  margin-left: 6px;
+}
+
+.glossary_old-related a {
+  text-decoration: underline;
+  color: green;
+}
+
+.glossary_old-related a:visited {
+  text-decoration: underline;
+  color: green;
+}
+
+.glossary_old-related a:link {
+  text-decoration: underline;
+  color: green;
+}
+
+.glossary_old-links {
+  text-align: center;
+  background-color: #eeeeff;
+  color: #888888;
+}
+
+.glossary_old-links a {
+  font-size: 140%;
+  text-transform: uppercase;
+}
+
+.glossary_old-alphabar-instructions {
+  font-size: 89%;
+  font-style: italic;
+}
+
+.glossary_old-admin-links {
+  clear: both;
+  margin: 0.5em 0 0 3.0em;
+}
+
+.glossary_old-admin-links li a {
+  padding: 5px;
+}
+
+.glossary_old-list dt img {
+  float: left;
+}  
+
+.glossary_old-list .taxonomy_image_wrapper {
+  width: 70px;
+  float: left;
+}
+
+a.clicktip_target {
+  font-style:normal;
+  /*border-bottom: 3px double #992222;*/
+}
+
+span.clicktip_target {
+  font-style:normal;
+}
+
+html > body .hovertip_wrap3 {
+  background-color: #ffdab9;
+  border: 3px outset #d2691e;
+}
+
+.hovertip h2 {
+  margin: 0;
+  padding: 0;
+  background-color: #D2691E;
+  color: #ffffff;
+}
+
+a.hovertip_target {
+  font-style:normal;
+  border-bottom: 3px double #992222;
+}
+
+span.hovertip_target {
+  font-style:normal;
+  border-bottom: 3px double #992222;
+}
+
+.glossary_old_radios .form-radios {
+  margin-top: 0;
+}
+
+.glossary_old_radios .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.glossary_old_checkboxes .form-checkboxes {
+  margin-top: 0;
+}
+
+.glossary_old_checkboxes .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.glossary_old_radios label.option {
+  margin-right: 1em;
+  border: 1px dotted #666666;
+  padding: 0 4px 1px 0;
+}
+
+.glossary_old_radios .form-item .description {
+  clear: both;
+}
+
+.glossary_old_checkboxes label.option {
+  margin-right: 1em;
+  float: left;
+  /* background: #ffffff; */
+  padding: 0 4px 1px 0;
+}
+
+.glossary_old_checkboxes .form-item .description {
+  clear: both; 
+}
+
+.glossary_old-detailed {
+  /* clear: both; */
+}
+
+.glossary_old-detailed h2 {
+  margin-left: 10px;
+}
+
+.glossary_old-detailed legend {
+  text-indent: 0;
+}
+
+.glossary_old-detailed-link {
+  font-size: 89%;
+  text-indent: 2em;
+}
+
+.glossary_old-interval .description {
+  display: block;
+}
+
+.block-glossary_old {
+  font-size: 89%;
+}
+
+.glossary_old-block-term-name {
+  font-weight: bold;
+  font-size: 110%;
+  text-align: center;
+}
+
+span.hovertip img {
+  text-align: left;
+  margin-right: 5px;
+}

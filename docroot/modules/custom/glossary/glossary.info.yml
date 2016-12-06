@@ -1,0 +1,5 @@
+name: Glossary
+type: module
+description: Scan text for glossary terms and automatically link them to the taxonomy terms page.
+core: 8.x
+package: SAM

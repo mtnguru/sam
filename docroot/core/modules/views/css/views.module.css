@@ -8,6 +8,7 @@
 .views-align-center {
   text-align: center;
 }
+
 /* Grid style column align. */
 .views-view-grid .views-col {
   float: left;
@@ -17,3 +18,20 @@
   float: left;
   width: 100%;
 }
+
+/* Views exposed filter form */
+form.views-exposed-form .filter-wrapper .form-item {
+  display: inline-block;
+}
+form.views-exposed-form .filter-wrapper > label {
+  display: inline-block;
+}
+
+/* Numeric field min/max wrapper */
+form.views-exposed-form .minmax-wrapper {
+  display: inline-block;
+}
+form.views-exposed-form .minmax-wrapper .form-item input.form-text {
+  width: 6em;
+}
+~                           
