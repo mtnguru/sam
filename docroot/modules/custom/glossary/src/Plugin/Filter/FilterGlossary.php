@@ -16,11 +16,11 @@ use Drupal\taxonomy\Entity\Vocabulary;
  * )
  */
 class FilterGlossary extends FilterBase {
-  public static $taxonomy = null;
+  public static $taxonomies = [];
 
   public function process($text, $langcode) {
-    if (self::$taxonomy == null) {
-      $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadTree($this->settings['taxonomy_id'], 0, null, true);
+    if (empty(self::$taxonomies[$this->settings['taxonomy_id']])) {
+      self::$taxonomies[$this->settings['taxonomy_id']] = \Drupal::entityManager()->getStorage('taxonomy_term')->loadTree($this->settings['taxonomy_id'], 0, null, true);
     }
     return new FilterProcessResult('<!-- processed -->' . $text);
   }
