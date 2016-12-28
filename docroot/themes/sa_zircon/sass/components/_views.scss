@@ -1,4 +1,11 @@
 
+.views-element-container {
+  .view-filters {
+    display: none;
+  }
+}
+
+form#views-exposed-form-media-gallery-page-1,
 form.views-exposed-form {
   .form--inline .form-item {
   }
@@ -6,15 +13,16 @@ form.views-exposed-form {
 //  display: block;
     margin: 2px 0;
     padding: 0;
-    width: auto;
+    width: 100%;
     label {
-      width: 11em;
+      width: 40%;
       font-weight: bold;
     }
     .form-item {
-      margin: .25em 0;
+      display: inline;
+      margin: .25em 0 .25em .25em;
       input {
-        width: 15em;
+        width: 56%;
         padding: 3px 4px;
       }
       select {
