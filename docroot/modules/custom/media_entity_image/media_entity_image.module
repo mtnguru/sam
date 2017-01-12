@@ -1,1 +1,41 @@
 <?php
+/**
+ * @file - media_entity_image.module
+ */
+
+/**
+ * Implements hook_file_presave().
+ *
+ * Preprocess image: Reduce filesize by resizing image and changing 'quality'
+ * using the convert command from the gd graphics library.
+ *
+ * @param $file
+ */
+function media_entity_image_file_presave($file) {
+
+  // Preprocess images - resize (scale) and reduce 'quality'
+  if (strstr($file->getMimeType(), 'image')) {
+    $path = \Drupal::service('file_system')->realpath($file->getFileUri());  // /home/atom/private
+    $tmpPath = file_directory_temp() . '/tmp_' . $file->getFileName();
+
+    $size = getimagesize($path);
+
+    // Default settings - Reduces 4M cell phone image file to appx 200-500KB.
+    $quality = 60;
+    $resolution = array(
+      'width' => 10000,
+      'height' => 10000,
+    );
+
+    // If image is greater than max resolution in width or height then resize it.
+    $res = ($size[0] > $resolution['width'] || $size[1] > $resolution['height'])
+      ? "-resize " . $resolution['width'] . 'x' . $resolution['height']
+      : '';
+
+    // Execute gd library convert command
+    $cmd = "convert $res -quality $quality '$path' '$tmpPath'; " .
+      "cp '$tmpPath' '$path'; " .
+      "rm '$tmpPath'";
+    `$cmd`;
+  }
+}
