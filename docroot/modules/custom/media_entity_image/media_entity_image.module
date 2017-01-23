@@ -1,7 +1,21 @@
 <?php
 /**
+ *
  * @file - media_entity_image.module
  */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * FORM ID: media_image_form
+ * Set default photographer to be the logged in user.
+ */
+function media_entity_image_form_media_image_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['field_photographer']['widget'][0]['target_id']['#default_value'] = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $form['#submit'][] = 'imager_form_media_image_form_submit';
+}
 
 /**
  * Implements hook_file_presave().
@@ -15,10 +29,25 @@ function media_entity_image_file_presave($file) {
 
   // Preprocess images - resize (scale) and reduce 'quality'
   if (strstr($file->getMimeType(), 'image')) {
-    $path = \Drupal::service('file_system')->realpath($file->getFileUri());  // /home/atom/private
-    $tmpPath = file_directory_temp() . '/tmp_' . $file->getFileName();
 
-    $size = getimagesize($path);
+    $srcPath = \Drupal::service('file_system')->realpath($file->getFileUri());  // /home/atom/private
+    $info = pathinfo($srcPath);
+    if ($info['extension'] == 'png') {
+      $pinfo = parse_url('public://fart.com/zoo/animal/picture.gif.jpg');
+      $zinfo = parse_url('public://picture.gif.jpg');
+      $uinfo = parse_url($file->getFileUri());
+      $filename = $uinfo['host'] . '.jpg';
+      $file->setFileUri($uinfo['scheme'] . '://' . $filename);
+      $file->setFilename($filename);
+    }
+    else {
+      $filename = $info['basename'];
+    }
+
+    $tmpPath = file_directory_temp() . '/tmp_' . $filename;
+    $destPath = $info['dirname'] . '/' . $filename;
+
+    $size = getimagesize($srcPath);
 
     // Default settings - Reduces 4M cell phone image file to appx 200-500KB.
     $quality = 60;
@@ -33,9 +62,13 @@ function media_entity_image_file_presave($file) {
       : '';
 
     // Execute gd library convert command
-    $cmd = "convert $res -quality $quality '$path' '$tmpPath'; " .
-      "cp '$tmpPath' '$path'; " .
-      "rm '$tmpPath'";
+    $cmd = "convert $res -quality $quality '$srcPath' '$tmpPath';" .
+      " cp '$tmpPath' '$destPath'; " .
+      " rm '$tmpPath';";
+
+    if ($srcPath != $destPath) {
+      $cmd .= " rm '$srcPath'";
+    }
     `$cmd`;
   }
 }

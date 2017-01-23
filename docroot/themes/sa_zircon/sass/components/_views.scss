@@ -1,10 +1,4 @@
 
-.views-element-container {
-  .view-filters {
-    display: none;
-  }
-}
-
 form#views-exposed-form-media-gallery-page-1,
 form.views-exposed-form {
   .form--inline .form-item {
@@ -15,14 +9,14 @@ form.views-exposed-form {
     padding: 0;
     width: 100%;
     label {
-      width: 40%;
+      width: 25%;
       font-weight: bold;
     }
     .form-item {
       display: inline;
       margin: .25em 0 .25em .25em;
       input {
-        width: 56%;
+        width: 38%;
         padding: 3px 4px;
       }
       select {
@@ -51,15 +45,17 @@ form.views-exposed-form {
         font-weight: normal;
       }
     }
+    .minmax-wrapper .form-item input.form-text {
+      width: 6.1em;
+    }
   }
 }
 
 .view-content {
   margin-top: 1em;
   table.views-table {
-    font-size: 13px;
     th {
-      padding: 2px 5px;
+      padding: 1px 5px;
       font-weight: normal;
       font-size: 100%;
       border: solid 1px $color-border;
@@ -73,8 +69,9 @@ form.views-exposed-form {
       }
     }
     td {
+      font-size: 11px;
       border: solid 1px $az-color-border;
-      padding: 2px 5px;
+      padding: 1px 5px;
       &.is-active {
         background: $color-active;
       }

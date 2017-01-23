@@ -57,6 +57,14 @@ body {
   }
 }
 
+.views-element-container {
+  .view-media-gallery {
+    .view-filters {
+      display: none;
+    }
+  }
+}
+
 .node__meta {
   .js-form-item {
     display: none;
