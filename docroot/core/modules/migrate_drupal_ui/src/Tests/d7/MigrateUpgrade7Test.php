@@ -45,7 +45,7 @@ class MigrateUpgrade7Test extends MigrateUpgradeTestBase {
       'editor' => 2,
       'field_config' => 49,
       'field_storage_config' => 37,
-      'file' => 1,
+      'file' => 2,
       'filter_format' => 7,
       'image_style' => 6,
       'language_content_settings' => 2,
@@ -77,7 +77,7 @@ class MigrateUpgrade7Test extends MigrateUpgradeTestBase {
   /**
    * Executes all steps of migrations upgrade.
    */
-  protected function testMigrateUpgrade() {
+  public function testMigrateUpgrade() {
     parent::testMigrateUpgrade();
 
     // Ensure migrated users can log in.
