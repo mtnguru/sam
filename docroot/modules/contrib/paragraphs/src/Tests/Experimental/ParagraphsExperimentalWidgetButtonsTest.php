@@ -95,20 +95,71 @@ class ParagraphsExperimentalWidgetButtonsTest extends ParagraphsExperimentalTest
   }
 
   /**
-   * Sets the Paragraphs widget display mode.
-   *
-   * @param string $content_type
-   *   Content type name where to set the widget mode.
-   * @param string $paragraphs_field
-   *   Paragraphs field to change the mode.
-   * @param string $mode
-   *   Mode to be set. ('closed', 'preview' or 'open').
+   * Tests if buttons are present for each widget mode.
    */
-  protected function setParagraphsWidgetMode($content_type, $paragraphs_field, $mode) {
-    $this->drupalGet('admin/structure/types/manage/' . $content_type . '/form-display');
-    $this->drupalPostAjaxForm(NULL, [], $paragraphs_field . '_settings_edit');
-    $this->drupalPostForm(NULL, ['fields[' . $paragraphs_field . '][settings_edit_form][settings][edit_mode]' => $mode], t('Update'));
-    $this->drupalPostForm(NULL, [], 'Save');
-  }
+  public function testButtonsVisibility() {
+    $this->addParagraphedContentType('paragraphed_test', 'field_paragraphs');
 
+    $this->loginAsAdmin(['create paragraphed_test content', 'edit any paragraphed_test content']);
+    // Add a Paragraph type.
+    $paragraph_type = 'text_paragraph';
+    $this->addParagraphsType($paragraph_type);
+    $this->addParagraphsType('text');
+
+    // Add a text field to the text_paragraph type.
+    static::fieldUIAddNewField('admin/structure/paragraphs_type/' . $paragraph_type, 'text', 'Text', 'text_long', [], []);
+    $edit = [
+      'fields[field_paragraphs][type]' => 'paragraphs',
+    ];
+    $this->drupalPostForm('admin/structure/types/manage/paragraphed_test/form-display', $edit, t('Save'));
+    $this->drupalPostAjaxForm('node/add/paragraphed_test', [], 'field_paragraphs_text_paragraph_add_more');
+
+    // Create a node with a Paragraph.
+    $text = 'recognizable_text';
+    $edit = [
+      'title[0][value]' => 'paragraphs_mode_test',
+      'field_paragraphs[0][subform][field_text][0][value]' => $text,
+    ];
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_text_paragraph_add_more');
+    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $node = $this->drupalGetNodeByTitle('paragraphs_mode_test');
+
+    // Checking visible buttons on "Open" mode.
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $this->assertText('Collapse');
+    $this->assertText('Remove');
+    $this->assertText('Duplicate');
+
+    // Checking visible buttons on "Closed" mode.
+    $this->setParagraphsWidgetMode('paragraphed_test', 'field_paragraphs', 'closed');
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $this->assertText('Edit');
+    $this->assertText('Remove');
+    $this->assertText('Duplicate');
+
+    // Checking visible buttons on "Preview" mode.
+    $this->setParagraphsWidgetMode('paragraphed_test', 'field_paragraphs', 'closed');
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $this->assertText('Edit');
+    $this->assertText('Remove');
+    $this->assertText('Duplicate');
+
+    // Checking always show collapse and edit actions.
+    $this->addParagraphsType('nested_paragraph');
+    static::fieldUIAddNewField('admin/structure/paragraphs_type/nested_paragraph', 'nested', 'Nested', 'field_ui:entity_reference_revisions:paragraph', [
+      'settings[target_type]' => 'paragraph',
+      'cardinality' => '-1',
+    ], []);
+    $this->drupalGet('admin/structure/paragraphs_type/nested_paragraph/form-display');
+    $edit = [
+      'fields[field_nested][type]' => 'paragraphs',
+    ];
+    $this->drupalPostForm(NULL, $edit, t('Save'));
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_nested_paragraph_add_more');
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_2_subform_field_nested_nested_paragraph_add_more');
+    // Collapse is present on each nesting level.
+    $this->assertFieldByName('field_paragraphs_2_collapse');
+    $this->assertFieldByName('field_paragraphs_2_subform_field_nested_0_collapse');
+  }
 }

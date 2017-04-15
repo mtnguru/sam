@@ -38,4 +38,5 @@ class ParagraphsTypesTest extends ParagraphsTestBase {
     $this->assertText('paragraph_type_test Paragraphs type is used by 1 piece of content on your site. You can not remove this paragraph_type_test Paragraphs type until you have removed all from the content.');
 
   }
+
 }

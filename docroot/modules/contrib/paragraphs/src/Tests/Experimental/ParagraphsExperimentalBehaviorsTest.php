@@ -14,6 +14,13 @@ class ParagraphsExperimentalBehaviorsTest extends ParagraphsExperimentalTestBase
   use FieldUiTestTrait;
 
   /**
+   * Modules to enable.
+   *
+   * @var array
+   */
+  public static $modules = ['image', 'file', 'views'];
+
+  /**
    * Tests the behavior plugins for paragraphs.
    */
   public function testBehaviorPluginsFields() {
@@ -111,10 +118,18 @@ class ParagraphsExperimentalBehaviorsTest extends ParagraphsExperimentalTestBase
     $this->addParagraphsType($paragraph_type);
     // Add a text field to the text_paragraph type.
     static::fieldUIAddNewField('admin/structure/paragraphs_type/' . $paragraph_type, 'text_test', 'Text', 'text_long', [], []);
+    static::fieldUIAddNewField('admin/structure/paragraphs_type/' . $paragraph_type, 'image', 'Image', 'image', [], []);
     // Assert if the plugin is listed on the edit form of the paragraphs type.
     $this->drupalGet('admin/structure/paragraphs_type/' . $paragraph_type);
     $this->assertNoFieldByName('behavior_plugins[test_bold_text][enabled]');
     $this->assertFieldByName('behavior_plugins[test_text_color][enabled]');
+    $this->assertFieldByName('behavior_plugins[test_field_selection][enabled]');
+    $this->assertText('Choose paragraph field to be applied.');
+    // Assert that Field Selection Filter plugin properly filters field types.
+    $this->assertOptionByText('edit-behavior-plugins-test-field-selection-settings-field-selection-filter', t('Image'));
+    // Check that Field Selection Plugin does not filter any field types.
+    $this->assertOptionByText('edit-behavior-plugins-test-field-selection-settings-field-selection', t('Image'));
+    $this->assertOptionByText('edit-behavior-plugins-test-field-selection-settings-field-selection', t('Text'));
 
     // Test a plugin without behavior fields.
     $edit = [
@@ -131,4 +146,104 @@ class ParagraphsExperimentalBehaviorsTest extends ParagraphsExperimentalTestBase
     $this->assertRaw('dummy_plugin_text');
   }
 
+  /**
+   * Tests the behavior plugins summary for paragraphs closed mode.
+   */
+  public function testCollapsedSummary() {
+    $this->addParagraphedContentType('paragraphed_test', 'field_paragraphs');
+    $this->loginAsAdmin(['create paragraphed_test content', 'edit any paragraphed_test content']);
+
+    // Add a text paragraph type.
+    $paragraph_type = 'text_paragraph';
+    $this->addParagraphsType($paragraph_type);
+    static::fieldUIAddNewField('admin/structure/paragraphs_type/' . $paragraph_type, 'text', 'Text', 'text_long', [], []);
+    $this->setParagraphsWidgetMode('paragraphed_test', 'field_paragraphs', 'closed');
+    // Enable plugins for the text paragraph type.
+    $edit = [
+      'behavior_plugins[test_bold_text][enabled]' => TRUE,
+      'behavior_plugins[test_text_color][enabled]' => TRUE,
+    ];
+    $this->drupalPostForm('admin/structure/paragraphs_type/' . $paragraph_type, $edit, t('Save'));
+
+    // Add a nested Paragraph type.
+    $paragraph_type = 'nested_paragraph';
+    $this->addParagraphsType($paragraph_type);
+    $this->addParagraphsField('nested_paragraph', 'paragraphs', 'paragraph');
+    // Enable plugins for the nested paragraph type.
+    $edit = [
+      'behavior_plugins[test_bold_text][enabled]' => TRUE,
+    ];
+    $this->drupalPostForm('admin/structure/paragraphs_type/' . $paragraph_type, $edit, t('Save'));
+
+    // Add a node and enabled plugins.
+    $this->drupalPostAjaxForm('node/add/paragraphed_test', [], 'field_paragraphs_nested_paragraph_add_more');
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_1_subform_paragraphs_text_paragraph_add_more');
+    $edit = [
+      'title[0][value]' => 'collapsed_test',
+      'field_paragraphs[0][subform][field_text][0][value]' => 'first_paragraph',
+      'field_paragraphs[0][behavior_plugins][test_bold_text][bold_text]' => TRUE,
+      'field_paragraphs[1][subform][paragraphs][0][subform][field_text][0][value]' => 'nested_paragraph',
+      'field_paragraphs[1][behavior_plugins][test_bold_text][bold_text]' => TRUE,
+    ];
+    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+
+    // Assert that the summary includes the text of the behavior plugins.
+    $this->clickLink('Edit');
+    $this->assertRaw('class="paragraphs-collapsed-description">first_paragraph, Text color: blue, Bold: Yes');
+    $this->assertRaw('class="paragraphs-collapsed-description">nested_paragraph, Text color: blue, Bold: No, Bold: Yes');
+  }
+
+  /**
+   * Tests the behavior plugins subform state submit.
+   */
+  public function testBehaviorSubform() {
+    $this->addParagraphedContentType('paragraphed_test', 'field_paragraphs');
+    $this->loginAsAdmin(['create paragraphed_test content', 'edit any paragraphed_test content']);
+
+    // Add a text paragraph type.
+    $paragraph_type = 'text_paragraph';
+    $this->addParagraphsType($paragraph_type);
+    static::fieldUIAddNewField('admin/structure/paragraphs_type/' . $paragraph_type, 'text', 'Text', 'text_long', [], []);
+    // Enable plugins for the text paragraph type.
+    $edit = [
+      'behavior_plugins[test_bold_text][enabled]' => TRUE,
+      'behavior_plugins[test_text_color][enabled]' => TRUE,
+    ];
+    $this->drupalPostForm('admin/structure/paragraphs_type/' . $paragraph_type, $edit, t('Save'));
+
+    // Add a nested Paragraph type.
+    $paragraph_type = 'nested_paragraph';
+    $this->addParagraphsType($paragraph_type);
+    static::fieldUIAddNewField('admin/structure/paragraphs_type/nested_paragraph', 'nested', 'Nested', 'field_ui:entity_reference_revisions:paragraph', [
+      'settings[target_type]' => 'paragraph',
+      'cardinality' => '-1',
+    ], []);
+    // Enable plugins for the nested paragraph type.
+    $edit = [
+      'behavior_plugins[test_bold_text][enabled]' => TRUE,
+    ];
+    $this->drupalPostForm('admin/structure/paragraphs_type/' . $paragraph_type, $edit, t('Save'));
+
+    // Add a node and enabled plugins.
+    $this->drupalPostAjaxForm('node/add/paragraphed_test', [], 'field_paragraphs_nested_paragraph_add_more');
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_text_paragraph_add_more');
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_subform_field_nested_text_paragraph_add_more');
+    $edit = [
+      'title[0][value]' => 'collapsed_test',
+      'field_paragraphs[0][subform][field_nested][0][subform][field_text][0][value]' => 'nested text paragraph',
+      'field_paragraphs[0][behavior_plugins][test_bold_text][bold_text]' => TRUE,
+      'field_paragraphs[1][subform][field_text][0][value]' => 'first_paragraph',
+      'field_paragraphs[1][behavior_plugins][test_bold_text][bold_text]' => TRUE,
+    ];
+    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+
+    $this->clickLink('Edit');
+    $edit = [
+      'field_paragraphs[0][_weight]' => 1,
+      'field_paragraphs[1][_weight]' => 0,
+    ];
+    $this->drupalPostForm(NULL, $edit, t('Save and keep published'));
+    $this->assertNoErrorsLogged();
+
+  }
 }

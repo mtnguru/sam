@@ -294,7 +294,7 @@ class NumericFilter extends FilterPluginBase {
     $options = $this->operatorOptions('short');
     $output = $options[$this->operator];
     if (in_array($this->operator, $this->operatorValues(2))) {
-      $output .= ' ' . $this->t('@min and @max', array('@min' => $this->value['minmax-wrapper']['min'], '@max' => $this->value['minmax-wrapper']['max']));
+      $output .= ' ' . $this->t('@min and @max', array('@min' => $this->value['min'], '@max' => $this->value['max']));
     }
     elseif (in_array($this->operator, $this->operatorValues(1))) {
       $output .= ' ' . $this->value['value'];
@@ -334,7 +334,7 @@ class NumericFilter extends FilterPluginBase {
             }
             break;
           case 2:
-            if ($value['minmax-wrapper']['min'] === '' && $value['minmax-wrapper']['max'] === '') {
+            if ($value['min'] === '' && $value['max'] === '') {
               return FALSE;
             }
             break;

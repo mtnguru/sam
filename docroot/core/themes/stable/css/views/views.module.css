@@ -8,7 +8,6 @@
 .views-align-center {
   text-align: center;
 }
-
 /* Grid style column align. */
 .views-view-grid .views-col {
   float: left;
@@ -20,17 +19,37 @@
 }
 
 /* Views exposed filter form */
-form.views-exposed-form .filter-wrapper .form-item {
-  display: inline-block;
+form.views-exposed-form .filter-wrapper {
+  display: flex;
 }
 form.views-exposed-form .filter-wrapper > label {
-  display: inline-block;
+  display: block;
+  width: 33%;
+  order: 1;
+//display: inline-block;
+}
+form.views-exposed-form .filter-wrapper .form-item {
+  display: block;
+  width: 33%;
+}
+form.views-exposed-form .filter-wrapper .form-item select {
+  width: 100%;
+}
+form.views-exposed-form .filter-wrapper .form-item input {
+  width: 100%;
+}
+form.views-exposed-form .filter-wrapper .form-item:nth-child(2) {
+  order: 3;
+}
+form.views-exposed-form .filter-wrapper .form-item:nth-child(3) {
+  order: 2;
 }
 
 /* Numeric field min/max wrapper */
 form.views-exposed-form .minmax-wrapper {
+  width: 33%;
   display: inline-block;
 }
 form.views-exposed-form .minmax-wrapper .form-item input.form-text {
-  width: 6em;
+  width: 5em;
 }

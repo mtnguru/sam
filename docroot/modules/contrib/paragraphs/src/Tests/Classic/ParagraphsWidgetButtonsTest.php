@@ -81,30 +81,32 @@ class ParagraphsWidgetButtonsTest extends ParagraphsTestBase {
     $this->assertText('paragraphed_test ' . $node->label() . ' has been updated.');
     $this->assertText($preview_mode_text);
 
-    // Test the remove function.
+    // Test the remove/restore function.
     $this->drupalGet('node/' . $node->id() . '/edit');
+    $this->assertText($preview_mode_text);
     // Click "Remove" button.
     $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_remove');
+    $this->assertText('Deleted Paragraph: text_paragraph');
+    // Click "Restore" button.
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_restore');
+    $this->assertFieldByName('field_paragraphs[0][subform][field_text][0][value]', $preview_mode_text);
+    $restore_text = 'restore_text';
+    $edit = ['field_paragraphs[0][subform][field_text][0][value]' => $restore_text];
+    $this->drupalPostForm(NULL, $edit, t('Save and keep published'));
+    $this->assertText('paragraphed_test ' . $node->label() . ' has been updated.');
+    $this->assertText($restore_text);
+
+    // Test the remove/confirm remove function.
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    $this->assertText($restore_text);
+    // Click "Remove" button.
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_remove');
+    $this->assertText('Deleted Paragraph: text_paragraph');
+    // Click "Confirm Removal" button.
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_confirm_remove');
     $this->drupalPostForm(NULL, [], t('Save and keep published'));
     $this->assertText('paragraphed_test ' . $node->label() . ' has been updated.');
-    $this->assertNoText($preview_mode_text);
-  }
-
-  /**
-   * Sets the Paragraphs widget display mode.
-   *
-   * @param string $content_type
-   *   Content type name where to set the widget mode.
-   * @param string $paragraphs_field
-   *   Paragraphs field to change the mode.
-   * @param string $mode
-   *   Mode to be set. ('closed', 'preview' or 'open').
-   */
-  protected function setParagraphsWidgetMode($content_type, $paragraphs_field, $mode) {
-    $this->drupalGet('admin/structure/types/manage/' . $content_type . '/form-display');
-    $this->drupalPostAjaxForm(NULL, [], $paragraphs_field . '_settings_edit');
-    $this->drupalPostForm(NULL, ['fields[' . $paragraphs_field . '][settings_edit_form][settings][edit_mode]' => $mode], t('Update'));
-    $this->drupalPostForm(NULL, [], 'Save');
+    $this->assertNoText($restore_text);
   }
 
 }

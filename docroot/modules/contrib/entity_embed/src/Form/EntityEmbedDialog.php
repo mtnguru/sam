@@ -458,23 +458,6 @@ class EntityEmbedDialog extends FormBase {
       );
     }
 
-    // James Sorensen - added class name to embedded entity
-    $form['attributes']['az-class'] = array(
-      '#title' => $this->t('AZ Class Name'),
-      '#type' => 'textfield',
-      '#default_value' => isset($entity_element['az-class']) ? Html::decodeEntities($entity_element['az-class']) : '',
-//    '#element_validate' => array('::escapeValue'),
-    );
-
-    // James Sorensen - added az data attribute
-    $form['attributes']['az-data'] = array(
-      '#title' => $this->t('AZ Data field'),
-      '#desc' => $this->t('Used to pass Key/Value pairs into JavaScript - Ex: key-value'),
-      '#type' => 'textfield',
-      '#default_value' => isset($entity_element['az-data']) ? Html::decodeEntities($entity_element['az-data']) : '',
-//    '#element_validate' => array('::escapeValue'),
-    );
-
     // When Drupal core's filter_caption is being used, the text editor may
     // offer the ability to add a caption.
     if ($editor->getFilterFormat()->filters('filter_caption')->status) {

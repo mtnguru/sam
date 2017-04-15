@@ -355,6 +355,13 @@ class PanelizerEntityViewBuilder implements EntityViewBuilderInterface, EntityHa
       $settings = $this->panelizer->getPanelizerSettings($entity->getEntityTypeId(), $entity->bundle(), $view_mode, $displays[$entity->bundle()]);
       $panels_display->setContexts($this->panelizer->getDisplayStaticContexts($settings['default'], $entity->getEntityTypeId(), $entity->bundle(), $view_mode, $displays[$entity->bundle()]));
       $build[$id] = $this->buildPanelized($entity, $panels_display, $view_mode, $langcode);
+
+      // Allow modules to modify the render array.
+      $alter_types = array(
+        "{$this->entityTypeId}_view",
+        'entity_view',
+      );
+      $this->moduleHandler->alter($alter_types, $build[$id], $entity, $displays[$entity->bundle()]);
     }
 
     return $build;
@@ -377,10 +384,10 @@ class PanelizerEntityViewBuilder implements EntityViewBuilderInterface, EntityHa
 
     $build = [
       '#theme' => [
-        'panelizer_view_mode',
-        'panelizer_view_mode__' . $this->entityTypeId,
-        'panelizer_view_mode__' . $this->entityTypeId . '__' . $entity->bundle(),
         'panelizer_view_mode__' . $this->entityTypeId . '__' . $entity->id(),
+        'panelizer_view_mode__' . $this->entityTypeId . '__' . $entity->bundle(),
+        'panelizer_view_mode__' . $this->entityTypeId,
+        'panelizer_view_mode',
       ],
       '#panelizer_plugin' => $this->getPanelizerPlugin(),
       '#panels_display' => $panels_display,

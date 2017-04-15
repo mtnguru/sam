@@ -7,13 +7,16 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\RevisionableInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldFilteredMarkup;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\SubformState;
 use Drupal\Core\Render\Element;
 use Drupal\paragraphs;
+use Drupal\paragraphs\ParagraphInterface;
 
 /**
  * Plugin implementation of the 'entity_reference_revisions paragraphs' widget.
@@ -264,10 +267,6 @@ class ParagraphsWidget extends WidgetBase {
       $item_mode = 'edit';
     }
 
-    if ($item_mode == 'collapsed') {
-      $item_mode = $default_edit_mode;
-    }
-
     if ($item_mode == 'closed') {
       // Validate closed paragraphs and expand if needed.
       // @todo Consider recursion.
@@ -379,45 +378,53 @@ class ParagraphsWidget extends WidgetBase {
           '#markup' => $bundle_info['label'],
         );
 
+        $actions = [];
+        $links = [];
+
+        $links['duplicate_button'] = [
+          '#type' => 'submit',
+          '#value' => $this->t('Duplicate'),
+          '#name' => strtr($id_prefix, '-', '_') . '_duplicate',
+          '#weight' => 502,
+          '#submit' => [[get_class($this), 'duplicateSubmit']],
+          '#limit_validation_errors' => [array_merge($parents, [$field_name, 'add_more'])],
+          '#delta' => $delta,
+          '#ajax' => [
+            'callback' => [get_class($this), 'itemAjax'],
+            'wrapper' => $widget_state['ajax_wrapper_id'],
+            'effect' => 'fade',
+          ],
+          '#access' => $paragraphs_entity->access('update'),
+          '#prefix' => '<li class="duplicate">',
+          '#suffix' => '</li>',
+        ];
+
         // Hide the button when translating.
         $button_access = $paragraphs_entity->access('delete') && !$this->isTranslating;
-        $element['top']['paragraphs_remove_button_container'] = [
-          '#type' => 'container',
-          '#weight' => 1,
-          '#attributes' => [
-            'class' => [
-              'paragraphs-remove-button-container',
-            ],
-          ],
-          'paragraphs_remove_button' => [
+        if($item_mode != 'remove') {
+          $links['remove_button'] = [
             '#type' => 'submit',
             '#value' => $this->t('Remove'),
             '#name' => strtr($id_prefix, '-', '_') . '_remove',
-            '#weight' => 500,
-            '#attributes' => [
-              'class' => [
-                'paragraphs-remove-button',
-              ],
-            ],
-            '#submit' => array(array(get_class($this), 'paragraphsItemSubmit')),
-            '#limit_validation_errors' => array(array_merge($parents, array($field_name, 'add_more'))),
+            '#weight' => 501 ,
+            '#submit' => [[get_class($this), 'paragraphsItemSubmit']],
+            '#limit_validation_errors' => [array_merge($parents, [$field_name, 'add_more'])],
             '#delta' => $delta,
-            '#ajax' => array(
+            '#ajax' => [
               'callback' => array(get_class($this), 'itemAjax'),
               'wrapper' => $widget_state['ajax_wrapper_id'],
               'effect' => 'fade',
-            ),
+            ],
             '#access' => $button_access,
+            '#prefix' => '<li class="remove">',
+            '#suffix' => '</li>',
             '#paragraphs_mode' => 'remove',
-          ]
-        ];
-
-        $actions = array();
-        $links = array();
+          ];
+        }
 
         if ($item_mode == 'edit') {
 
-          if (isset($items[$delta]->entity) && ($default_edit_mode == 'preview' || $default_edit_mode == 'closed')) {
+          if (isset($paragraphs_entity)) {
             $links['collapse_button'] = array(
               '#type' => 'submit',
               '#value' => $this->t('Collapse'),
@@ -433,7 +440,7 @@ class ParagraphsWidget extends WidgetBase {
               '#access' => $paragraphs_entity->access('update'),
               '#prefix' => '<li class="collapse">',
               '#suffix' => '</li>',
-              '#paragraphs_mode' => 'collapsed',
+              '#paragraphs_mode' => 'closed',
               '#paragraphs_show_warning' => TRUE,
             );
           }
@@ -459,25 +466,37 @@ class ParagraphsWidget extends WidgetBase {
             '#access' => !$paragraphs_entity->access('update') && !$paragraphs_entity->access('delete'),
           );
         }
-        elseif ($item_mode == 'preview' || $item_mode == 'closed') {
-          $links['edit_button'] = array(
-            '#type' => 'submit',
-            '#value' => $this->t('Edit'),
-            '#name' => strtr($id_prefix, '-', '_') . '_edit',
-            '#weight' => 501,
-            '#submit' => array(array(get_class($this), 'paragraphsItemSubmit')),
-            '#limit_validation_errors' => array(array_merge($parents, array($field_name, 'add_more'))),
-            '#delta' => $delta,
-            '#ajax' => array(
-              'callback' => array(get_class($this), 'itemAjax'),
-              'wrapper' => $widget_state['ajax_wrapper_id'],
-              'effect' => 'fade',
-            ),
-            '#access' => $paragraphs_entity->access('update'),
-            '#prefix' => '<li class="edit">',
-            '#suffix' => '</li>',
-            '#paragraphs_mode' => 'edit',
-          );
+        else {
+          $element['top']['paragraphs_edit_button_container'] = [
+            '#type' => 'container',
+            '#weight' => 1,
+            '#attributes' => [
+              'class' => [
+                'paragraphs-edit-button-container',
+              ],
+            ],
+            'paragraphs_edit_button' => [
+              '#type' => 'submit',
+              '#value' => $this->t('Edit'),
+              '#name' => strtr($id_prefix, '-', '_') . '_edit',
+              '#weight' => 500,
+              '#attributes' => [
+                'class' => [
+                  'paragraphs-edit-button',
+                ],
+              ],
+              '#submit' => [[get_class($this), 'paragraphsItemSubmit']],
+              '#limit_validation_errors' => [array_merge($parents, [$field_name, 'add_more'])],
+              '#delta' => $delta,
+              '#ajax' => [
+                'callback' => [get_class($this), 'itemAjax'],
+                'wrapper' => $widget_state['ajax_wrapper_id'],
+                'effect' => 'fade',
+              ],
+              '#access' => $paragraphs_entity->access('update'),
+              '#paragraphs_mode' => 'edit',
+            ]
+          ];
 
           if ($show_must_be_saved_warning) {
             $info['must_be_saved_info'] = array(
@@ -545,7 +564,7 @@ class ParagraphsWidget extends WidgetBase {
                 unset($element['top']['links'][$key]['#suffix']);
               }
             }
-            $element['top']['links']['#weight'] = 2;
+            $element['top']['links']['#weight'] = 1;
           }
         }
 
@@ -617,7 +636,10 @@ class ParagraphsWidget extends WidgetBase {
         if ($paragraphs_type) {
           foreach ($paragraphs_type->getEnabledBehaviorPlugins() as $plugin_id => $plugin) {
             $element['behavior_plugins'][$plugin_id] = [];
-            $element['behavior_plugins'][$plugin_id] = $plugin->buildBehaviorForm($paragraphs_entity);
+            $subform_state = SubformState::createForSubform($element['behavior_plugins'][$plugin_id], $form, $form_state);
+            if ($plugin_form = $plugin->buildBehaviorForm($paragraphs_entity, $element['behavior_plugins'][$plugin_id], $subform_state)) {
+              $element['behavior_plugins'][$plugin_id] = $plugin_form;
+            }
           }
         }
       }
@@ -1093,6 +1115,43 @@ class ParagraphsWidget extends WidgetBase {
     $form_state->setRebuild();
   }
 
+  /**
+   * Creates a duplicate of the paragraph entity.
+   */
+  public static function duplicateSubmit(array $form, FormStateInterface $form_state) {
+    $button = $form_state->getTriggeringElement();
+    // Go one level up in the form, to the widgets container.
+    $element = NestedArray::getValue($form, array_slice($button['#array_parents'], 0, -4));
+    $field_name = $element['#field_name'];
+    $parents = $element['#field_parents'];
+
+    // Inserting new element in the array.
+    $widget_state = static::getWidgetState($parents, $field_name, $form_state);
+    $delta = $button['#delta'];
+    $widget_state['items_count']++;
+    $widget_state['real_item_count']++;
+    $widget_state['original_deltas'] = array_merge($widget_state['original_deltas'], ['1' => 1]) ;
+
+    // Check if the replicate module is enabled
+    if (\Drupal::hasService('replicate.replicator')) {
+      $duplicate_entity = \Drupal::getContainer()->get('replicate.replicator')->replicateEntity($widget_state['paragraphs'][$delta]['entity']);
+      }
+    else {
+      $duplicate_entity = $widget_state['paragraphs'][$delta]['entity']->createDuplicate();
+     }
+    // Create the duplicated paragraph and insert it below the original.
+    $paragraph[] = [
+      'entity' => $duplicate_entity,
+      'display' => $widget_state['paragraphs'][$delta]['display'],
+      'mode' => 'edit'
+    ];
+
+    array_splice($widget_state['paragraphs'], $delta + 1, 0, $paragraph);
+
+    static::setWidgetState($parents, $field_name, $form_state, $widget_state);
+    $form_state->setRebuild();
+  }
+
   public static function paragraphsItemSubmit(array $form, FormStateInterface $form_state) {
     $button = $form_state->getTriggeringElement();
 
@@ -1165,7 +1224,8 @@ class ParagraphsWidget extends WidgetBase {
         // Validate all enabled behavior plugins.
         $paragraphs_type = $entity->getParagraphType();
         foreach ($paragraphs_type->getEnabledBehaviorPlugins() as $plugin_id => $plugin_values) {
-          $plugin_values->validateBehaviorForm($element['behavior_plugins'][$plugin_id], $form_state);
+          $subform_state = SubformState::createForSubform($element['behavior_plugins'][$plugin_id], $form_state->getCompleteForm(), $form_state);
+          $plugin_values->validateBehaviorForm($entity, $element['behavior_plugins'][$plugin_id], $subform_state);
         }
       }
     }
@@ -1228,7 +1288,10 @@ class ParagraphsWidget extends WidgetBase {
             if (!isset($item['behavior_plugins'][$plugin_id])) {
               $item['behavior_plugins'][$plugin_id] = [];
             }
-            $plugin_values->submitBehaviorForm($paragraphs_entity, $item['behavior_plugins'][$plugin_id]);
+            if (isset($element[$delta]) && isset($element[$delta]['behavior_plugins'][$plugin_id]) && $form_state->getCompleteForm()) {
+              $subform_state = SubformState::createForSubform($element[$delta]['behavior_plugins'][$plugin_id], $form_state->getCompleteForm(), $form_state);
+              $plugin_values->submitBehaviorForm($paragraphs_entity, $item['behavior_plugins'][$plugin_id], $subform_state);
+            }
           }
         }
 
@@ -1406,9 +1469,35 @@ class ParagraphsWidget extends WidgetBase {
           $summary[] = $this->addCollapsedSummary($paragraphs_entity->get($key)->entity);
         }
       }
+      if ($field_type = $value->getType() == 'entity_reference') {
+        if (!in_array($key, ['type', 'uid', 'revision_uid'])) {
+          if ($paragraphs_entity->get($key)->entity) {
+            $summary[] = $paragraphs_entity->get($key)->entity->label();
+          }
+        }
+      }
+    }
+    $paragraphs_type = $paragraphs_entity->getParagraphType();
+    foreach ($paragraphs_type->getEnabledBehaviorPlugins() as $plugin_id => $plugin) {
+      if ($plugin_summary = $plugin->settingsSummary($paragraphs_entity)) {
+        $summary = array_merge($summary, $plugin_summary);
+      }
     }
     $collapsed_summary_text = implode(', ', $summary);
     return strip_tags($collapsed_summary_text);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function isApplicable(FieldDefinitionInterface $field_definition) {
+    $target_type = $field_definition->getSetting('target_type');
+    $paragraph_type = \Drupal::entityTypeManager()->getDefinition($target_type);
+    if ($paragraph_type) {
+      return $paragraph_type->isSubclassOf(ParagraphInterface::class);
+    }
+
+    return FALSE;
   }
 
 }

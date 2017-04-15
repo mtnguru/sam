@@ -843,13 +843,25 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     $form[$this->options['id']] = array(
       '#type' => 'container',
       '#attributes' => array(
-        'class' => 'filter-wrapper clearfix',
+        'class' => 'filter-wrapper form--inline clearfix filter-op-' . $this->operator,
       ),
       'label' => array(
         '#type' => 'label',
         '#title' => $this->options['expose']['label'],
       ),
     );
+
+    // Build the exposed form, when its based on an operator.
+    if (!empty($this->options['expose']['use_operator']) && !empty($this->options['expose']['operator_id'])) {
+      $operator = $this->options['expose']['operator_id'];
+      $this->operatorForm($form, $form_state);
+      unset($form['operator']['#title']);
+      $form[$this->options['id']][$operator] = $form['operator'];
+
+      $this->exposedTranslate($form[$this->options['id']][$operator], 'operator');
+
+      unset($form['operator']);
+    }
 
     // Build the form and set the value based on the identifier.
     if (!empty($this->options['expose']['identifier'])) {
@@ -873,20 +885,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
         unset($form['value']);
       }
     }
-
-    // Build the exposed form, when its based on an operator.
-    if (!empty($this->options['expose']['use_operator']) && !empty($this->options['expose']['operator_id'])) {
-      $operator = $this->options['expose']['operator_id'];
-      $this->operatorForm($form, $form_state);
-      unset($form['operator']['#title']);
-      $form[$this->options['id']][$operator] = $form['operator'];
-      $form[$this->options['id']][$operator]['#attributes'] =
-        array('class' => array('form-operator'));
-      $this->exposedTranslate($form[$this->options['id']][$operator], 'operator');
-
-      unset($form['operator']);
-    }
-
   }
 
   /**

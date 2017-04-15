@@ -3,6 +3,7 @@ type: module
 description: 'Enables the creation of paragraphs entities.'
 # core: 8.x
 package: Paragraphs
+configure: entity.paragraphs_type.collection
 
 dependencies:
   - entity_reference_revisions:entity_reference_revisions
@@ -12,8 +13,8 @@ test_dependencies:
   - inline_entity_form:inline_entity_form
   - field_group:field_group
 
-# Information added by Drupal.org packaging script on 2017-01-19
-version: '8.x-1.0+52-dev'
+# Information added by Drupal.org packaging script on 2017-02-17
+version: '8.x-1.1'
 core: '8.x'
 project: 'paragraphs'
-datestamp: 1484868786
+datestamp: 1487332042

@@ -5,3 +5,7 @@ Patches applied to this directory:
 Source: https://www.drupal.org/files/issues/2652138-28.patch
 
 
+2765525 - Add AJAX command to add style sheets to CKEditor instances
+Source: https://www.drupal.org/files/issues/2765525-30-8.2.x.patch
+
+

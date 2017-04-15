@@ -1,0 +1,11 @@
+name: LiveReload
+description: 'Enables and enhances use of LiveReload during development.'
+configure: system.performance_settings
+# core: 8.x
+type: module
+
+# Information added by Drupal.org packaging script on 2016-09-16
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'livereload'
+datestamp: 1474009740

@@ -1,12 +1,3 @@
-Metatag 8.x-1.x-dev, xxxx-xx-xx
--------------------------------
-#2841139 by jmolivas: Relocated commands services registration to
-  console.services.yml file.
-#2844429 by DamienMcKenna: There's only one hreflang meta tag so far and it does
-  not yet support custom tokens like the D7 version does.
-#2844504 by DamienMcKenna: Add project names to all dependencies.
-
-
 Metatag 8.x-1.0-beta12, 2017-01-03
 ----------------------------------
 #2823811 by Michelle: metatag_open_graph_preprocess_html() was misspelled.
