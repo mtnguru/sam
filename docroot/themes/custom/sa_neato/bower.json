@@ -1,0 +1,14 @@
+{
+  "name": "sa_neato",
+  "version": "1.1.1",
+  "authors": [
+    "James Sorensen <james@ecosleuth.com"
+  ],
+  "description": "Custom Drupakl theme based on neato",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "refills": "~0.2.0"
+  }
+}
+
