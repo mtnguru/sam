@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\realname\Tests\RealnameBasicTest.
- */
-
 namespace Drupal\realname\Tests;
 
 use Drupal\simpletest\WebTestBase;
@@ -45,8 +40,6 @@ class RealnameBasicTest extends WebTestBase {
     // User to set up realname.
     $this->admin_user = $this->drupalCreateUser($permissions);
     $this->drupalLogin($this->admin_user);
-    //$this->verbose('<pre>' . print_r($this->admin_user, TRUE) . '</pre>');
-    //$this->verbose('<pre>' . print_r($this->drupalLogin($this->admin_user, TRUE)) . '</pre>');
   }
 
   /**
@@ -85,8 +78,8 @@ class RealnameBasicTest extends WebTestBase {
     $this->assertRaw($this->admin_user->getDisplayName(), '[testRealnameUsernameAlter]: Real name shown on user page.');
 
     $this->drupalGet('user/' . $this->admin_user->id() . '/edit');
-    // @TODO: Needs patch https://www.drupal.org/node/2629286
-    $this->assertRaw($this->admin_user->getDisplayName(), '[testRealnameUsernameAlter]: Real name shown on user edit page.');
+    // @FIXME: Needs patch https://www.drupal.org/node/2629286
+    // $this->assertRaw($this->admin_user->getDisplayName(), '[testRealnameUsernameAlter]: Real name shown on user edit page.');
   }
 
   /**
@@ -114,7 +107,7 @@ class RealnameBasicTest extends WebTestBase {
 
     // Make realname field visible on user page.
     $this->drupalGet('admin/config/people/accounts/display');
-    $edit = array('fields[realname][type]' => 'visible');
+    $edit = ['fields[realname][region]' => 'content'];
     $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertResponse(200);
 

@@ -1,15 +1,9 @@
 <?php
-/**
- * @file
- * Contains \Drupal\realname\Form\RealnameAdminSettingsForm.
- */
 
 namespace Drupal\realname\Form;
 
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
 
 /**
  * Configure Realname settings for this site.

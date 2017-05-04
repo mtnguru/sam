@@ -1,12 +1,13 @@
+// Main navigation header at top of the page.
 
 #site-header {
   $base-border-radius: 3px !default;
   $dark-gray: #333 !default;
   $large-screen: 53.75em !default;
-  $base-font-color: $dark-gray !default;
+  $base-font-color: $topnav-color;
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
-  $centered-navigation-background: #d7F1dC;
+  $centered-navigation-background: $topnav-background;
   $centered-navigation-color: transparentize($base-font-color, 0.3);
   $centered-navigation-color-hover: $base-font-color;
   $centered-navigation-height: 50px;
@@ -22,7 +23,28 @@
   width: 100%;
   z-index: 9999;
 
-  
+  .site-name,
+  .site-slogan {
+    display: none;
+  }
+
+  #block-sa-neato-branding {
+    display: inline-block;
+
+    a {
+      padding: 10px 10px;
+    } // a
+
+    img {
+      @include size(40px);
+      vertical-align: middle;
+    } // img
+  } // #block-sa-neato-branding {
+
+  nav {
+    display: inline-block;
+  } // nav
+
 // Mobile view
 
   .mobile-logo {
@@ -62,7 +84,6 @@
     }
   }
 
-  
 // Nav menu
 
   .centered-navigation-wrapper {
@@ -78,7 +99,7 @@
     margin: 0 auto;
     overflow: visible;
     padding: 0;
-    -webkit-transform-style: preserve-3d;
+//  -webkit-transform-style: preserve-3d;
 
 // stop webkit flicker
 

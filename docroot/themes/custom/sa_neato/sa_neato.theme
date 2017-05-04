@@ -38,16 +38,68 @@ function sa_neato_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements template_preprocess().
+ */
+function sa_neato_preprocess(&$variables) {
+  // Make 'is_front' available to all templates.
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+
+  // Make the full node content-type available to all templates.
+  $variables['em_route_name'] = \Drupal::routeMatch()->getRouteName();
+  $route_match = \Drupal::routeMatch();
+  if ($route_match->getParameter('node') && is_object($route_match->getParameter('node'))) {
+    $variables['em_root_content_type'] = $route_match->getParameter('node')->bundle();
+  }
+}
+
+/**
  * Implements template_preprocess_page.
  * @param array $variables
  */
 function sa_neato_preprocess_page(&$variables) {
   $site_name = \Drupal::configFactory()->get('system.site')->get('name');
   $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
+  $variables['em_linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
 }
 
 /**
  * Implements template_preprocess_node.
  * @param array $variables
  */
-function sa_neato_preprocess_node(&$variables) {}
+function sa_neato_preprocess_node(&$variables) {
+  return;
+}
+
+/**
+ * Implements template_preprocess_group.
+ * @param array $variables
+ */
+function sa_neato_preprocess_group(&$variables) {
+  $fid = $variables['elements']['field_hero_image'][0]['#media']->image->target_id;
+  $file =  \Drupal\file\Entity\File::load($fid);
+  $variables['em_hero_image_uri'] = $file->uri;
+//$variables['hero_image_url'] = Url::fromUri($file->uri->value);
+  $variables['em_hero_image_url'] = file_create_url($file->uri->value);
+  return;
+}
+
+/**
+ * Implements template_preprocess_region.
+ * @param array $variables
+ */
+function sa_neato_preprocess_region(&$variables) {
+  return;
+}
+/**
+ * Implements template_preprocess_entity.
+ * @param array $variables
+ */
+function sa_neato_preprocess_entity(&$variables) {
+  return;
+}
+

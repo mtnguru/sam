@@ -3,12 +3,11 @@ type: module
 description: 'Provides token-based name displays for users.'
 configure: realname.admin_settings_form
 # core: 8.x
-# version: VERSION
 dependencies:
   - token:token
 
-# Information added by Drupal.org packaging script on 2016-05-29
-version: '8.x-1.x-dev'
+# Information added by Drupal.org packaging script on 2017-04-30
+version: '8.x-1.0-beta1'
 core: '8.x'
 project: 'realname'
-datestamp: 1464515676
+datestamp: 1493573346

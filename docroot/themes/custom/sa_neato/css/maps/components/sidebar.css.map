@@ -1,0 +1,1 @@
+{"version":3,"file":"../../components/sidebar.css","sources":["../stdin"],"sourcesContent":[".sidebar {\n  .block {\n    margin-bottom: 30px;\n    padding: 0 20px;\n  }\n}"],"mappings":"AAAA,AACE,QADM,CACN,MAAM,AAAC,CACL,aAAa,CAAE,IAAK,CACpB,OAAO,CAAE,MAAO,CACjB","names":[]}

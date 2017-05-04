@@ -3,6 +3,23 @@ $dark-gray: #333 !default;
 $medium-gray: #999 !default;
 $light-gray: #DDD !default;
 
+//$color-stormy: #494e68;
+$color-stormy: #503a68;
+$color-cloud: #98878f;
+$color-sunset: #985e6d;
+$color-purple: #220044;
+$color-evening: #192231;
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Headers
+$header-background: $color-stormy;
+$header-color: $color-white;
+
+// Top Navigation
+$topnav-background: $color-stormy;
+$topnav-color: $color-white;
+
 // Base colors.
 $base-background-color: white !default;
 $base-font-color: $dark-gray !default;

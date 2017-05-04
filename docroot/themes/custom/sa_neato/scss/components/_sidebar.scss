@@ -1,0 +1,25 @@
+.sidebar {
+  margin-top: 30px;
+  .block {
+    border: 1px solid $header-background;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+
+  .title-container {
+    padding: 10px 20px;
+    background: $header-background;
+    color: $header-color;
+
+    h2 {
+      font-size: 110%;
+      margin: 0;
+    }
+  } // .title-container
+
+  .content-container {
+    padding: 20px;
+  } // .content-container
+} // .sidebar
+
+
