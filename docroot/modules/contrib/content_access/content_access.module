@@ -691,7 +691,12 @@ function content_access_get_role_gid($role) {
   $config = \Drupal::configFactory()->getEditable('content_access.settings');
   $roles_gids = $config->get('content_access_roles_gids');
 
-  return $roles_gids[$role];
+//if (empty($roles_gids[$role])) {
+//  return 0;
+//}
+//else {
+    return $roles_gids[$role];
+//}
 }
 
 /**
