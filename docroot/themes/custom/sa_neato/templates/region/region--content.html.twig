@@ -15,9 +15,10 @@
  * @ingroup themeable
  */
 #}
+{# James - The region is already rendered - why? #}
 {% if content %}
+  {# kint() #}
   <div class="{{ attributes.class }}"{{ attributes }}>
     {{ content }}
   </div>
-  {{ kint() }}
 {% endif %}

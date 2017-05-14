@@ -8,6 +8,7 @@ libraries:
   - sa_neato/global-scripts
 regions:
   header: Header
+  hero: Hero
   featured: Featured
   breadcrumb: Breadcrumb
   sidebar_first: 'Sidebar first'

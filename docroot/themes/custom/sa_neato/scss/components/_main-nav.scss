@@ -4,12 +4,11 @@
   $base-border-radius: 3px !default;
   $dark-gray: #333 !default;
   $large-screen: 53.75em !default;
-  $base-font-color: $topnav-color;
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
   $centered-navigation-background: $topnav-background;
-  $centered-navigation-color: transparentize($base-font-color, 0.3);
-  $centered-navigation-color-hover: $base-font-color;
+  $centered-navigation-color: transparentize($topnav-color, 0.3);
+  $centered-navigation-color-hover: $topnav-color;
   $centered-navigation-height: 50px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
@@ -21,7 +20,7 @@
   border-bottom: 1px solid darken($centered-navigation-background, 6%);
   min-height: $centered-navigation-height;
   width: 100%;
-  z-index: 9999;
+  z-index: 10;
 
   .site-name,
   .site-slogan {
@@ -90,7 +89,7 @@
     @include outer-container;
     @include clearfix;
     position: relative;
-    z-index: 999;
+    z-index: 10;
   }
 
   ul.centered-navigation-menu {
@@ -132,7 +131,7 @@
     padding-right: $centered-navigation-submenu-padding;
     text-align: right;
     width: 100%;
-    z-index: 9999;
+    z-index: 10;
 
     a {
       color: $centered-navigation-color;

@@ -10,6 +10,7 @@ var uglify = require('gulp-uglify');
 var fs = require("fs");
 var runSequence = require('run-sequence');
 var config = require("./example.config");
+var sassGlob = require('gulp-sass-glob');
 
 /**
  * If config.js exists, load that config for overriding certain values below.
@@ -30,6 +31,7 @@ loadConfig();
  */
 gulp.task('sass', function () {
   return gulp.src('./scss/**/*.scss')
+    .pipe(sassGlob())
     .pipe(sourcemaps.init())
     .pipe(sass({
       noCache: true,

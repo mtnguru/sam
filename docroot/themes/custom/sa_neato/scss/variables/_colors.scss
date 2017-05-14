@@ -1,16 +1,59 @@
 // Color definitions
-$dark-gray: #333 !default;
-$medium-gray: #999 !default;
-$light-gray: #DDD !default;
 
+// Greys
+$color-black: #000000;
+$color-dark-grey: #333333 !default;
+$color-dim-grey: #666666;
+$color-medium-grey: #999999 !default;
+$color-light-grey: #DDDDDD !default;
+$color-white: #fff;
+
+/////////////// EU Geology //////////////////////
+$color-stormy: #503a68;
+$color-cloud: #98878f;
+$color-sunset: #985e6d;
+$color-purple: #220044;
+$color-evening: #192231;
+
+$transparent-captions-color: rgba($color-black, 0.56);
+$accent-line-color: $color-sunset;
+$main-title-color: #DDFFDD;
+
+// Headers
+$header-background: $color-stormy;
+$header-color: #DDFFDD;
+
+// Top Navigation
+$topnav-background: $color-stormy;
+$topnav-color: #DDFFDD;
+
+// Base colors.
+$base-background-color: white !default;
+$base-font-color: $color-dark-grey !default;
+$base-border-color: gainsboro !default;
+$base-accent-color: #477DCA !default;
+$base-link-color: $base-accent-color !default;
+$action-color: #477DCA !default;
+
+// Messages colors.
+$alert-color: #fff6bf !default;
+$error-color: #fbe3e4 !default;
+$notice-color: #e5edf8 !default;
+$success-color: #e6efc2 !default;
+/////////////////////////////////////////////////
+
+
+/*///////////// SAM /////////////////////////////
 //$color-stormy: #494e68;
 $color-stormy: #503a68;
 $color-cloud: #98878f;
 $color-sunset: #985e6d;
 $color-purple: #220044;
 $color-evening: #192231;
-$color-white: #ffffff;
-$color-black: #000000;
+
+$transparent-captions-color: rgba($color-black, 0.56);
+$accent-line-color: $color-sunset;
+$main-title-color: lightgreen;
 
 // Headers
 $header-background: $color-stormy;
@@ -20,46 +63,39 @@ $header-color: $color-white;
 $topnav-background: $color-stormy;
 $topnav-color: $color-white;
 
-// Base colors.
-$base-background-color: white !default;
-$base-font-color: $dark-gray !default;
-$base-border-color: gainsboro !default;
-$base-accent-color: #477DCA !default;
-$base-link-color: $base-accent-color !default;
-$action-color: #477DCA !default;
-
-// Table colors.
-$table-border-color: $base-border-color;
-$table-background: $base-background-color;
-$table-header-background: lighten($table-background, 10);
-$table-hover-background: darken($table-background, 2);
-$table-stripe-background: darken($table-background, 4);
-$table-stripe-background-hover: darken($table-stripe-background, 5);
-
-// Tasks colors.
-$tab-link-color: $dark-gray;
-$tab-active-background: $base-background-color;
-$tab-inactive-color: $base-background-color;
-$tab-inactive-hover-color: silver;
-
 // Messages colors.
 $alert-color: #fff6bf !default;
 $error-color: #fbe3e4 !default;
 $notice-color: #e5edf8 !default;
 $success-color: #e6efc2 !default;
+///////////////////////////////////////////////// */
+
+// Table colors.
+$table-border-color: $base-border-color;
+$table-background: $base-background-color;
+$table-header-background: lighten($table-background, 10);
+$table-hover-background: darken($table-background, 3);
+$table-stripe-background: darken($table-background, 5);
+$table-stripe-background-hover: darken($table-stripe-background, 5);
+
+// Tasks colors.
+$tab-link-color: $color-dark-grey;
+$tab-active-background: $base-background-color;
+$tab-inactive-color: $base-background-color;
+$tab-inactive-hover-color: silver;
 
 // Breadcrumb colors.
 $breadcrumb-border-color: $base-border-color;
 $breadcrumb-arrow-color: $breadcrumb-border-color;
 $breadcrumb-background: $base-background-color;
 $breadcrumb-inactive-hover-color: $breadcrumb-background;
-$breadcrumb-color: $medium-gray;
+$breadcrumb-color: $color-medium-grey;
 $breadcrumb-color-hover: $action-color;
 $breadcrumb-color-active: $breadcrumb-color;
 
 // Flexbox colors.
-$flex-box-border-color: $light-gray;
-$flex-box-background: lighten($light-gray, 10%);
+$flex-box-border-color: $color-light-grey;
+$flex-box-background: lighten($color-light-grey, 10%);
 $flex-box-color: transparentize($base-font-color, 0.3);
 $flex-box-top-colors:
         tomato,

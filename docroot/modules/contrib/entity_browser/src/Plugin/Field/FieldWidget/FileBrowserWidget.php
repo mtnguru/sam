@@ -433,22 +433,26 @@ class FileBrowserWidget extends EntityReferenceBrowserWidget {
    *
    * This is a combination of logic shared between the File and Image widgets.
    *
+   * @param bool $upload
+   *   Whether or not upload-specific validators should be returned.
+   *
    * @return array
    *   An array suitable for passing to file_save_upload() or the file field
    *   element's '#upload_validators' property.
    */
-  public function getFileValidators() {
+  public function getFileValidators($upload = FALSE) {
     $validators = [];
     $settings = $this->fieldDefinition->getSettings();
 
-    // Cap the upload size according to the PHP limit.
-    $max_filesize = Bytes::toInt(file_upload_max_size());
-    if (!empty($settings['max_filesize'])) {
-      $max_filesize = min($max_filesize, Bytes::toInt($settings['max_filesize']));
+    if ($upload) {
+      // Cap the upload size according to the PHP limit.
+      $max_filesize = Bytes::toInt(file_upload_max_size());
+      if (!empty($settings['max_filesize'])) {
+        $max_filesize = min($max_filesize, Bytes::toInt($settings['max_filesize']));
+      }
+      // There is always a file size limit due to the PHP server limit.
+      $validators['file_validate_size'] = [$max_filesize];
     }
-
-    // There is always a file size limit due to the PHP server limit.
-    $validators['file_validate_size'] = [$max_filesize];
 
     // Images have expected defaults for file extensions.
     // See \Drupal\image\Plugin\Field\FieldWidget::formElement() for details.
@@ -458,14 +462,14 @@ class FileBrowserWidget extends EntityReferenceBrowserWidget {
       $extensions = isset($settings['file_extensions']) ? $settings['file_extensions'] : implode(' ', $supported_extensions);
       $extensions = array_intersect(explode(' ', $extensions), $supported_extensions);
       $validators['file_validate_extensions'] = [implode(' ', $extensions)];
+
+      // Add resolution validation.
+      if ($settings['max_resolution'] || $settings['min_resolution']) {
+        $validators['entity_browser_file_validate_image_resolution'] = [$settings['max_resolution'], $settings['min_resolution']];
+      }
     }
     elseif (!empty($settings['file_extensions'])) {
       $validators['file_validate_extensions'] = [$settings['file_extensions']];
-    }
-
-    // Add upload resolution validation.
-    if ($settings['max_resolution'] || $settings['min_resolution']) {
-      $validators['entity_browser_file_validate_image_resolution'] = [$settings['max_resolution'], $settings['min_resolution']];
     }
 
     return $validators;
@@ -479,9 +483,9 @@ class FileBrowserWidget extends EntityReferenceBrowserWidget {
     $settings = $this->fieldDefinition->getSettings();
     // Add validators based on our current settings.
     $data['validators']['file'] = ['validators' => $this->getFileValidators()];
-    // Provide context for widgets to enhance their configuration. Currently
-    // we only know that "upload_location" is used.
+    // Provide context for widgets to enhance their configuration.
     $data['widget_context']['upload_location'] = $settings['uri_scheme'] . '://' . $settings['file_directory'];
+    $data['widget_context']['upload_validators'] = $this->getFileValidators(TRUE);
     return $data;
   }
 

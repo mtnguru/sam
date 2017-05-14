@@ -1,53 +1,26 @@
-.hero {
+.hero-container {
+  position: relative;
 
-  ///////////////////////////////////////////////////////////////////////////////////
-  $base-border-radius: 3px !default;
-  //////////////////////////////////////////////////////////////////////////////////
-  $gradient-angle: 10deg;
+  .field--name-field-hero-image {
 
-  background-color: #53aee0;
-  background-image: linear-gradient(#53aee0,#3da4dc);
-  background-size: cover;
-  padding-bottom: 3em;
+    article {
+      @include fixed-aspect(1/ 5 * 100%, '.field--name-image');
+      width: 100%;
 
-  .hero-logo img {
-    height: 4em;
-    margin-bottom: 1em;
-  }
+      img {
+        width: 100%;
+        height: auto;
+      } // img
+    } // article
+  } // .field--name-field-hero-image
 
-  .hero-inner {
-    @include outer-container;
-    @include clearfix;
-    color: $hero-color;
-    margin: auto;
-    padding: 3.5em;
-    text-align: center;
-
-    .hero-copy {
-      text-align: center;
-
-      h2 {
-        font-size: 2rem;
-        margin-bottom: 0.5em;
-        font-weight: 200;
-
-        @include media($bp960) {
-          font-size: 4rem;
-        }
-
-        strong {
-          font-weight: 700;
-        }
-      }
-
-      p {
-        font-weight: 200;
-        line-height: 1.4em;
-
-        @include media($bp960) {
-          font-size: 1.4em;
-        }
+  .title-wrapper {
+    h1 {
+      a {
+        font-size: 50px;
+        color: $main-title-color;
       }
     }
+    @include position(absolute, 20px null null 30px);
   }
-}
+} // .hero-container

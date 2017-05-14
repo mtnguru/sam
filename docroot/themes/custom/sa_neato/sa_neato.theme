@@ -80,11 +80,14 @@ function sa_neato_preprocess_node(&$variables) {
  * @param array $variables
  */
 function sa_neato_preprocess_group(&$variables) {
-  $fid = $variables['elements']['field_hero_image'][0]['#media']->image->target_id;
-  $file =  \Drupal\file\Entity\File::load($fid);
-  $variables['em_hero_image_uri'] = $file->uri;
+  if (!empty($variables['elements']['field_hero_image'][0])) {
+    // Trying to figure out how this works
+    $fid = $variables['elements']['field_hero_image'][0]['#media']->image->target_id;
+    $file =  \Drupal\file\Entity\File::load($fid);
+    $variables['em_hero_image_uri'] = $file->uri;
 //$variables['hero_image_url'] = Url::fromUri($file->uri->value);
-  $variables['em_hero_image_url'] = file_create_url($file->uri->value);
+    $variables['em_hero_image_url'] = file_create_url($file->uri->value);
+  }
   return;
 }
 

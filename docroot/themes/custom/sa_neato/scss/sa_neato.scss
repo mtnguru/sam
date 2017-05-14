@@ -20,31 +20,17 @@
 @import "../../../contrib/neato/bower_components/bourbon/app/assets/stylesheets/bourbon";
 
 // Import Neat.
-@import "grid/base";
+@import "grid/*";
 @import "../../../contrib/neato/bower_components/neat/app/assets/stylesheets/neat";
 @import "../../../contrib/neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
 
 // Import variables.
-@import "variables/breakpoints";
-@import "variables/colors";
-
-// Import layout.
-@import "base/base";
-@import "base/layout";
-
-// Import Drupal element overrides
-@import "common/messages";
-@import "common/tables";
-@import "common/tasks";
-
-// Import your components here.
-@import "components/main-nav";
-@import "components/breadcrumb";
-@import "components/hero";
-@import "components/flexbox";
-@import "components/footer";
-@import "components/sidebar";
-
-// Pages
-@import "page/page-group";
+@import "variables/*";
+@import "abstractions/*";
+@import "base/*";
+@import "common/*";
+@import "components/*";
+@import "block/*";
+@import "page/*";
+@import "views/*";
 
