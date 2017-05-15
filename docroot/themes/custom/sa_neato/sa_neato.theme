@@ -5,6 +5,7 @@
  * Functions to support theming in the sa_neato theme.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
@@ -106,3 +107,13 @@ function sa_neato_preprocess_entity(&$variables) {
   return;
 }
 
+
+/**
+ * Implements HOOK_form_alter().
+ *
+ */
+function sa_neato_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  return;
+
+}

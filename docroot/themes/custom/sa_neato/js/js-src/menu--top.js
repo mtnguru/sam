@@ -48,6 +48,7 @@
 
   Drupal.behaviors.menuTop = {
     attach: function (context, settings) {
+      var $fart = $(context).find('#site-header');
       $(context).find('#site-header').once('menuTopAttached').each(function () {
         if (!Drupal.menuTop) {
           Drupal.menuTop = Drupal.menuTopC();
