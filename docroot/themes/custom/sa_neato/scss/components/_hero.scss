@@ -1,13 +1,14 @@
-.hero-container {
+.hero-wrapper {
   position: relative;
 
   .field--name-field-hero-image {
 
     article {
-      @include fixed-aspect(1/ 5 * 100%, '.field--name-image');
+      @include fixed-aspect(1/ 4 * 100%, '.field--name-image');
       width: 100%;
 
       img {
+        border-radius: 5px;
         width: 100%;
         height: auto;
       } // img
@@ -19,8 +20,14 @@
       a {
         font-size: 50px;
         color: $main-title-color;
-      }
-    }
+      } // a
+    } // h1
     @include position(absolute, 20px null null 30px);
-  }
-} // .hero-container
+  } // .title-wrapper
+
+  .field--name-field-short-description {
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+  } // .field--name-field-short-description
+} // .hero-wrapper

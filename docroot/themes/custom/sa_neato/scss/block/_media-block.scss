@@ -1,0 +1,42 @@
+.view-az-media-block {
+  @include clearfix;
+
+  .views-row {
+    float: left;
+    width: 156px;
+    height: 240px;
+    border: 1px solid #ddd;
+    padding: 2px;
+    border-radius: 4px;
+    margin: 5px;
+  }
+
+  img {
+    border-radius: 3px;
+  }
+
+  .text-container {
+    padding: 0 3px;
+
+    .article-creator {
+      font-size: 90%;
+    }
+
+    .article-mid {
+      float: right;
+      font-size: 75%;
+    }
+
+    .article-date {
+      color: $color-medium-grey;
+      font-style: italic;
+      font-size: 80%;
+      margin: 0 auto;
+    }
+
+    .article-name {
+      font-size: 110%;
+      line-height: 1.2;
+    }
+  }
+}

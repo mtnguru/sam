@@ -1,3 +1,11 @@
+@function page-margin () {
+//@include media($bp320only) {
+    @return $color-white;
+//  @return calc(30 / 320 * 100%);
+//} // $bp320only
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -34,11 +42,13 @@ body {
       aside {
         &#sidebar-second {
           @include span-columns(4);
+          padding-right: calc(30 / 1280 * 100%);
         }
       }
 
       section#content {
         @include span-columns(8);
+        padding-left: calc(30 / 1280 * 100%);
       }
     }
   }
@@ -48,15 +58,19 @@ body {
       aside {
         &#sidebar-first {
           @include span-columns(3);
+          padding-left: 25px;
         }
 
         &#sidebar-second {
           @include span-columns(3);
+          padding-right: 25px;
         }
       }
 
       section#content {
         @include span-columns(6);
+        padding-left: 20px;
+        padding-left: 20px;
       }
     }
   }

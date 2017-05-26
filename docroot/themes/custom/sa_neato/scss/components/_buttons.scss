@@ -20,7 +20,7 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
+    background-color: shade($action-color, 30%);
     color: #fff;
   }
 
@@ -32,4 +32,8 @@
       background-color: $action-color;
     }
   }
+}
+
+.dropbutton-toggle {
+  background: $action-color;
 }
