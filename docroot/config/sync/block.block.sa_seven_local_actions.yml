@@ -1,0 +1,29 @@
+uuid: 7c6ffa9d-9536-4e80-b033-02dd9cd1fb36
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - sa_seven
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: sa_seven_local_actions
+theme: sa_seven
+region: content
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

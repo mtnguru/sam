@@ -1,0 +1,14 @@
+uuid: 920e7ceb-1b33-46ce-9896-4af8ceeaf902
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.main_content
+label: 'Main Content'
+targetEntityType: node
+cache: true

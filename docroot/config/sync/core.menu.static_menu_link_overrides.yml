@@ -1,0 +1,21 @@
+definitions:
+  book__render:
+    menu_name: tools
+    parent: ''
+    weight: -50
+    expanded: true
+    enabled: true
+  filter__tips_all:
+    weight: -45
+    menu_name: tools
+    parent: ''
+    expanded: false
+    enabled: false
+  node__add_page:
+    parent: 'menu_link_content:f405fd16-72f0-43d9-a5ca-1c5facdb2c2d'
+    menu_name: tools
+    enabled: true
+    expanded: true
+    weight: -50
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

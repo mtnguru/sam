@@ -1,0 +1,10 @@
+uuid: 4b78fc6d-854b-426d-bf9f-abccbc86b83a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.x_large
+label: 'X-large 720x720'
+targetEntityType: media
+cache: true

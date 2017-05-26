@@ -1,0 +1,8 @@
+uuid: 540b8f86-dfe9-4598-b6a9-ecd78d74b5ab
+langcode: en
+status: true
+dependencies: {  }
+id: documentation
+label: Documentation
+description: 'Project documentation'
+locked: false

@@ -1,0 +1,14 @@
+uuid: 3066611b-1242-4791-a985-df459d24bb2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media_entity
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.thumbnail_
+label: Thumbnail
+targetEntityType: media
+cache: true

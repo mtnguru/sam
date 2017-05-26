@@ -1,0 +1,35 @@
+uuid: 987ed2aa-7657-450e-a3e3-d584f01bbad5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article.field_allow_comments
+    - field.field.node.article.field_allow_subscribing
+    - field.field.node.article.field_allow_voting
+    - field.field.node.article.field_body
+    - field.field.node.article.field_media
+    - field.field.node.article.field_node_comments
+    - field.field.node.article.field_short_description
+    - field.field.node.article.field_topics
+    - node.type.article
+  module:
+    - user
+id: node.article.teaser
+targetEntityType: node
+bundle: article
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_allow_comments: true
+  field_allow_subscribing: true
+  field_allow_voting: true
+  field_body: true
+  field_media: true
+  field_node_comments: true
+  field_short_description: true
+  field_topics: true
+  langcode: true

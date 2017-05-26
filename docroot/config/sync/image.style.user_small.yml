@@ -1,0 +1,14 @@
+uuid: dedcdc95-4784-48f5-b260-c9f86b80f787
+langcode: en
+status: true
+dependencies: {  }
+name: user_small
+label: 'User small'
+effects:
+  d77ba174-eb8f-4630-a26a-7f6b7b9e7488:
+    uuid: d77ba174-eb8f-4630-a26a-7f6b7b9e7488
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 40
+      height: 40

@@ -1,0 +1,20 @@
+uuid: 2edf58c7-1b0f-472b-b0fb-57687bbc81cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_atomic_number
+field_name: field_atomic_number
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

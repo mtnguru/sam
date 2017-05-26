@@ -1,0 +1,32 @@
+uuid: 4086048d-a2a4-4972-ae1f-221aaf43ae82
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.documentation
+  module:
+    - system
+    - user
+  theme:
+    - sa_neato
+id: sa_neato_documentation
+theme: sa_neato
+region: featured
+weight: -6
+provider: null
+plugin: 'system_menu_block:documentation'
+settings:
+  id: 'system_menu_block:documentation'
+  label: Documentation
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

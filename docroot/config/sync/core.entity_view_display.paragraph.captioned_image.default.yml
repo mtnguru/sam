@@ -1,0 +1,31 @@
+uuid: aa120c56-222e-40d0-9450-7572ce5610ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.captioned_image.field_caption
+    - field.field.paragraph.captioned_image.field_image
+    - paragraphs.paragraphs_type.captioned_image
+  module:
+    - text
+id: paragraph.captioned_image.default
+targetEntityType: paragraph
+bundle: captioned_image
+mode: default
+content:
+  field_caption:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

@@ -1,0 +1,16 @@
+uuid: b2d36505-7f16-49c6-abbf-00c134a8a2f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+id: theories-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: true
+permissions:
+  - 'view group'
+  - 'view group_node:article entity'

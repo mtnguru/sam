@@ -1,0 +1,32 @@
+uuid: 56d80843-1a8c-46c4-81f9-d1aff5908955
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.documentation
+  module:
+    - system
+    - user
+  theme:
+    - neato
+id: neato_documentation
+theme: neato
+region: header
+weight: -7
+provider: null
+plugin: 'system_menu_block:documentation'
+settings:
+  id: 'system_menu_block:documentation'
+  label: Documentation
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

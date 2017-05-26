@@ -1,0 +1,37 @@
+uuid: 05493cf1-31ac-4323-94c0-38fc324fb637
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+id: theories-admin
+label: Admin
+weight: 100
+internal: false
+audience: member
+group_type: theories
+permissions_ui: true
+permissions:
+  0: 'access content overview'
+  1: 'administer group'
+  2: 'delete group'
+  3: 'edit group'
+  4: 'administer members'
+  5: 'update own group_membership content'
+  6: 'leave group'
+  7: 'view group_membership content'
+  8: 'view group'
+  9: 'access group_node overview'
+  10: 'create group_node:article entity'
+  11: 'delete any group_node:article entity'
+  12: 'delete own group_node:article entity'
+  13: 'update own group_node:article entity'
+  14: 'view group_node:article entity'
+  15: 'view unpublished group_node:article entity'
+  16: 'create group_node:article content'
+  17: 'delete any group_node:article content'
+  18: 'delete own group_node:article content'
+  19: 'update any group_node:article content'
+  20: 'update own group_node:article content'
+  21: 'view group_node:article content'
+  35: 'update any group_node:article entity'

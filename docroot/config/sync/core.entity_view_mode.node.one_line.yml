@@ -1,0 +1,14 @@
+uuid: e1c8dc56-046d-4076-a391-4dc2b071e25f
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.one_line
+label: 'One line'
+targetEntityType: node
+cache: true

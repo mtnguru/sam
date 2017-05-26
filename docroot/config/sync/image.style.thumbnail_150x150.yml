@@ -1,0 +1,15 @@
+uuid: 1d824eae-ce01-49ff-b0d1-5f95e52ad043
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail_150x150
+label: 'Thumbnail - 150x150'
+effects:
+  c15fcbd7-9b8e-48a9-8549-61f0cde67acb:
+    uuid: c15fcbd7-9b8e-48a9-8549-61f0cde67acb
+    id: image_scale
+    weight: 1
+    data:
+      width: 150
+      height: 150
+      upscale: false

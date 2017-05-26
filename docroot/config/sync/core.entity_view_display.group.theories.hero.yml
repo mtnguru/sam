@@ -1,0 +1,48 @@
+uuid: 578279db-d0c4-40a2-b16d-759eafb240ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group.hero
+    - field.field.group.theories.field_allow_comments
+    - field.field.group.theories.field_comments
+    - field.field.group.theories.field_description
+    - field.field.group.theories.field_display_navigation
+    - field.field.group.theories.field_hero_image
+    - field.field.group.theories.field_short_description
+    - field.field.group.theories.field_topics
+    - group.type.theories
+  module:
+    - text
+id: group.theories.hero
+targetEntityType: group
+bundle: theories
+mode: hero
+content:
+  field_hero_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: hero_image
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_short_description:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  field_allow_comments: true
+  field_comments: true
+  field_description: true
+  field_display_navigation: true
+  field_topics: true
+  label: true
+  langcode: true
+  uid: true

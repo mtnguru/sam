@@ -1,0 +1,19 @@
+uuid: f610caff-7c15-4b2b-b38a-f3ab984868c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_atomic_structure
+    - node.type.atom
+id: node.atom.field_atomic_structure
+field_name: field_atomic_structure
+entity_type: node
+bundle: atom
+label: 'Atomic Structure'
+description: 'This field contains the YAML array that defines the structure of an atom.  It is used to create an atom in the atomizer atom builder.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

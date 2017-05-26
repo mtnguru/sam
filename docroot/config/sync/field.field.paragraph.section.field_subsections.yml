@@ -1,0 +1,38 @@
+uuid: 209d0a37-40e3-475c-9a75-4286040cfe6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subsections
+    - paragraphs.paragraphs_type.captioned_image
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_subsections
+field_name: field_subsections
+entity_type: paragraph
+bundle: section
+label: Subsections
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      wysiwyg: wysiwyg
+      captioned_image: captioned_image
+    target_bundles_drag_drop:
+      wysiwyg:
+        enabled: true
+        weight: -7
+      captioned_image:
+        enabled: true
+        weight: -6
+      section:
+        weight: -5
+        enabled: false
+field_type: entity_reference_revisions

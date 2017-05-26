@@ -1,0 +1,24 @@
+uuid: da4073cb-e065-4611-baaf-c631a531362e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - sa_neato
+id: tools
+theme: sa_neato
+region: footer_top
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

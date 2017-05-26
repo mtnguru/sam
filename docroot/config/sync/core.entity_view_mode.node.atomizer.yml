@@ -1,0 +1,14 @@
+uuid: 88550550-a4db-40ed-993f-e9f9cfda19c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Use the Atomizer Atom Viewer to display an atom.'
+id: node.atomizer
+label: Atomizer
+targetEntityType: node
+cache: true

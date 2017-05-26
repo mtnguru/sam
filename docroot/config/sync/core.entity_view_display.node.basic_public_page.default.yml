@@ -1,0 +1,27 @@
+uuid: 0505a3c8-4425-4609-8f27-8915bc08c26a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.basic_public_page.body
+    - node.type.basic_public_page
+  module:
+    - text
+    - user
+id: node.basic_public_page.default
+targetEntityType: node
+bundle: basic_public_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,14 @@
+uuid: caf71718-93be-46ca-bb92-457261d72e00
+langcode: en
+status: true
+dependencies: {  }
+name: user_large
+label: 'User large'
+effects:
+  4d482f35-25b5-43e0-a986-4563acbfc3ed:
+    uuid: 4d482f35-25b5-43e0-a986-4563acbfc3ed
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 150

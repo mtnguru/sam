@@ -1,0 +1,15 @@
+uuid: 92dad044-5920-4193-b078-42c4bb3b5f22
+langcode: en
+status: true
+dependencies: {  }
+name: user_tiny
+label: 'User Tiny'
+effects:
+  68bab63b-e0a9-4a0b-a13e-d3d9950b00e0:
+    uuid: 68bab63b-e0a9-4a0b-a13e-d3d9950b00e0
+    id: image_scale
+    weight: 1
+    data:
+      width: 60
+      height: 60
+      upscale: false

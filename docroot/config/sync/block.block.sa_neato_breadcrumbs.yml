@@ -1,0 +1,30 @@
+uuid: 1fbcea38-6988-4105-be80-5913844b2f3e
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - sa_neato
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: sa_neato_breadcrumbs
+theme: sa_neato
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

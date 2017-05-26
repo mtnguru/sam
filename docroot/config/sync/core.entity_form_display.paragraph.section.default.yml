@@ -1,0 +1,40 @@
+uuid: 6d9bfb12-9a13-459e-ad39-a05938d77095
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section.field_section_title
+    - field.field.paragraph.section.field_subsections
+    - paragraphs.paragraphs_type.section
+  module:
+    - paragraphs
+    - workbench_moderation
+id: paragraph.section.default
+targetEntityType: paragraph
+bundle: section
+mode: default
+content:
+  field_section_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_subsections:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: wysiwyg
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

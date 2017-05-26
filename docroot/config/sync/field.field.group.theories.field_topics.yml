@@ -1,0 +1,28 @@
+uuid: 272fc279-5c65-4673-b723-e5a87390ba18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_topics
+    - group.type.theories
+    - taxonomy.vocabulary.topics
+id: group.theories.field_topics
+field_name: field_topics
+entity_type: group
+bundle: theories
+label: Topics
+description: 'Topics that are relevant to this theory.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      topics: topics
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

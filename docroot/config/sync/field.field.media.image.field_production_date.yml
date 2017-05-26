@@ -1,0 +1,21 @@
+uuid: 5d3316c0-8acb-44bb-b702-357a60af97b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_production_date
+    - media_entity.bundle.image
+  module:
+    - datetime
+id: media.image.field_production_date
+field_name: field_production_date
+entity_type: media
+bundle: image
+label: 'Production Date'
+description: 'Day and time the image was photographed.<br>--- Do NOT set this if it can be extracted automagically from the image. ---'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

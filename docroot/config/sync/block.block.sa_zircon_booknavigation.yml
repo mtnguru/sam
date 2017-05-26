@@ -1,0 +1,35 @@
+uuid: 1affe2db-d76e-416e-9a42-ed47840ff404
+langcode: en
+status: false
+dependencies:
+  module:
+    - book
+    - system
+    - user
+  theme:
+    - sa_zircon
+id: sa_zircon_booknavigation
+theme: sa_zircon
+region: sidebar_second
+weight: -5
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Book Navigation'
+  provider: book
+  label_display: visible
+  block_mode: 'all pages'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: "/atomizer/*\r\n/media-gallery\r\n/atom/*"
+    negate: true
+    context_mapping: {  }

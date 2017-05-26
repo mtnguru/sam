@@ -1,0 +1,10 @@
+uuid: 926525da-2d71-4664-beef-d8903de1d213
+langcode: en
+status: true
+dependencies: {  }
+id: theories
+label: Theories
+description: 'A group built around a theory - SAM, Arc Blasts, Velikovsky, etc.'
+creator_roles:
+  - theories-admin
+creator_membership: true

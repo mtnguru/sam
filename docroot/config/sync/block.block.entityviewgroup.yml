@@ -1,0 +1,23 @@
+uuid: c58f58d2-839e-4766-b57a-18cea12728b4
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - sa_neato
+id: entityviewgroup
+theme: sa_neato
+region: header
+weight: 0
+provider: null
+plugin: 'entity_view:group'
+settings:
+  id: 'entity_view:group'
+  label: 'Entity view (Group)'
+  provider: ctools
+  label_display: '0'
+  view_mode: hero
+  context_mapping:
+    entity: '@group.group_route_context:group'
+visibility: {  }

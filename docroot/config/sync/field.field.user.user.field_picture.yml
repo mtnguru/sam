@@ -1,0 +1,38 @@
+uuid: 8d68216b-c1ea-462c-a056-d564e9fc2d72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_picture
+  module:
+    - image
+    - user
+id: user.user.field_picture
+field_name: field_picture
+entity_type: user
+bundle: user
+label: Picture
+description: 'A picture of you.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: d1cbd17e-65e8-4c8e-88fc-cb061def66c8
+    alt: 'Michael Steinbacher'
+    title: 'Michael Steinbacher'
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

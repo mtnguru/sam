@@ -1,0 +1,30 @@
+uuid: b153fdba-03f5-4ebf-bbd2-f8620e8d2cdb
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - zircon
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: zircon_breadcrumbs
+theme: zircon
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

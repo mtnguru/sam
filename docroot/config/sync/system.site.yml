@@ -1,0 +1,14 @@
+uuid: 168d6da3-7635-48a1-ac1b-053f7f089ec4
+name: 'Ethereal Matters'
+mail: sam@ecosleuth.com
+slogan: 'A new understanding of the Universe'
+page:
+  403: ''
+  404: ''
+  front: /node/121
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

@@ -1,0 +1,94 @@
+uuid: bed8d736-0639-413f-b047-2516efdb2a8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.atom.body
+    - field.field.node.atom.field__inner_electrons
+    - field.field.node.atom.field__outer_electrons
+    - field.field.node.atom.field__p
+    - field.field.node.atom.field_atomic_structure
+    - field.field.node.atom.field_element
+    - field.field.node.atom.field_isotope
+    - field.field.node.atom.field_stability
+    - node.type.atom
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.atom.teaser
+targetEntityType: node
+bundle: atom
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 6
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field__inner_electrons:
+    type: number_integer
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  field__outer_electrons:
+    type: number_integer
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  field__p:
+    type: number_integer
+    weight: 1
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  field_element:
+    type: entity_reference_label
+    weight: 0
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_isotope:
+    type: number_integer
+    weight: 4
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    region: content
+  field_stability:
+    type: entity_reference_label
+    weight: 5
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_atomic_structure: true
+  langcode: true
+  links: true

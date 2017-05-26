@@ -1,0 +1,19 @@
+uuid: 519bb172-4304-4d39-9f6d-d097cf1a0064
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+    - node.type.page
+  module:
+    - gnode
+    - node
+id: theories-group_node-page
+label: 'Theories: Group node (Page)'
+description: 'Adds <em class="placeholder">Page</em> content to groups both publicly and privately.'
+group_type: theories
+content_plugin: 'group_node:page'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: true

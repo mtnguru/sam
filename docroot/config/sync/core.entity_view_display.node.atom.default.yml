@@ -1,0 +1,105 @@
+uuid: 1d3df45c-84ef-4e7d-89d3-6f46c567ff06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.atom.body
+    - field.field.node.atom.field__inner_electrons
+    - field.field.node.atom.field__outer_electrons
+    - field.field.node.atom.field__p
+    - field.field.node.atom.field_atomic_structure
+    - field.field.node.atom.field_element
+    - field.field.node.atom.field_isotope
+    - field.field.node.atom.field_stability
+    - node.type.atom
+  module:
+    - atomizer
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.atom.default
+targetEntityType: node
+bundle: atom
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field__inner_electrons:
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field__outer_electrons:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field__p:
+    weight: 1
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_atomic_structure:
+    weight: 7
+    label: above
+    settings:
+      atomizer: atom_viewer.yml
+      atomizer_class: az-atomizer-viewer-large
+    third_party_settings: {  }
+    type: atom_formatter
+    region: content
+  field_element:
+    weight: 0
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_isotope:
+    weight: 4
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_stability:
+    weight: 5
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

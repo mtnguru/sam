@@ -1,0 +1,23 @@
+uuid: 8da273f7-72e6-400d-a005-87003cfe1686
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_allow_comments
+    - node.type.article
+id: node.article.field_allow_comments
+field_name: field_allow_comments
+entity_type: node
+bundle: article
+label: 'Allow Comments'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

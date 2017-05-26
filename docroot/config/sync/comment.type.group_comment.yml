@@ -1,0 +1,8 @@
+uuid: 934d480e-6e3d-4936-89f2-b4db044f0d6c
+langcode: en
+status: true
+dependencies: {  }
+id: group_comment
+label: 'Group Comment'
+target_entity_type_id: group
+description: 'Comments attached to groups'

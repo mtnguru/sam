@@ -1,0 +1,14 @@
+uuid: 170a614b-c2d6-43e8-82b1-b1050bf08f61
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: 'Display the hero image at the top of the screen'
+id: group.hero
+label: Hero
+targetEntityType: group
+cache: true

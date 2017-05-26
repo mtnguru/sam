@@ -1,0 +1,43 @@
+uuid: 1031c086-87f9-4477-87c7-7cc3dee56c0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - book
+    - ctools
+    - system
+    - user
+  theme:
+    - sa_neato
+id: sa_neato_booknavigation
+theme: sa_neato
+region: sidebar_second
+weight: -10
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Book Navigation'
+  provider: book
+  label_display: visible
+  block_mode: 'all pages'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: "/atomizer/*\r\n/media-gallery\r\n/atom/*"
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    bundles:
+      theories: theories
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

@@ -1,0 +1,24 @@
+uuid: 12b57f60-aaa0-494c-913c-e3df7c914be6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.atom
+  content:
+    - 'file:file:22d8b26d-21c9-4bfa-b1f6-c66ba8b7b083'
+  module:
+    - entity_embed
+    - node
+label: Atomizer
+id: atomizer
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles:
+    - atom
+  display_plugins:
+    - 'entity_reference:entity_reference_entity_view'
+  entity_browser: ''
+  entity_browser_settings:
+    display_review: false
+icon_uuid: 22d8b26d-21c9-4bfa-b1f6-c66ba8b7b083

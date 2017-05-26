@@ -1,0 +1,30 @@
+uuid: c224a2f2-d005-4d77-bff7-c57dbab5c3ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+    - user
+  theme:
+    - sa_seven
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: sa_seven_help
+theme: sa_seven
+region: help
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

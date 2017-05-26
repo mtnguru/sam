@@ -1,0 +1,37 @@
+uuid: d130a836-e291-4146-b87a-c0f424659575
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.captioned_image.field_caption
+    - field.field.paragraph.captioned_image.field_image
+    - paragraphs.paragraphs_type.captioned_image
+  module:
+    - text
+    - workbench_moderation
+id: paragraph.captioned_image.default
+targetEntityType: paragraph
+bundle: captioned_image
+mode: default
+content:
+  field_caption:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_image:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,23 @@
+uuid: 165fa3ca-331e-45f3-8788-b59d21a0565f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_isotope
+    - node.type.atom
+id: node.atom.field_isotope
+field_name: field_isotope
+entity_type: node
+bundle: atom
+label: Isotope
+description: 'Isotope number - equates to the number of ''neutrons''.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: -50
+  max: 50
+  prefix: ''
+  suffix: ''
+field_type: integer

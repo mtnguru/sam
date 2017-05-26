@@ -1,0 +1,23 @@
+uuid: 3ef97a9c-8b66-4997-a0ca-f4159f15ab08
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.image_640x480
+    - field.field.paragraph.captioned_image.field_caption
+    - paragraphs.paragraphs_type.captioned_image
+  module:
+    - text
+id: paragraph.captioned_image.image_640x480
+targetEntityType: paragraph
+bundle: captioned_image
+mode: image_640x480
+content:
+  field_caption:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

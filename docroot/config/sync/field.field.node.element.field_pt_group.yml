@@ -1,0 +1,28 @@
+uuid: 8b15fdf2-c032-46da-a600-dd9f689b1c8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_group
+    - node.type.element
+    - taxonomy.vocabulary.groups
+id: node.element.field_pt_group
+field_name: field_pt_group
+entity_type: node
+bundle: element
+label: 'PT Group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      groups: groups
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,14 @@
+uuid: 45d10623-4b12-4275-95eb-1a5959c28c3c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -13
+is_admin: false
+permissions:
+  - 'access content'
+  - 'generate lorem ipsum'
+  - 'view media'

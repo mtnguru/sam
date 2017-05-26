@@ -1,0 +1,48 @@
+uuid: e2c4d095-2d22-4e2e-8940-3d19016da754
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.atomizer
+    - field.field.node.atom.body
+    - field.field.node.atom.field__inner_electrons
+    - field.field.node.atom.field__outer_electrons
+    - field.field.node.atom.field__p
+    - field.field.node.atom.field_atomic_structure
+    - field.field.node.atom.field_element
+    - field.field.node.atom.field_isotope
+    - field.field.node.atom.field_stability
+    - node.type.atom
+  module:
+    - atomizer
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.atom.atomizer
+targetEntityType: node
+bundle: atom
+mode: atomizer
+content:
+  field_atomic_structure:
+    weight: 7
+    label: hidden
+    settings:
+      atomizer: atom_viewer.yml
+    third_party_settings: {  }
+    type: atom_formatter
+    region: content
+hidden:
+  body: true
+  field__inner_electrons: true
+  field__outer_electrons: true
+  field__p: true
+  field_element: true
+  field_isotope: true
+  field_stability: true
+  langcode: true
+  links: true

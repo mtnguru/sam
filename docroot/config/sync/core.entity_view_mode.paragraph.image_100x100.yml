@@ -1,0 +1,14 @@
+uuid: 178a45e5-5d1c-4b4e-9b99-a7b531d2070b
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - paragraphs
+third_party_settings:
+  lightning_core:
+    description: ''
+id: paragraph.image_100x100
+label: 'Image - 100x100'
+targetEntityType: paragraph
+cache: true

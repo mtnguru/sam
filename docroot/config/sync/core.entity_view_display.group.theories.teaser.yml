@@ -1,0 +1,45 @@
+uuid: 7266582e-ece5-4124-869f-0bf5c761a5fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.group.teaser
+    - field.field.group.theories.field_allow_comments
+    - field.field.group.theories.field_comments
+    - field.field.group.theories.field_description
+    - field.field.group.theories.field_display_navigation
+    - field.field.group.theories.field_short_description
+    - field.field.group.theories.field_topics
+    - group.type.theories
+  module:
+    - text
+id: group.theories.teaser
+targetEntityType: group
+bundle: theories
+mode: teaser
+content:
+  field_short_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  label:
+    label: hidden
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  changed: true
+  created: true
+  field_allow_comments: true
+  field_comments: true
+  field_description: true
+  field_display_navigation: true
+  field_topics: true
+  langcode: true
+  uid: true

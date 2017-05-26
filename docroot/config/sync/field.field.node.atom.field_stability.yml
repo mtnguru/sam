@@ -1,0 +1,28 @@
+uuid: a6526aac-a8fa-4f57-8ded-0853024046b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stability
+    - node.type.atom
+    - taxonomy.vocabulary.stability
+id: node.atom.field_stability
+field_name: field_stability
+entity_type: node
+bundle: atom
+label: Stability
+description: 'How stable is this configuration - Preferred, Stable, Unstable, Volatile, Impossible'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      stability: stability
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

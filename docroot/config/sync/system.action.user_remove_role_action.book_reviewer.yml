@@ -1,0 +1,14 @@
+uuid: 066eed0e-c661-4e03-9cf3-637318f8359d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.book_reviewer
+  module:
+    - user
+id: user_remove_role_action.book_reviewer
+label: 'Remove the Book page Reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: book_reviewer

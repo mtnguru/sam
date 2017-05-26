@@ -1,0 +1,14 @@
+uuid: 30b7116b-b92a-4dd4-a1d0-417cc756d651
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.one_line
+label: 'One line'
+targetEntityType: taxonomy_term
+cache: true

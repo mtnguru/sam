@@ -1,0 +1,14 @@
+uuid: 17fed197-2b34-451e-ac0c-dcb3435ef44c
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: ''
+id: group.teaser
+label: Teaser
+targetEntityType: group
+cache: true

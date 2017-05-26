@@ -1,0 +1,26 @@
+uuid: caf7470e-a556-4b5f-b624-8f062d232b87
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_terms
+label: 'Taxonomy Terms'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:name]'
+selection_criteria:
+  5e7967e9-7d83-447a-ac6e-d480f94ff8fa:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      task_component: task_component
+      task_priority: task_priority
+      task_status: task_status
+      task_type: task_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 5e7967e9-7d83-447a-ac6e-d480f94ff8fa
+selection_logic: and
+weight: -5
+relationships: {  }

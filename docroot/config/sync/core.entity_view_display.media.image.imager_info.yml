@@ -1,0 +1,72 @@
+uuid: f121a561-be86-4c02-8075-352788e5c8c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.imager_info
+    - field.field.media.image.field_description
+    - field.field.media.image.field_dimensions
+    - field.field.media.image.field_geo_location
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_photographer
+    - field.field.media.image.field_production_date
+    - field.field.media.image.image
+    - media_entity.bundle.image
+  module:
+    - datetime
+    - text
+_core:
+  default_config_hash: Zn9LsLt7n0fzyEwtBMqioYJzhnU9RvIcfVef1gs51-Y
+id: media.image.imager_info
+targetEntityType: media
+bundle: image
+mode: imager_info
+content:
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dimensions:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_photographer:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_production_date:
+    weight: 2
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  name:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_geo_location: true
+  field_media_in_library: true
+  image: true
+  langcode: true
+  thumbnail: true
+  uid: true

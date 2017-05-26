@@ -1,0 +1,7 @@
+uuid: ceb1ed64-eb0c-40fa-8566-d0183406d42c
+langcode: en
+status: true
+dependencies: {  }
+id: captioned_image
+label: 'Captioned image'
+behavior_plugins: {  }

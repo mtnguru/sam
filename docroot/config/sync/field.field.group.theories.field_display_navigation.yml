@@ -1,0 +1,23 @@
+uuid: caf9b34a-1a63-4184-99a8-a1ec36b1dd73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_display_navigation
+    - group.type.theories
+id: group.theories.field_display_navigation
+field_name: field_display_navigation
+entity_type: group
+bundle: theories
+label: 'Display Navigation'
+description: 'If the description has multiple sections, then create a navigation menu for those sections in the left sidebar.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

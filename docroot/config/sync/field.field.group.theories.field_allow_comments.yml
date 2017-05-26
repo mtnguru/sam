@@ -1,0 +1,23 @@
+uuid: 1295199d-78be-4aa1-923a-50972e65fbd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_allow_comments
+    - group.type.theories
+id: group.theories.field_allow_comments
+field_name: field_allow_comments
+entity_type: group
+bundle: theories
+label: 'Allow Comments'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

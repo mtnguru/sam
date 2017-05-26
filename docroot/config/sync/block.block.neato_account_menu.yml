@@ -1,0 +1,26 @@
+uuid: 0b45c5cc-e45b-44c6-ada9-c763a3bcc69a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - neato
+_core:
+  default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
+id: neato_account_menu
+theme: neato
+region: header
+weight: -6
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: Membership
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+visibility: {  }

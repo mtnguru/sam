@@ -1,0 +1,60 @@
+uuid: e665df0d-55fd-4712-a1fa-aea4fe7ae471
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_geo_location
+    - media_entity.bundle.image
+  module:
+    - geolocation
+id: media.image.field_geo_location
+field_name: field_geo_location
+entity_type: media
+bundle: image
+label: 'Geo location'
+description: "Longitude and latitude for where this image was taken.<br>  \r\n--- Do NOT set this if the location can be extracted from the image."
+required: false
+translatable: false
+default_value:
+  -
+    google_map_settings:
+      type: ROADMAP
+      zoom: '5'
+      mapTypeControl: 1
+      streetViewControl: 1
+      zoomControl: 1
+      scrollwheel: 1
+      gestureHandling: auto
+      draggable: 1
+      preferScrollingToZooming: 0
+      disableDoubleClickZoom: 0
+      style: ''
+      height: 400px
+      width: 600px
+      info_auto_display: 1
+      disableAutoPan: 1
+    lat: '39.58029027440865'
+    lng: '-103.88946533203125'
+    lat_sin: null
+    lat_cos: null
+    lng_rad: null
+    data:
+      google_map_settings:
+        type: ROADMAP
+        zoom: '5'
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+        style: ''
+        height: 400px
+        width: 600px
+        info_auto_display: 1
+        disableAutoPan: 1
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

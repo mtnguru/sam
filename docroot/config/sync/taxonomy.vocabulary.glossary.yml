@@ -1,0 +1,9 @@
+uuid: e8e574f6-4e78-4890-b2d2-1f1e3f6bece3
+langcode: en
+status: true
+dependencies: {  }
+name: Glossary
+vid: glossary
+description: 'Terms used to describe the SAM theory'
+hierarchy: 0
+weight: 0

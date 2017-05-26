@@ -1,0 +1,22 @@
+uuid: 01ce2bec-85f0-4852-bc42-be929187b703
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sa_zircon
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: sa_zircon_content
+theme: sa_zircon
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 04e1ee87-53a5-4c30-9164-fb0ff30d5ab5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.page
+  module:
+    - text
+id: node.page.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: page
+label: 'Short Description'
+description: 'Used for teasers on content listing pages.  '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

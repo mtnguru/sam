@@ -1,0 +1,7 @@
+uuid: 12b8382f-5d1b-4612-856d-194d0c932c5e
+langcode: en
+status: true
+dependencies: {  }
+id: wysiwyg
+label: 'Text - WYSIWYG'
+behavior_plugins: {  }

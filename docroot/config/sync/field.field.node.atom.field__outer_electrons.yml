@@ -1,0 +1,23 @@
+uuid: c422c1d0-a379-446c-a314-9ce63f8f49dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field__outer_electrons
+    - node.type.atom
+id: node.atom.field__outer_electrons
+field_name: field__outer_electrons
+entity_type: node
+bundle: atom
+label: '# Outer electrons'
+description: 'Number of outer electrons - determines the element for this nucleus'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 400
+  prefix: ''
+  suffix: ''
+field_type: integer

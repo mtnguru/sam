@@ -1,0 +1,22 @@
+uuid: d7b1f22d-e4a2-41c6-9dae-a0f4908bb57a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sa_neato
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: sa_neato_content
+theme: sa_neato
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

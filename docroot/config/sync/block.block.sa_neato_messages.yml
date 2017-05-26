@@ -1,0 +1,30 @@
+uuid: 25198bee-4bb2-4b30-846e-eb4fe735739d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - sa_neato
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: sa_neato_messages
+theme: sa_neato
+region: featured
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

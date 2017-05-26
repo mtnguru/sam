@@ -1,0 +1,21 @@
+uuid: 78d43f21-2f62-443f-a635-89208712fb7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_teaser
+    - taxonomy.vocabulary.glossary
+  module:
+    - text
+id: taxonomy_term.glossary.field_teaser
+field_name: field_teaser
+entity_type: taxonomy_term
+bundle: glossary
+label: Teaser
+description: 'Displayed in popup when users hovers over a glossary term in the text.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

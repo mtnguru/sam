@@ -1,0 +1,134 @@
+uuid: ae9eee43-64a7-40af-85c6-0a9f0f12d60f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_articles
+    - field.field.media.image.field_description
+    - field.field.media.image.field_dimensions
+    - field.field.media.image.field_geo_location
+    - field.field.media.image.field_groups
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_photographer
+    - field.field.media.image.field_production_date
+    - field.field.media.image.field_topics
+    - field.field.media.image.image
+    - media_entity.bundle.image
+  module:
+    - datetime
+    - geolocation
+    - imager
+    - text
+_core:
+  default_config_hash: Zn9LsLt7n0fzyEwtBMqioYJzhnU9RvIcfVef1gs51-Y
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_articles:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_description:
+    type: text_default
+    weight: 8
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_dimensions:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_geo_location:
+    type: geolocation_map
+    weight: 9
+    region: content
+    label: hidden
+    settings:
+      set_marker: '1'
+      title: ''
+      info_text: ''
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        height: 400px
+        width: '640'
+        info_auto_display: 1
+        disableAutoPan: 1
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+    third_party_settings: {  }
+  field_groups:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_photographer:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_production_date:
+    type: datetime_default
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_topics:
+    weight: 6
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  image:
+    type: imager_formatter
+    weight: 0
+    label: hidden
+    settings:
+      imager_style: x_large_640x640
+      imager_mode: popup
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_in_library: true
+  langcode: true
+  thumbnail: true
+  uid: true

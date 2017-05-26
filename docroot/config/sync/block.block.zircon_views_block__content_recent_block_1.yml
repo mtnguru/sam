@@ -1,0 +1,38 @@
+uuid: c11a62fb-5195-4bc6-b166-70a5b633eae7
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.content_recent
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - zircon
+id: zircon_views_block__content_recent_block_1
+theme: zircon
+region: sidebar_second
+weight: -6
+provider: null
+plugin: 'views_block:content_recent-block_1'
+settings:
+  id: 'views_block:content_recent-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: "/atom-builder\r\n/page/*\r\n/admin/*\r\n/atomizer/*\r\n/atom/*\r\n/media-gallery"
+    negate: true
+    context_mapping: {  }

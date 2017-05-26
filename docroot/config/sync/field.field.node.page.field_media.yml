@@ -1,0 +1,21 @@
+uuid: adc93b04-84f3-4d3f-9982-42fb3ff66ab9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media
+    - node.type.page
+id: node.page.field_media
+field_name: field_media
+entity_type: node
+bundle: page
+label: Media
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings: {  }
+field_type: entity_reference

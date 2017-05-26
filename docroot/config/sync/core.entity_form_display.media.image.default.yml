@@ -1,0 +1,144 @@
+uuid: 36c37e18-62ba-41dd-afc0-3380cd899c48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_articles
+    - field.field.media.image.field_description
+    - field.field.media.image.field_dimensions
+    - field.field.media.image.field_geo_location
+    - field.field.media.image.field_groups
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_photographer
+    - field.field.media.image.field_production_date
+    - field.field.media.image.field_topics
+    - field.field.media.image.image
+    - image.style.thumbnail_100x100
+    - media_entity.bundle.image
+  module:
+    - datetime
+    - geolocation
+    - image
+    - text
+    - workbench_moderation
+_core:
+  default_config_hash: 3sayyMrnuL8vsG48ckrv-6c4o1uDeQLY15D3l7rtslY
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_articles:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_description:
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_dimensions:
+    type: string_textfield
+    weight: 6
+    settings:
+      size: 16
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_geo_location:
+    weight: 7
+    settings:
+      default_longitude: ''
+      default_latitude: ''
+      auto_client_location: '1'
+      allow_override_map_settings: 1
+      google_map_settings:
+        type: ROADMAP
+        zoom: '5'
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        height: 400px
+        width: 600px
+        info_auto_display: 1
+        disableAutoPan: 1
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      auto_client_location_marker: '0'
+      populate_address_field: ''
+      target_address_field: null
+    third_party_settings: {  }
+    type: geolocation_googlegeocoder
+    region: content
+  field_groups:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_photographer:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_production_date:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_topics:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  image:
+    type: image_image
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail_100x100
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  uid: true

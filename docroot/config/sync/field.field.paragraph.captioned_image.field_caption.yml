@@ -1,0 +1,21 @@
+uuid: 9f0dec93-57c6-41e2-93e3-df6ee79d4ebf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.captioned_image
+  module:
+    - text
+id: paragraph.captioned_image.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: captioned_image
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

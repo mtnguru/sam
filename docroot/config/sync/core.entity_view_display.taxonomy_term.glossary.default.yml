@@ -1,0 +1,30 @@
+uuid: 62f712aa-73b4-46d2-89d2-b07f86a766aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.glossary.field_teaser
+    - taxonomy.vocabulary.glossary
+  module:
+    - text
+id: taxonomy_term.glossary.default
+targetEntityType: taxonomy_term
+bundle: glossary
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_teaser:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,15 @@
+uuid: fd4cce6c-88e6-4dee-b077-207cd0dafa43
+langcode: en
+status: true
+dependencies: {  }
+name: x_large
+label: 'X-large 720x720'
+effects:
+  1467e24e-7561-419d-a346-c5fa5c35ac72:
+    uuid: 1467e24e-7561-419d-a346-c5fa5c35ac72
+    id: image_scale
+    weight: 1
+    data:
+      width: 720
+      height: 720
+      upscale: true

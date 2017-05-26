@@ -1,0 +1,74 @@
+uuid: 6cf8b27a-8561-4c0b-a51b-91c4c1b5b457
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.group_comment.default
+    - core.entity_view_mode.group.one_line
+    - field.field.group.theories.field_allow_comments
+    - field.field.group.theories.field_comments
+    - field.field.group.theories.field_description
+    - field.field.group.theories.field_display_navigation
+    - field.field.group.theories.field_hero_image
+    - field.field.group.theories.field_short_description
+    - field.field.group.theories.field_topics
+    - group.type.theories
+  module:
+    - comment
+    - entity_reference_revisions
+id: group.theories.one_line
+targetEntityType: group
+bundle: theories
+mode: one_line
+content:
+  field_comments:
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_description:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_hero_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: hero_image
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_topics:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  label:
+    label: hidden
+    type: string
+    weight: 1
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  changed: true
+  created: true
+  field_allow_comments: true
+  field_display_navigation: true
+  field_short_description: true
+  langcode: true
+  uid: true

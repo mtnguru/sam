@@ -1,0 +1,35 @@
+uuid: 3cf26ec8-b8f7-425d-80ff-f102df0bd929
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_allow_comments
+    - field.field.node.page.field_allow_subscribing
+    - field.field.node.page.field_allow_voting
+    - field.field.node.page.field_media
+    - field.field.node.page.field_node_comments
+    - field.field.node.page.field_sections
+    - field.field.node.page.field_short_description
+    - field.field.node.page.field_topics
+    - node.type.page
+  module:
+    - user
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_allow_comments: true
+  field_allow_subscribing: true
+  field_allow_voting: true
+  field_media: true
+  field_node_comments: true
+  field_sections: true
+  field_short_description: true
+  field_topics: true
+  langcode: true

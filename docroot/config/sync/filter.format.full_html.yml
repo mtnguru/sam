@@ -1,0 +1,74 @@
+uuid: ebdff3be-8080-435e-984e-c8e3c75db3a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_embed
+    - node_tooltip
+    - taxonomy_tooltip
+name: 'Full HTML'
+format: full_html
+weight: 0
+filters:
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: 0
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img data-caption data-align data-entity-uuid data-entity-type alt src> <p> <h1> <pre> <s> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-settings data-entity-embed-display-settings data-align data-caption data-embed-button> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <sup>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  taxonomy_tooltip:
+    id: taxonomy_tooltip
+    provider: taxonomy_tooltip
+    status: false
+    weight: -10
+    settings:
+      taxonomy_tooltip_case_sensitivity: '1'
+      taxonomy_tooltip_first_only: '1'
+      taxonomy_tooltip_type: tooltips_links
+      taxonomy_tooltip_vocabs: glossary
+      taxonomy_tooltip_urlpattern: '/taxonomy/term/[id]'
+  node_tooltip:
+    id: node_tooltip
+    provider: node_tooltip
+    status: false
+    weight: -10
+    settings:
+      node_tooltip_case_sensitivity: '1'
+      node_tooltip_first_only: '0'
+      node_tooltip_type: tooltips
+      node_tooltip_bundles: element
+      node_tooltip_urlpattern: '/node/[id]'

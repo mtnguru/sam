@@ -1,0 +1,11 @@
+date_format_exif: 'Y-m-d\TH:i:s'
+granularity: 0
+mediatypes: {  }
+nodetypes: {  }
+update_metadata: false
+vocabulary: {  }
+write_empty_values: false
+extraction_solution: php_extensions
+exiftool_location: exiftool
+_core:
+  default_config_hash: W880NX3EBp1PYO6cX58Erj5bmgAjnq2pTOcDpDz9VRY

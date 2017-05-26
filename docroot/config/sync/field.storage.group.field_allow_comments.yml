@@ -1,0 +1,18 @@
+uuid: e991a89a-6aaa-46d0-816a-65b1f44d22b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.field_allow_comments
+field_name: field_allow_comments
+entity_type: group
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+uuid: 02ccdae2-3b4f-4e86-977c-f3bb4d7772ec
+langcode: en
+status: true
+dependencies: {  }
+name: 'PT Groups'
+vid: groups
+description: 'Periodic Table Groups or Families - Corresponds to the columns of the table'
+hierarchy: 0
+weight: 0

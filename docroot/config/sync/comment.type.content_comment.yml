@@ -1,0 +1,8 @@
+uuid: e32e10fa-5222-4a6e-b218-d1dc7330fac4
+langcode: en
+status: true
+dependencies: {  }
+id: content_comment
+label: 'Content Comment'
+target_entity_type_id: node
+description: 'Comments attached to content created by official SAM authors'

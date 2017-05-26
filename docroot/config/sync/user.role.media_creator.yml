@@ -1,0 +1,17 @@
+uuid: aca3936a-b449-4ab0-a941-8759a8df5945
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sEkxJ1n9ieraDpNXMxeIbsoRKnVH78dBSH7Nlgp6qnw
+id: media_creator
+label: 'Media Creator'
+weight: -5
+is_admin: null
+permissions:
+  - 'access image_browser entity browser pages'
+  - 'access media overview'
+  - 'access media_browser entity browser pages'
+  - 'create media'
+  - 'delete media'
+  - 'update media'

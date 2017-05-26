@@ -1,0 +1,23 @@
+uuid: 677c27fc-28fa-445a-86eb-ed259e030550
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_allow_subscribing
+    - node.type.article
+id: node.article.field_allow_subscribing
+field_name: field_allow_subscribing
+entity_type: node
+bundle: article
+label: 'Allow Subscribing'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

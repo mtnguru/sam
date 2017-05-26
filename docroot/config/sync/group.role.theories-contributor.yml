@@ -1,0 +1,34 @@
+uuid: 13c3cbfb-c959-4ad9-9a69-bfd778bed7e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+id: theories-contributor
+label: Contributor
+weight: 102
+internal: false
+audience: member
+group_type: theories
+permissions_ui: true
+permissions:
+  - 'edit group'
+  - 'administer members'
+  - 'update own group_membership content'
+  - 'leave group'
+  - 'view group_membership content'
+  - 'view group'
+  - 'access group_node overview'
+  - 'create group_node:article entity'
+  - 'delete any group_node:article entity'
+  - 'delete own group_node:article entity'
+  - 'update any group_node:article entity'
+  - 'update own group_node:article entity'
+  - 'view group_node:article entity'
+  - 'view unpublished group_node:article entity'
+  - 'create group_node:article content'
+  - 'delete any group_node:article content'
+  - 'delete own group_node:article content'
+  - 'update any group_node:article content'
+  - 'update own group_node:article content'
+  - 'view group_node:article content'

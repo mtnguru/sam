@@ -1,0 +1,9 @@
+uuid: d3a9496a-95e8-437f-bece-cb869cc30b7b
+langcode: en
+status: true
+dependencies: {  }
+name: Stability
+vid: stability
+description: 'Classifies the stability of an atomic nucleus.'
+hierarchy: 0
+weight: 0

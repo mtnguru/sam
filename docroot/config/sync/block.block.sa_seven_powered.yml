@@ -1,0 +1,22 @@
+uuid: 4567a817-5610-4582-acd6-16933185605a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - sa_seven
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: sa_seven_powered
+theme: sa_seven
+region: header
+weight: -8
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

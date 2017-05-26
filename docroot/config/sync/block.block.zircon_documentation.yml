@@ -1,0 +1,32 @@
+uuid: 451ef05c-4545-4270-b951-471ecb445a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.documentation
+  module:
+    - system
+    - user
+  theme:
+    - zircon
+id: zircon_documentation
+theme: zircon
+region: featured
+weight: -7
+provider: null
+plugin: 'system_menu_block:documentation'
+settings:
+  id: 'system_menu_block:documentation'
+  label: Documentation
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

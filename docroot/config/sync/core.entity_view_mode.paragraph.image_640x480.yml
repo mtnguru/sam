@@ -1,0 +1,14 @@
+uuid: 59622b3e-77f3-421a-8a4c-36149a6ddbb5
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - paragraphs
+third_party_settings:
+  lightning_core:
+    description: ''
+id: paragraph.image_640x480
+label: 'Image - 640x480'
+targetEntityType: paragraph
+cache: true
