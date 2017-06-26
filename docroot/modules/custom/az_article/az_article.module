@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Contains az_article.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Component\Utility\Random;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function az_article_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  return;
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function az_article_node_presave(Node $node) {
+//$id = $node->field_media->getValue()[0]['target_id'];
+
+//$entity_manager = \Drupal::entityManager();
+//$media = $entity_manager->getStorage('media')->load($id);
+
+  return;
+}
+/**
+ * Implements HOOK_entity_presave().
+ *
+ */
+function az_article_entity_presave(EntityInterface $entity) {
+  return;
+}
+
+function az_article_media_presave(EntityInterface $entity) {
+  return;
+}
+
+function az_article_file_presave(EntityInterface $entity) {
+  return;
+}

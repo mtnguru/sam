@@ -1,0 +1,112 @@
+.view-group-content {
+
+  .views-row {
+    clear: both;
+    padding: rem(15) 0;
+    position: relative;
+    margin-bottom: 20px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: rem(-10);
+      left: 0;
+      right: 0;
+      border-top: 1px solid $base-border-color;
+    }
+
+    &:first-child {
+      padding-top: 0;
+
+      &:after {
+        border: 0;
+      }
+    } // &:first-child
+
+    &:last-child {
+      padding-bottom: 0;
+    } // &:last-child
+  } // .views-row
+
+  .teaser-container {
+
+    .changed-container {
+      margin-bottom: 10px;
+      @include clearfix;
+
+      .changed {
+        color: $base-date-color;
+        font-size: .90em;
+        font-style: italic;
+        padding-right: 20px;
+      } // .changed
+
+      .changed,
+      .new {
+        float: left;
+      }
+    }
+
+    .header-container {
+      vertical-align: top;
+      display: inline-block;
+      margin-bottom: 20px;
+
+      h3 {
+        clear: both;
+        font-size: 1.8em;
+        margin-bottom: 0;
+      } // h3
+
+      .author-picture {
+        float: left;
+        padding-right: 20px;
+
+        img {
+          display: block;
+          border-radius: 50%;
+        } // img
+      } // .author
+
+      .author-container {
+        float: left;
+        padding-bottom: 20px;
+
+        .author-name {
+          color: $color-black;
+          line-height: 1.2;
+        } // .author-name
+
+        .author-title {
+          color: $base-date-color;
+          font-size: 80%;
+        } // .author-title
+      } // .author.body
+    } // .header-container
+
+    .body-container {
+      @include clearfix;
+      clear: both;
+      vertical-align: top;
+      min-height: 150px;
+
+      .media {
+        display: inline-block;
+        float: right;
+
+        img {
+          height: auto;
+          border-radius: $base-border-radius;
+          margin-left: 1.2em;
+        } // img
+      } // .image
+
+      .short-description {
+//      float: left;
+      } // .short-description
+
+      .body {
+      } // .body
+    } // .text-container
+  } // .teaser-container
+} // .view-group-content

@@ -1,0 +1,5 @@
+name: Atomizer node functions 
+type: module
+description: Hooks for manipulating nodes
+core: 8.x
+package: Atomizer

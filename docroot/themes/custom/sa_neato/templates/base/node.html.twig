@@ -74,8 +74,7 @@
 * @see template_process()
 */
 #}
-{# kint() #}
-<article id="node-{{ node.id }}" class="{{ attributes.class }}"{{ attributes }}>
+<article id="node-{{ node.id }}" class="{{ attributes.class }} {{ view_mode }} {{ 'type-' ~ node.bundle }}"{{ attributes }}>
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>

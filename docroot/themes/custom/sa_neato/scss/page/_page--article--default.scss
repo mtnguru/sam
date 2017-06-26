@@ -1,0 +1,36 @@
+// body.page-node-type-article
+body.path-node {
+
+  article.type-article {
+
+    > h2 {
+      display: none;
+    } // > h2
+  } // article.type-article
+
+  .page-title {
+  } // .page-title
+
+
+  .field--name-field-image,
+  .field--name-image {
+    text-align: center;
+    margin-bottom: 30px;
+
+    img {
+      margin: 0 auto;
+      border-radius: $base-border-radius;
+    } // img
+  } // .field--name-image
+
+  .field--name-field-topics {
+    @include clearfix;
+    margin-bottom: 20px;
+  } // .field--name-field-topics
+
+  .field--name-field-body {
+    clear: both;
+    margin-bottom: 20px;
+  } // .field--name-field-body
+} // body.page-node-type-article
+

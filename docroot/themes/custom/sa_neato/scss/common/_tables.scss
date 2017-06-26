@@ -1,6 +1,6 @@
 table {
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-border-radius: 3px !default;
+  $base-border-radius: $base-border-radius !default;
   $base-line-height: 1.5em !default;
   $base-spacing: 1.5em !default;
 
@@ -15,7 +15,7 @@ table {
   }
   //////////////////////////////////////////////////////////////////////////////////
   $table-border: 1px solid $table-border-color;
-  $table-padding: .3em .6em;
+  $table-padding: 0.2em 0.6em;
 
   border-collapse: separate;
   border-spacing: 0;

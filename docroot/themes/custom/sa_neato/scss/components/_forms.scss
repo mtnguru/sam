@@ -45,7 +45,7 @@ select[multiple=multiple] {
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: $base-link-color;
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }
@@ -84,7 +84,7 @@ input[type="file"] {
 }
 
 select {
-  margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
+  height: 35px;
 }

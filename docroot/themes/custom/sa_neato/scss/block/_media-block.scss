@@ -1,42 +1,106 @@
+.block-views-blockaz-media-block-media-block-article {
+  .content-container {
+    padding: 10px;
+  }
+}
+
+.view-az-media {
+  .view-content {
+    margin: 0 -5px;
+  }
+
+  .views-row {
+
+    @include media($bp320only) {
+      width: calc(100% / 2);
+    } // $bp320only
+
+    @include media($bp580only) {
+      width: calc(100% / 4);
+    } // $bp580only
+
+    @include media($bp960only) {
+      width: calc(100% / 6);
+    } // $bp960only
+
+    @include media($bp1280) {
+      width: 200px;
+    } // $bp1280
+
+  } // .views-row
+} // .view-az-media
+
+.view-az-media-block {
+  .views-row {
+    width: 50%;
+  } // .views-row
+} // .view-az-media-block
+
+.view-az-media,
 .view-az-media-block {
   @include clearfix;
 
-  .views-row {
-    float: left;
-    width: 156px;
-    height: 240px;
-    border: 1px solid #ddd;
-    padding: 2px;
-    border-radius: 4px;
-    margin: 5px;
-  }
+  .views-container {
+//  display: flex;
+    @include clearfix;
+  } // .views-container
 
-  img {
-    border-radius: 3px;
-  }
+  .views-row {
+    min-width: 0;
+    float: left;
+    padding: 6px;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    } // &:last-of-type
+  } // .views-row
+
+  .views-field {
+    border: 1px solid $color-light-grey;
+    border-radius: $base-border-radius;;
+    width: 100%;
+    @include fixed-aspect(32/22 * 100%, '.field-content');
+    padding: 2px;
+  } // .views-field
+
+  .image-container {
+    margin: -1px;
+
+    img {
+      border-radius: $inner-border-radius $inner-border-radius 0 0;
+      display: block;
+      height: auto;
+    } // img
+  } // .image-container
 
   .text-container {
-    padding: 0 3px;
+    position: relative;
+    margin: 5px;
 
     .article-creator {
-      font-size: 90%;
-    }
+      font-size: 75%;
+      line-height: 1;
+      float: left;
+    } // .article-creator
 
     .article-mid {
-      float: right;
+      line-height: 1.2;
       font-size: 75%;
-    }
+      float: right;
+    } // .article-mid
 
     .article-date {
+      clear: both;
+      text-align: center;
       color: $color-medium-grey;
       font-style: italic;
-      font-size: 80%;
-      margin: 0 auto;
-    }
+      font-size: 70%;
+      line-height: 1;
+    } // .article-date
 
     .article-name {
-      font-size: 110%;
+      padding-top: 5px;
       line-height: 1.2;
-    }
-  }
-}
+    } // .article-name
+  } // .text-container
+} // .view-az-media-block

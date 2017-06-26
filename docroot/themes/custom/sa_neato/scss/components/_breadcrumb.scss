@@ -1,5 +1,5 @@
 .breadcrumb {
-  $base-border-radius: 3px !default;
+  $base-border-radius: $base-border-radius !default;
   $base-spacing: 1.5em !default;
   $breadcrumb-border: 1px solid $breadcrumb-border-color;
   $breadcrumb-height: $base-spacing * 1.5;

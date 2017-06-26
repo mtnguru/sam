@@ -14,7 +14,21 @@
   a {
     text-decoration: none;
   }
+
+  h2 {
+    color: white;
+  }
   //////////////////////////////////////////////////////////////////////////////////
+
+  .menu--account,
+  #block-masquerade {
+    float: right;
+    width: 21%;
+    margin-bottom: 30px;
+    input {
+      width: 10em;
+    }
+  }
 
   section {
     @include outer-container;

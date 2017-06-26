@@ -1,5 +1,5 @@
 $base-spacing: 1.5em !default;
-$message-border-radius: 5px;
+$message-border-radius: $base-border-radius;
 
 @mixin flash($color) {
   background-color: $color;

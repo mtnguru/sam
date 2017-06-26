@@ -1,5 +1,6 @@
 .outer-wrapper {
 //max-width: 1980px;
-  padding-left: rem(30);
-  padding-right: rem(30);
+//padding-left: rem(30);
+//padding-right: rem(30);
+  @extend %layout-padding;
 }

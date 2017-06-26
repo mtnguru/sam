@@ -39,14 +39,14 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: $base-link-color;
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: shade($base-link-color, 25%);
   }
 }
 
@@ -62,4 +62,5 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+  display: block;
 }

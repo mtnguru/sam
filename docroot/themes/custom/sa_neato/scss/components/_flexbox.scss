@@ -1,6 +1,6 @@
 .flex-boxes {
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-border-radius: 3px !default;
+  $base-border-radius: $base-border-radius !default;
 
   a {
     text-decoration: none;

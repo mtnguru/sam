@@ -1,6 +1,6 @@
 #{$all-buttons} {
   appearance: none;
-  background-color: $action-color;
+  background-color: $base-link-color;
   border: 0;
   border-radius: $base-border-radius;
   color: #fff;
@@ -20,7 +20,7 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 30%);
+    background-color: shade($base-link-color, 30%);
     color: #fff;
   }
 
@@ -29,11 +29,11 @@
     opacity: 0.5;
 
     &:hover {
-      background-color: $action-color;
+      background-color: $base-link-color;
     }
   }
 }
 
 .dropbutton-toggle {
-  background: $action-color;
+  background: $base-link-color;
 }

@@ -1,25 +1,31 @@
 .block-region-sidebar,
 .sidebar {
-//margin-top: 30px;
+
   .block {
-    border: 1px solid $header-background;
-    border-radius: 5px;
+    border: 1px solid $base-border-color;
+    border-radius: $base-border-radius;
     margin-bottom: 30px;
-  }
+  } // .block
 
   .title-container {
-    padding: 10px 20px;
+    margin: -1px -1px 0;
+    padding: 10px 15px;
     background: $header-background;
     color: $header-color;
+    border-radius: $base-border-radius $base-border-radius 0 0;
 
     h2 {
       font-size: 110%;
       margin: 0;
-    }
+    } // h2
   } // .title-container
 
   .content-container {
-    padding: 20px;
+    padding: 10px 20px;
+
+    ul {
+      margin-left: 0;
+    } // ul
   } // .content-container
 } // .sidebar
 

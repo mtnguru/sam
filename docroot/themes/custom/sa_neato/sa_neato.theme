@@ -5,6 +5,7 @@
  * Functions to support theming in the sa_neato theme.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
@@ -73,7 +74,17 @@ function sa_neato_preprocess_page(&$variables) {
  * @param array $variables
  */
 function sa_neato_preprocess_node(&$variables) {
-  return;
+  $view_mode = $variables['elements']['#view_mode'];
+  $node = $variables['node'];
+
+  if ($view_mode == 'full') {
+  }
+
+  if ($view_mode == 'search_result') {
+    if ($node->bundle() == 'article') {
+      $variables['content']['#item_type'] = $variables['node']->type->entity->label();
+    }
+  }
 }
 
 /**
@@ -99,6 +110,7 @@ function sa_neato_preprocess_group(&$variables) {
 function sa_neato_preprocess_region(&$variables) {
   return;
 }
+
 /**
  * Implements template_preprocess_entity.
  * @param array $variables
@@ -107,13 +119,20 @@ function sa_neato_preprocess_entity(&$variables) {
   return;
 }
 
+/**
+ * Implements template_preprocess_media.
+ * @param array $variables
+ */
+function sa_neato_preprocess_media(&$variables) {
+  return;
+}
 
 /**
  * Implements HOOK_form_alter().
  *
  */
 function sa_neato_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-
   return;
-
 }
+
+

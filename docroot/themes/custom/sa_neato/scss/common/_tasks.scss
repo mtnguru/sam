@@ -60,7 +60,7 @@
 #secondary-tasks {
   &.tabs {
     ///////////////////////////////////////////////////////////////////////////////////
-    $base-border-radius: 3px !default;
+    $base-border-radius: $inner-border-radius !default;
     $base-line-height: 1.5em !default;
     $base-spacing: 1.5em !default;
     $base-font-size: .8em !default;
