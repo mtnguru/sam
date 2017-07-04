@@ -19,13 +19,16 @@ function az_article_form_alter(&$form, FormStateInterface $form_state, $form_id)
 
 /**
  * Implements hook_node_presave().
+ *
+ * Storing a node - assign
  */
 function az_article_node_presave(Node $node) {
-//$id = $node->field_media->getValue()[0]['target_id'];
-
-//$entity_manager = \Drupal::entityManager();
-//$media = $entity_manager->getStorage('media')->load($id);
-
+  $media = $node->get('field_media');
+  if ($node->get('field_media')->value()) {
+//  $id = $node->field_media->getValue()[0]['target_id'];
+//  $entity_manager = \Drupal::entityManager();
+//  $media = $entity_manager->getStorage('media')->load($id);
+  }
   return;
 }
 /**
@@ -41,5 +44,18 @@ function az_article_media_presave(EntityInterface $entity) {
 }
 
 function az_article_file_presave(EntityInterface $entity) {
+  return;
+}
+
+function az_article_group_content_alter($group_content_entity, $entity) {
+// Get the Group ID
+// Get the Article ID
+// Get the Media
+//   for each media item
+//     Add the article to the media
+//     Add group to the media
+//     Add topics - or should that come from the article
+  $gid = $group_content_entity->gid->value;
+  $media = $entity->get('field_media');
   return;
 }
