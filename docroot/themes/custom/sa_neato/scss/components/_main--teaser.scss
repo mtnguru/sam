@@ -52,12 +52,6 @@
       display: inline-block;
       margin-bottom: 20px;
 
-      h3 {
-        clear: both;
-        font-size: 1.8em;
-        margin-bottom: 0;
-      } // h3
-
       .author-picture {
         float: left;
         padding-right: 20px;
@@ -70,7 +64,6 @@
 
       .author-container {
         float: left;
-        padding-bottom: 20px;
 
         .author-name {
           color: $color-black;
@@ -89,6 +82,11 @@
       clear: both;
       vertical-align: top;
       min-height: 150px;
+
+      h3 {
+        font-size: 1.8em;
+        margin-bottom: rem(20);
+      } // h3
 
       .media {
         display: inline-block;

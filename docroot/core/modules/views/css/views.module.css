@@ -17,27 +17,3 @@
   float: left;
   width: 100%;
 }
-
-/* Views exposed filter form */
-form.views-exposed-form .filter-wrapper {
-  background-color: #efefef;
-  border-radius: 4px;
-  min-width: 31em;
-  width: 48%;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-right: 1%;
-  padding: 0.5em;
-  float: left;
-}
-form.views-exposed-form .filter-wrapper:nth-child(even) {
-  margin-right: 0;
-}
-form.views-exposed-form .filter-wrapper .form-item {
-  margin: 0 1em 0 0;
-}
-form.views-exposed-form .filter-wrapper .form-item input.form-text {
-  padding: 5px;
-  margin: 0;
-  font: inherit;
-}

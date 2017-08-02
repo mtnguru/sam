@@ -23,12 +23,12 @@ function az_article_form_alter(&$form, FormStateInterface $form_state, $form_id)
  * Storing a node - assign
  */
 function az_article_node_presave(Node $node) {
-  $media = $node->get('field_media');
-  if ($node->get('field_media')->value()) {
+//$media = $node->get('field_media');
+//if ($node->get('field_media')->value()) {
 //  $id = $node->field_media->getValue()[0]['target_id'];
 //  $entity_manager = \Drupal::entityManager();
 //  $media = $entity_manager->getStorage('media')->load($id);
-  }
+//}
   return;
 }
 /**
