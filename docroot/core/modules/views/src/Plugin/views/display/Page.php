@@ -176,10 +176,7 @@ class Page extends PathPluginBase {
     //   it should be dropped.
     if (is_array($render)) {
       $render += [
-//      Sorensen - changes to make dialog title display correctly.
-//      '#title' => ['#markup' => $this->view->getTitle(), '#allowed_tags' => Xss::getHtmlTagList()],
-        '#markup' => $this->view->getTitle(),
-        '#allowed_tags' => Xss::getHtmlTagList(),
+        '#title' => ['#markup' => $this->view->getTitle(), '#allowed_tags' => Xss::getHtmlTagList()],
       ];
     }
     return $render;
