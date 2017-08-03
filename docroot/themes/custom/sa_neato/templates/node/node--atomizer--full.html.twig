@@ -84,14 +84,17 @@
   {% endif %}
 
   <div id="view-select-atom">
-    <button id="atom--select-close" class="close-button fa fa-close"></button>
-    <h2>Select Atom</h2>
+    <div class="header">
+      <button id="atom--select-close" class="close-button fa fa-close"></button>
+      <h2>Select Atom</h2>
+    </div>
     {{ content.view_select_atom }}
   </div>
 
   {{ content.links }}
 </article>
 
+{#
 <br><i class="fa fa-mouse-pointer"></i> mouse-pointer
 <br><i class="fa fa-dot-circle-o"></i> dot-circle-o
 <br><i class="fa fa-futbol-o"></i> futbol-o
@@ -106,3 +109,4 @@
 <br><i class="fa fa-question"></i> question
 <br><i class="fa fa-bars"></i> bars
 <br><i class="fa fa-pencil"></i> pencil
+#}

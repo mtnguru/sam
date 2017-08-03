@@ -14,10 +14,41 @@ body.page-node-type-atomizer {
     &.enabled {
       display: block;
       position: absolute;
-      top: 0;
+      top: 20px;
       bottom: 0;
       left: 0;
-      overflow: auto;
+      .views-element-container {
+        position: absolute;
+        top: 50px;
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        overflow: auto;
+      }
+    }
+
+    @include media(max-width $bp580max) {
+      .views-field-field-stability,
+      .views-field-field-pt-group,
+      .views-field-field__inner-electrons,
+      .views-field-field__outer-electrons {
+        display: none;
+      }
+    }
+
+    @include media(max-width $bp960max) {
+      .views-field-field-stability,
+      .views-field-field__inner-electrons,
+      .views-field-field__outer-electrons {
+        display: none;
+      }
+    }
+
+    @include media($bp1280) {
+      .views-field-field__inner-electrons,
+      .views-field-field__outer-electrons {
+        display: none;
+      }
     }
 
     h2 {
