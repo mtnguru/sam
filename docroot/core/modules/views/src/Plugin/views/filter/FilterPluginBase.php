@@ -838,6 +838,7 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     if (empty($this->options['exposed'])) {
       return;
     }
+    /**
     // Build a common container for all exposed options of this filter.
     $form[$this->options['id']] = array(
       '#type' => 'container',
@@ -848,19 +849,19 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
         '#type' => 'label',
         '#title' => $this->options['expose']['label'],
       ),
-    );
+    ); **/
 
     // Build the exposed form, when its based on an operator.
     if (!empty($this->options['expose']['use_operator']) && !empty($this->options['expose']['operator_id'])) {
       $operator = $this->options['expose']['operator_id'];
       $this->operatorForm($form, $form_state);
 
-//    $form[$operator] = $form['operator'];
-      unset($form['operator']['#title']);
-      $form[$this->options['id']][$operator] = $form['operator'];
+      $form[$operator] = $form['operator'];
+//    unset($form['operator']['#title']);
+//    $form[$this->options['id']][$operator] = $form['operator'];
 
-//    $this->exposedTranslate($form[$operator], 'operator');
-      $this->exposedTranslate($form[$this->options['id']][$operator], 'operator');
+      $this->exposedTranslate($form[$operator], 'operator');
+//    $this->exposedTranslate($form[$this->options['id']][$operator], 'operator');
 
       unset($form['operator']);
     }
@@ -869,23 +870,24 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     if (!empty($this->options['expose']['identifier'])) {
       $value = $this->options['expose']['identifier'];
       $this->valueForm($form, $form_state);
-      $form[$this->options['id']][$value] = $form['value'];
+//    $form[$this->options['id']][$value] = $form['value'];
+      $form[$value] = $form['value'];
 
-//    if (isset($form[$value]['#title']) && !empty($form[$value]['#type']) && $form[$value]['#type'] != 'checkbox') {
-//      unset($form[$value]['#title']);
-//    }
-      unset($form[$this->options['id']][$value]['#title']);
+      if (isset($form[$value]['#title']) && !empty($form[$value]['#type']) && $form[$value]['#type'] != 'checkbox') {
+        unset($form[$value]['#title']);
+      }
+//    unset($form[$this->options['id']][$value]['#title']);
 
       $this->exposedTranslate($form[$value], 'value');
 
       if (!empty($form['#type']) && ($form['#type'] == 'checkboxes' || ($form['#type'] == 'select' && !empty($form['#multiple'])))) {
-//      unset($form[$value]['#default_value']);
-        unset($form[$this->options['id']][$value]['#default_value']);
+        unset($form[$value]['#default_value']);
+//      unset($form[$this->options['id']][$value]['#default_value']);
       }
 
       if (!empty($form['#type']) && $form['#type'] == 'select' && empty($form['#multiple'])) {
-//      $form[$value]['#default_value'] = 'All';
-        $form[$this->options['id']][$value]['#default_value'] = 'All';
+        $form[$value]['#default_value'] = 'All';
+//      $form[$this->options['id']][$value]['#default_value'] = 'All';
       }
 
       if ($value != 'value') {
