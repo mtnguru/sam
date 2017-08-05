@@ -16,7 +16,7 @@ body.page-node-type-atomizer {
       position: absolute;
       top: 20px;
       bottom: 0;
-      left: 0;
+      right: 0;
       .views-element-container {
         position: absolute;
         top: 50px;
@@ -53,6 +53,37 @@ body.page-node-type-atomizer {
 
     h2 {
       margin-bottom: .2em;
+    }
+  }
+
+  .control-block {
+    &::before {
+      content: '';
+      display: block;
+      margin: 5px 0;
+      border-top: 2px solid #aaa;
+    }
+  }
+
+  #blocks-buttons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 115%;
+
+    hr {
+      clear: both;
+    }
+
+    .az-control {
+      padding: 3px;
+      @include transition-3d;
+      color: $color-button-inactive;
+      &.az-selected {
+        color: $color-button-selected;
+      }
+      &:hover {
+        color: $color-button-hover;
+      }
     }
   }
 
