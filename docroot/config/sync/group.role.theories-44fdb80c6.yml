@@ -1,0 +1,17 @@
+uuid: e3f7a8b2-a84e-41c8-8b1e-12e138762e7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.atomizer_reviewer
+id: theories-44fdb80c6
+label: 'Atomizer Reviewer'
+weight: 12
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

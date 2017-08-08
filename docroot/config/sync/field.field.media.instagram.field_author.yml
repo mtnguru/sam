@@ -1,0 +1,28 @@
+uuid: c70f4931-22c5-4ffb-9d82-5196155110e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_author
+    - media_entity.bundle.instagram
+id: media.instagram.field_author
+field_name: field_author
+entity_type: media
+bundle: instagram
+label: Author
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

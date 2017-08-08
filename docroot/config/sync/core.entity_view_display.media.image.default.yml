@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_articles
+    - field.field.media.image.field_author
+    - field.field.media.image.field_create_date
     - field.field.media.image.field_description
     - field.field.media.image.field_dimensions
     - field.field.media.image.field_geo_location
     - field.field.media.image.field_groups
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.field_photographer
-    - field.field.media.image.field_production_date
     - field.field.media.image.field_topics
     - field.field.media.image.image
     - media_entity.bundle.image
@@ -28,11 +28,28 @@ mode: default
 content:
   field_articles:
     weight: 7
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_author:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_create_date:
+    weight: 2
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_description:
     type: text_default
@@ -45,7 +62,7 @@ content:
     type: string
     weight: 4
     region: content
-    label: hidden
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -78,32 +95,15 @@ content:
     third_party_settings: {  }
   field_groups:
     weight: 5
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_photographer:
-    type: entity_reference_label
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-  field_production_date:
-    type: datetime_default
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
   field_topics:
     weight: 6
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }

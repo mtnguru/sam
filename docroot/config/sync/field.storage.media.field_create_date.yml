@@ -1,17 +1,17 @@
-uuid: acffc3eb-c770-49f9-9259-0e2617f6d4ae
+uuid: 9c71c09d-6e07-4d3b-830f-36204d873a19
 langcode: en
 status: true
 dependencies:
   module:
+    - datetime
     - media_entity
-    - user
-id: media.field_photographer
-field_name: field_photographer
+id: media.field_create_date
+field_name: field_create_date
 entity_type: media
-type: entity_reference
+type: datetime
 settings:
-  target_type: user
-module: core
+  datetime_type: datetime
+module: datetime
 locked: false
 cardinality: 1
 translatable: true

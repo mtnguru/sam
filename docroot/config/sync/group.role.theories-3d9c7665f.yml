@@ -1,0 +1,17 @@
+uuid: 1d241766-a5d9-4934-b5bd-2d04c85e9fe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.atomizer_creator
+id: theories-3d9c7665f
+label: 'Atomizer Creator'
+weight: 11
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

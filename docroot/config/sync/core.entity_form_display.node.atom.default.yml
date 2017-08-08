@@ -54,7 +54,7 @@ content:
   field_atomic_structure:
     weight: 8
     settings:
-      rows: 5
+      rows: 20
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea

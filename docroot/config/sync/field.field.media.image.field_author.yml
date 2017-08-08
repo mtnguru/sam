@@ -1,18 +1,18 @@
-uuid: e9382349-d98a-4275-925e-e6e2f2ded6ae
+uuid: ed782f87-26ca-45ef-8319-7877bdaeb398
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_photographer
+    - field.storage.media.field_author
     - media_entity.bundle.image
-id: media.image.field_photographer
-field_name: field_photographer
+id: media.image.field_author
+field_name: field_author
 entity_type: media
 bundle: image
 label: Photographer
-description: 'The person that took this picture.'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,5 +24,5 @@ settings:
     target_bundles: null
     sort:
       field: _none
-    auto_create: true
+    auto_create: false
 field_type: entity_reference

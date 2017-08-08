@@ -1,0 +1,22 @@
+uuid: fb924567-8dc6-4f7d-b61d-63c013646f3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_description
+    - media_entity.bundle.instagram
+  module:
+    - text
+id: media.instagram.field_description
+field_name: field_description
+entity_type: media
+bundle: instagram
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

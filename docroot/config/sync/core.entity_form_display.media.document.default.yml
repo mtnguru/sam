@@ -3,14 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.document.field_articles
     - field.field.media.document.field_author
+    - field.field.media.document.field_create_date
+    - field.field.media.document.field_description
     - field.field.media.document.field_document
     - field.field.media.document.field_document_size
+    - field.field.media.document.field_groups
     - field.field.media.document.field_media_in_library
     - field.field.media.document.field_mime_type
+    - field.field.media.document.field_topics
     - media_entity.bundle.document
   module:
+    - datetime
     - file
+    - text
     - workbench_moderation
 _core:
   default_config_hash: cJuFx19N5_sxWYHHlmO3RQGGsc47AjZ5a1HfNN2fOzc
@@ -19,7 +26,56 @@ targetEntityType: media
 bundle: document
 mode: default
 content:
+  field_articles:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_author:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_create_date:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description:
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_document:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_groups:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_topics:
     weight: 6
     settings:
       match_operator: CONTAINS
@@ -28,36 +84,31 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_document:
-    weight: 0
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-    type: file_generic
-    region: content
-  field_media_in_library:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 3
-    third_party_settings: {  }
-    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     region: content
   name:
     type: string_textfield
-    weight: 2
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
   field_document_size: true
+  field_media_in_library: true
   field_mime_type: true
-  uid: true

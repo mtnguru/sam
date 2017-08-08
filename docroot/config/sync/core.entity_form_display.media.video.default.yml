@@ -3,10 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.video.field_articles
+    - field.field.media.video.field_author
+    - field.field.media.video.field_create_date
+    - field.field.media.video.field_description
+    - field.field.media.video.field_groups
     - field.field.media.video.field_media_in_library
     - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_topics
     - media_entity.bundle.video
   module:
+    - datetime
+    - text
     - video_embed_field
     - workbench_moderation
 _core:
@@ -16,12 +24,47 @@ targetEntityType: media
 bundle: video
 mode: default
 content:
-  field_media_in_library:
-    type: boolean_checkbox
-    weight: 1
+  field_articles:
+    weight: 9
     settings:
-      display_label: true
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_author:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_create_date:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description:
+    weight: 6
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_groups:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_media_video_embed_field:
     type: video_embed_field_textfield
@@ -29,9 +72,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_topics:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -44,8 +96,11 @@ content:
     third_party_settings: {  }
     region: content
   preview:
-    weight: null
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
+  field_media_in_library: true
   uid: true

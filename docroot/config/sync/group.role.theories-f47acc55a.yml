@@ -1,0 +1,17 @@
+uuid: 6ab847f7-cd8c-46de-8a46-c7f0a90b7952
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.media_creator
+id: theories-f47acc55a
+label: 'Media Creator'
+weight: -5
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

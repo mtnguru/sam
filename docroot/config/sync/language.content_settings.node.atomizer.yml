@@ -1,0 +1,11 @@
+uuid: f5a5fa36-6ac0-42c0-9ddf-599d4a235ffa
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.atomizer
+id: node.atomizer
+target_entity_type_id: node
+target_bundle: atomizer
+default_langcode: site_default
+language_alterable: false

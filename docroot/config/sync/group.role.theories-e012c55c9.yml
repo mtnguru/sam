@@ -1,0 +1,17 @@
+uuid: c92c6e79-2455-4ef7-894f-0d8597c4daa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.book_reviewer
+id: theories-e012c55c9
+label: 'Book page Reviewer'
+weight: 6
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.embedded
+    - field.field.media.image.field_articles
+    - field.field.media.image.field_author
     - field.field.media.image.field_description
     - field.field.media.image.field_dimensions
     - field.field.media.image.field_geo_location
+    - field.field.media.image.field_groups
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.field_photographer
-    - field.field.media.image.field_production_date
+    - field.field.media.image.field_topics
     - field.field.media.image.image
     - image.style.medium
     - media_entity.bundle.image
@@ -33,12 +35,14 @@ content:
     region: content
 hidden:
   created: true
+  field_articles: true
+  field_author: true
   field_description: true
   field_dimensions: true
   field_geo_location: true
+  field_groups: true
   field_media_in_library: true
-  field_photographer: true
-  field_production_date: true
+  field_topics: true
   langcode: true
   name: true
   thumbnail: true

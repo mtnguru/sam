@@ -1,0 +1,14 @@
+uuid: b3663338-04a7-4683-9c8b-c4cb73c68bc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.atomizer_reviewer
+  module:
+    - user
+id: user_remove_role_action.atomizer_reviewer
+label: 'Remove the Atomizer Reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: atomizer_reviewer

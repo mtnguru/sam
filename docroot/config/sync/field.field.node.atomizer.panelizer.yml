@@ -1,0 +1,21 @@
+uuid: 6ad29c6c-2536-4429-8648-ccc2f65f6e8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.panelizer
+    - node.type.atomizer
+  module:
+    - panelizer
+id: node.atomizer.panelizer
+field_name: panelizer
+entity_type: node
+bundle: atomizer
+label: Panelizer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: panelizer

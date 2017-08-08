@@ -1,0 +1,17 @@
+uuid: 44fa44fc-79cc-4cf2-901f-c8f3e159672b
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.page_creator
+id: theories-09fde3543
+label: 'Page Creator'
+weight: 9
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

@@ -1,0 +1,29 @@
+uuid: f346a821-9f47-471e-8878-d3921e9b76f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.atomizer.body
+    - node.type.atomizer
+  module:
+    - text
+    - user
+id: node.atomizer.teaser
+targetEntityType: node
+bundle: atomizer
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

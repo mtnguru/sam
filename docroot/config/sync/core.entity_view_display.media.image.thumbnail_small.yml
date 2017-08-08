@@ -1,0 +1,48 @@
+uuid: 5b6f344e-90b6-4795-9f2f-d9f1757e3efa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumbnail_small
+    - field.field.media.image.field_articles
+    - field.field.media.image.field_author
+    - field.field.media.image.field_description
+    - field.field.media.image.field_dimensions
+    - field.field.media.image.field_geo_location
+    - field.field.media.image.field_groups
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_topics
+    - field.field.media.image.image
+    - media_entity.bundle.image
+  module:
+    - imager
+_core:
+  default_config_hash: Zn9LsLt7n0fzyEwtBMqioYJzhnU9RvIcfVef1gs51-Y
+id: media.image.thumbnail_small
+targetEntityType: media
+bundle: image
+mode: thumbnail_small
+content:
+  image:
+    type: imager_formatter
+    weight: 0
+    label: hidden
+    settings:
+      imager_style: thumbnail_75_x_75
+      imager_mode: popup
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_articles: true
+  field_author: true
+  field_description: true
+  field_dimensions: true
+  field_geo_location: true
+  field_groups: true
+  field_media_in_library: true
+  field_topics: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

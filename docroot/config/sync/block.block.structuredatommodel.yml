@@ -1,0 +1,29 @@
+uuid: a39fcbcf-9db7-4500-88ff-6dd05cb0633d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.structured-atom-model
+  module:
+    - system
+  theme:
+    - sa_neato
+id: structuredatommodel
+theme: sa_neato
+region: sidebar_first
+weight: -10
+provider: null
+plugin: 'system_menu_block:structured-atom-model'
+settings:
+  id: 'system_menu_block:structured-atom-model'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: "/sam\r\n/sam/*\r\n"
+    negate: false
+    context_mapping: {  }

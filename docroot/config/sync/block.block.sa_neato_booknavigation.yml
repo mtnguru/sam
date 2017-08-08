@@ -11,13 +11,13 @@ dependencies:
     - sa_neato
 id: sa_neato_booknavigation
 theme: sa_neato
-region: sidebar_second
-weight: -10
+region: sidebar_first
+weight: -11
 provider: null
 plugin: book_navigation
 settings:
   id: book_navigation
-  label: 'Book Navigation'
+  label: 'Structured Atom Model Theory'
   provider: book
   label_display: visible
   block_mode: 'all pages'
@@ -31,8 +31,8 @@ visibility:
       user: '@user.current_user_context:current_user'
   request_path:
     id: request_path
-    pages: "/atomizer/*\r\n/media-gallery\r\n/atom/*"
-    negate: true
+    pages: /sam
+    negate: false
     context_mapping: {  }
   'entity_bundle:group':
     id: 'entity_bundle:group'

@@ -4,16 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.imager_info
+    - field.field.media.image.field_articles
+    - field.field.media.image.field_author
     - field.field.media.image.field_description
     - field.field.media.image.field_dimensions
     - field.field.media.image.field_geo_location
+    - field.field.media.image.field_groups
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.field_photographer
-    - field.field.media.image.field_production_date
+    - field.field.media.image.field_topics
     - field.field.media.image.image
     - media_entity.bundle.image
   module:
-    - datetime
     - text
 _core:
   default_config_hash: Zn9LsLt7n0fzyEwtBMqioYJzhnU9RvIcfVef1gs51-Y
@@ -37,23 +38,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_photographer:
-    weight: 3
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_production_date:
-    weight: 2
-    label: inline
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   name:
     type: string
     weight: 0
@@ -64,8 +48,12 @@ content:
     region: content
 hidden:
   created: true
+  field_articles: true
+  field_author: true
   field_geo_location: true
+  field_groups: true
   field_media_in_library: true
+  field_topics: true
   image: true
   langcode: true
   thumbnail: true

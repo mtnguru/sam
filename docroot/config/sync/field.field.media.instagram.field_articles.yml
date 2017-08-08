@@ -1,0 +1,28 @@
+uuid: 663aa03c-5088-452c-8a68-06cad425ed48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_articles
+    - media_entity.bundle.instagram
+    - node.type.article
+id: media.instagram.field_articles
+field_name: field_articles
+entity_type: media
+bundle: instagram
+label: Articles
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,15 @@
+uuid: 5592cb44-7b17-498b-8392-dbae3318fb00
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail_75_x_75
+label: 'Thumbnail - 75 x 75'
+effects:
+  b9482f69-b4c8-417d-857c-aba7c77e4fdd:
+    uuid: b9482f69-b4c8-417d-857c-aba7c77e4fdd
+    id: image_scale
+    weight: 1
+    data:
+      width: 75
+      height: 75
+      upscale: false

@@ -1,0 +1,28 @@
+uuid: cf658213-f906-49e1-9a61-168610b798bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_author
+    - media_entity.bundle.video
+id: media.video.field_author
+field_name: field_author
+entity_type: media
+bundle: video
+label: Author
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

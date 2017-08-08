@@ -1,0 +1,22 @@
+uuid: 31db80c4-5a1c-473e-9de4-a057d19a882c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.atomizer
+id: node.atomizer.promote
+field_name: promote
+entity_type: node
+bundle: atomizer
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

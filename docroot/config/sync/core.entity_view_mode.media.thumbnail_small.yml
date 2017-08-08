@@ -1,0 +1,14 @@
+uuid: 4e480668-95db-4ac3-9cf7-d1de5f066fd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media_entity
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.thumbnail_small
+label: 'Thumbnail Small'
+targetEntityType: media
+cache: true

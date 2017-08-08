@@ -1,0 +1,15 @@
+uuid: 1872123c-18e6-4ff5-9e6d-081087b3cbce
+langcode: en
+status: true
+dependencies: {  }
+id: atomizer_reviewer
+label: 'Atomizer Reviewer'
+weight: 12
+is_admin: null
+permissions:
+  - 'delete any atomizer content'
+  - 'edit any atomizer content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_published transition'

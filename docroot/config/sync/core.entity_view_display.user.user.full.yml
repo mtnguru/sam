@@ -1,0 +1,113 @@
+uuid: fcf5a42b-ae52-4b0a-a071-541e9d138305
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.full
+    - field.field.user.user.field_address
+    - field.field.user.user.field_biography
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_linkedin
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_picture
+    - field.field.user.user.field_website
+    - image.style.medium
+  module:
+    - address
+    - image
+    - link
+    - telephone
+    - text
+    - user
+id: user.user.full
+targetEntityType: user
+bundle: user
+mode: full
+content:
+  field_address:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_biography:
+    weight: 5
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_first_name:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_last_name:
+    type: string
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_linkedin:
+    weight: 4
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_phone:
+    weight: 3
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_picture:
+    weight: 8
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_website:
+    weight: 7
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  masquerade:
+    weight: 50
+    region: content
+  member_for:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  realname:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

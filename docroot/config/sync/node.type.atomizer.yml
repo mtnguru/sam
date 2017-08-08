@@ -1,0 +1,19 @@
+uuid: 9bc2a352-b56c-4514-a347-196db1507def
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - top
+    parent: 'main:'
+name: Atomizer
+type: atomizer
+description: 'Page which displays atomizers.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

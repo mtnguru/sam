@@ -1,6 +1,6 @@
 uuid: 25726c07-dfed-40fc-a6a1-dce829972c13
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.content_recent
@@ -14,7 +14,7 @@ dependencies:
 id: sa_neato_views_block__content_recent_block_1
 theme: sa_neato
 region: sidebar_second
-weight: -7
+weight: -11
 provider: null
 plugin: 'views_block:content_recent-block_1'
 settings:

@@ -10,15 +10,15 @@ dependencies:
     - sa_neato
 id: useraccountmenu
 theme: sa_neato
-region: footer_bottom
-weight: 0
+region: footer_top
+weight: -11
 provider: null
 plugin: 'system_menu_block:account'
 settings:
   id: 'system_menu_block:account'
-  label: 'User account menu'
+  label: Account
   provider: system
-  label_display: '0'
+  label_display: visible
   level: 1
   depth: 0
 visibility: {  }

@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_articles
+    - field.field.media.image.field_author
+    - field.field.media.image.field_create_date
     - field.field.media.image.field_description
     - field.field.media.image.field_dimensions
     - field.field.media.image.field_geo_location
     - field.field.media.image.field_groups
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.field_photographer
-    - field.field.media.image.field_production_date
     - field.field.media.image.field_topics
     - field.field.media.image.image
     - image.style.thumbnail_100x100
@@ -36,6 +36,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_author:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_create_date:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_description:
     weight: 4
@@ -91,21 +106,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_photographer:
-    weight: 2
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_production_date:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_topics:
     weight: 9

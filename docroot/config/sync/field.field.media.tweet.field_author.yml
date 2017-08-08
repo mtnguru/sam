@@ -1,0 +1,28 @@
+uuid: b4a6173e-8d17-4fc9-a4c9-fadd2597c09e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_author
+    - media_entity.bundle.tweet
+id: media.tweet.field_author
+field_name: field_author
+entity_type: media
+bundle: tweet
+label: Author
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

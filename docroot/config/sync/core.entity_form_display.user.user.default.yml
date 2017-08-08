@@ -10,7 +10,9 @@ dependencies:
     - field.field.user.user.field_linkedin
     - field.field.user.user.field_phone
     - field.field.user.user.field_picture
+    - field.field.user.user.field_title
     - field.field.user.user.field_website
+    - image.style.thumbnail
   module:
     - address
     - image
@@ -30,19 +32,19 @@ content:
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
-    weight: 9
+    weight: 10
     settings:
       default_country: null
     third_party_settings: {  }
     type: address_default
     region: content
   field_biography:
-    weight: 8
+    weight: 9
     settings:
       rows: 9
       summary_rows: 3
@@ -67,7 +69,7 @@ content:
     type: string_textfield
     region: content
   field_linkedin:
-    weight: 7
+    weight: 8
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -75,7 +77,7 @@ content:
     type: link_default
     region: content
   field_phone:
-    weight: 5
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -83,14 +85,22 @@ content:
     region: content
   field_picture:
     type: image_image
-    weight: 3
+    weight: 4
     settings:
       preview_image_style: thumbnail
       progress_indicator: throbber
     third_party_settings: {  }
     region: content
+  field_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_website:
-    weight: 6
+    weight: 7
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -98,18 +108,18 @@ content:
     type: link_default
     region: content
   language:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     region: content
   timezone:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

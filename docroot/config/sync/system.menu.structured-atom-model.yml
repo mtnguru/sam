@@ -1,0 +1,8 @@
+uuid: bebacefd-e197-44ce-8fa2-245c1c873c44
+langcode: en
+status: true
+dependencies: {  }
+id: structured-atom-model
+label: 'Structured Atom Model'
+description: ''
+locked: false

@@ -1,0 +1,28 @@
+uuid: 3d3e144c-ee53-46fd-bbee-1d372302178b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_groups
+    - group.type.theories
+    - media_entity.bundle.video
+id: media.video.field_groups
+field_name: field_groups
+entity_type: media
+bundle: video
+label: Groups
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:group'
+  handler_settings:
+    target_bundles:
+      theories: theories
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

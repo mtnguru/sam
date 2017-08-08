@@ -1,0 +1,17 @@
+uuid: 56ed202b-97bb-4a25-adfc-581d9eff3800
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.book_creator
+id: theories-8f4a900af
+label: 'Book page Creator'
+weight: 5
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

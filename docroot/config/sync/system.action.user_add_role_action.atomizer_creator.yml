@@ -1,0 +1,14 @@
+uuid: 261884fb-f272-46fc-ae78-0a20ca427f8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.atomizer_creator
+  module:
+    - user
+id: user_add_role_action.atomizer_creator
+label: 'Add the Atomizer Creator role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: atomizer_creator

@@ -1,0 +1,22 @@
+uuid: c461b071-cf0b-4d76-b830-5b36c270aa0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_description
+    - media_entity.bundle.tweet
+  module:
+    - text
+id: media.tweet.field_description
+field_name: field_description
+entity_type: media
+bundle: tweet
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

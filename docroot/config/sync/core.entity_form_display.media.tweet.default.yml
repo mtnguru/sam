@@ -4,9 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.media.tweet.embed_code
+    - field.field.media.tweet.field_articles
+    - field.field.media.tweet.field_author
+    - field.field.media.tweet.field_create_date
+    - field.field.media.tweet.field_description
+    - field.field.media.tweet.field_groups
     - field.field.media.tweet.field_media_in_library
+    - field.field.media.tweet.field_topics
     - media_entity.bundle.tweet
   module:
+    - datetime
+    - text
     - workbench_moderation
 _core:
   default_config_hash: ptBSQ5lrg7HxikqhFDXWCd-f7Pvz5s9HCpj_h4udD_o
@@ -23,16 +31,60 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-  field_media_in_library:
-    type: boolean_checkbox
-    weight: 1
+  field_articles:
+    weight: 8
     settings:
-      display_label: true
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_author:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_create_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description:
+    weight: 5
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_groups:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_topics:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -45,8 +97,11 @@ content:
     third_party_settings: {  }
     region: content
   preview:
-    weight: null
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
+  field_media_in_library: true
   uid: true

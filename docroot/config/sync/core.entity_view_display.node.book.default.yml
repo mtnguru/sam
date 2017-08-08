@@ -6,9 +6,11 @@ dependencies:
     - core.entity_view_display.comment.content_comment.default
     - field.field.node.book.body
     - field.field.node.book.field_comments
+    - field.field.node.book.field_image
     - node.type.book
   module:
     - comment
+    - imager
     - panelizer
     - text
     - user
@@ -28,12 +30,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_comments:
-    weight: 102
+    weight: 3
     label: above
     settings:
       view_mode: default
@@ -41,10 +43,19 @@ content:
     third_party_settings: {  }
     type: comment_default
     region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      imager_style: x_large
+      imager_mode: popup
+    third_party_settings: {  }
+    type: imager_formatter
+    region: content
   links:
-    weight: 101
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   langcode: true

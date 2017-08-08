@@ -12,8 +12,8 @@ dependencies:
     - user
 third_party_settings:
   panelizer:
-    enable: false
-    custom: false
+    enable: true
+    custom: true
     displays:
       default:
         blocks: {  }
@@ -57,7 +57,7 @@ third_party_settings:
         pattern: panelizer
         builder: ipe
         static_context: {  }
-    allow: false
+    allow: true
     default: default
 _core:
   default_config_hash: bDWtHHGb2vFEchz7IRJEpvFvIgD2_4VLFq3SLyOZG6Y

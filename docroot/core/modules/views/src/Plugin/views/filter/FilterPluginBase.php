@@ -839,30 +839,36 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
       return;
     }
 
-    // Build a common container for all exposed options of this filter.
-    $form[$this->options['id']] = array(
-      '#type' => 'container',
-      '#attributes' => array(
-        'class' => 'filter-wrapper form--inline clearfix',
-      ),
-      'label' => array(
-        '#type' => 'label',
-        '#title' => $this->options['expose']['label'],
-      ),
-    );
+    $twocols = false;
+    $id = $this->view->id();
+    if ($id == 'az_atom') {
+      $twocols = TRUE;
+      // Build a common container for all exposed options of this filter.
+      $form[$this->options['id']] = array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => 'filter-wrapper form--inline clearfix',
+        ),
+        'label' => array(
+          '#type' => 'label',
+          '#title' => $this->options['expose']['label'],
+        ),
+      );
+    }
 
     // Build the exposed form, when its based on an operator.
     if (!empty($this->options['expose']['use_operator']) && !empty($this->options['expose']['operator_id'])) {
       $operator = $this->options['expose']['operator_id'];
       $this->operatorForm($form, $form_state);
 
-//    $form[$operator] = $form['operator'];
-      unset($form['operator']['#title']);
-      $form[$this->options['id']][$operator] = $form['operator'];
-
-//    $this->exposedTranslate($form[$operator], 'operator');
-      $this->exposedTranslate($form[$this->options['id']][$operator], 'operator');
-
+      if ($twocols) {
+        unset($form['operator']['#title']);
+        $form[$this->options['id']][$operator] = $form['operator'];
+        $this->exposedTranslate($form[$this->options['id']][$operator], 'operator');
+      } else {
+        $form[$operator] = $form['operator'];
+        $this->exposedTranslate($form[$operator], 'operator');
+      }
       unset($form['operator']);
     }
 
@@ -870,24 +876,33 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     if (!empty($this->options['expose']['identifier'])) {
       $value = $this->options['expose']['identifier'];
       $this->valueForm($form, $form_state);
-//    $form[$value] = $form['value'];
-      $form[$this->options['id']][$value] = $form['value'];
 
-//    if (isset($form[$value]['#title']) && !empty($form[$value]['#type']) && $form[$value]['#type'] != 'checkbox') {
-//      unset($form[$value]['#title']);
-//    }
-      unset($form[$this->options['id']][$value]['#title']);
+      if ($twocols) {
+        $form[$this->options['id']][$value] = $form['value'];
+        unset($form[$this->options['id']][$value]['#title']);
+        $this->exposedTranslate($form[$value], 'value');
 
-      $this->exposedTranslate($form[$value], 'value');
+        if (!empty($form['#type']) && ($form['#type'] == 'checkboxes' || ($form['#type'] == 'select' && !empty($form['#multiple'])))) {
+          unset($form[$this->options['id']][$value]['#default_value']);
+        }
 
-      if (!empty($form['#type']) && ($form['#type'] == 'checkboxes' || ($form['#type'] == 'select' && !empty($form['#multiple'])))) {
-//      unset($form[$value]['#default_value']);
-        unset($form[$this->options['id']][$value]['#default_value']);
+        if (!empty($form['#type']) && $form['#type'] == 'select' && empty($form['#multiple'])) {
+          $form[$this->options['id']][$value]['#default_value'] = 'All';
+        }
       }
+      else {
+        $form[$value] = $form['value'];
+        if (isset($form[$value]['#title']) && !empty($form[$value]['#type']) && $form[$value]['#type'] != 'checkbox') {
+          unset($form[$value]['#title']);
+        }
+        $this->exposedTranslate($form[$value], 'value');
+        if (!empty($form['#type']) && ($form['#type'] == 'checkboxes' || ($form['#type'] == 'select' && !empty($form['#multiple'])))) {
+          unset($form[$value]['#default_value']);
+        }
 
-      if (!empty($form['#type']) && $form['#type'] == 'select' && empty($form['#multiple'])) {
-//      $form[$value]['#default_value'] = 'All';
-        $form[$this->options['id']][$value]['#default_value'] = 'All';
+        if (!empty($form['#type']) && $form['#type'] == 'select' && empty($form['#multiple'])) {
+          $form[$value]['#default_value'] = 'All';
+        }
       }
 
       if ($value != 'value') {

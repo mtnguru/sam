@@ -3,17 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_photographer
-    - field.storage.media.field_production_date
+    - field.storage.media.field_author
+    - field.storage.media.field_create_date
     - field.storage.media.image
-    - image.style.thumbnail_150x150
     - media_entity.bundle.image
     - node.type.article
   module:
     - datetime
-    - image
+    - imager
     - media_entity
-    - node
     - user
 id: az_media_block
 label: 'AZ Media Block'
@@ -192,76 +190,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: imager_formatter
           settings:
-            image_style: thumbnail_150x150
-            image_link: content
+            imager_style: thumbnail_360x240
+            imager_mode: popup
           group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_production_date:
-          id: field_production_date
-          table: media__field_production_date
-          field: field_production_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_time_ago
-          settings:
-            future_format: '@interval hence'
-            past_format: '@interval ago'
-            granularity: 2
-          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -338,10 +271,10 @@ display:
           entity_type: media
           entity_field: mid
           plugin_id: field
-        field_photographer:
-          id: field_photographer
-          table: media__field_photographer
-          field: field_photographer
+        field_author:
+          id: field_author
+          table: media__field_author
+          field: field_author
           relationship: none
           group_type: group
           admin_label: ''
@@ -401,6 +334,136 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: media
+          entity_field: bundle
+          plugin_id: field
+        field_create_date:
+          id: field_create_date
+          table: media__field_create_date
+          field: field_create_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_time_ago
+          settings:
+            future_format: '@interval hence'
+            past_format: '@interval ago'
+            granularity: 2
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -412,7 +475,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-container\"   >{{ image }}</div>\n<div class=\"text-container\">\n    <span class=\"article-creator\">{{ field_photographer }}</span>\n    <span class=\"article-mid\"     >{{ mid }}</span>\n    <div class=\"article-date\"       > {{ field_production_date }}</div>\n    <div class=\"article-name\"     >{{ name }}</div>\n</div>"
+            text: "<div class=\"image-container\"   >{{ image }}</div>\n<div class=\"text-container\">\n    <span class=\"article-creator\">{{ field_author }}</span>\n    <span class=\"article-mid\"     >{{ bundle }}-{{ mid }}</span>\n    <div class=\"article-date\"       > {{ field_create_date }}</div>\n    <div class=\"article-name\"     >{{ name }}</div> \n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -472,10 +535,10 @@ display:
           entity_field: bundle
           plugin_id: bundle
       sorts:
-        field_production_date_value:
-          id: field_production_date_value
-          table: media__field_production_date
-          field: field_production_date_value
+        created:
+          id: created
+          table: media_field_data
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
@@ -484,7 +547,9 @@ display:
           expose:
             label: ''
           granularity: second
-          plugin_id: datetime
+          entity_type: media
+          entity_field: created
+          plugin_id: date
       title: 'Media - Article'
       header: {  }
       footer: {  }
@@ -500,12 +565,12 @@ display:
         - url.query_args
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_photographer'
-        - 'config:field.storage.media.field_production_date'
+        - 'config:field.storage.media.field_author'
+        - 'config:field.storage.media.field_create_date'
         - 'config:field.storage.media.image'
-  block_1:
+  media_block_all:
     display_plugin: block
-    id: block_1
+    id: media_block_all
     display_title: 'All - Block'
     position: 2
     display_options:
@@ -525,12 +590,12 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_photographer'
-        - 'config:field.storage.media.field_production_date'
+        - 'config:field.storage.media.field_author'
+        - 'config:field.storage.media.field_create_date'
         - 'config:field.storage.media.image'
-  block_2:
+  media_block_article:
     display_plugin: block
-    id: block_2
+    id: media_block_article
     display_title: 'Article - Block'
     position: 3
     display_options:
@@ -590,96 +655,6 @@ display:
         - url.query_args
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_photographer'
-        - 'config:field.storage.media.field_production_date'
-        - 'config:field.storage.media.image'
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: 'All - Page'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: media-gallery
-      display_description: ''
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - user.permissions
-      tags:
-        - 'config:field.storage.media.field_photographer'
-        - 'config:field.storage.media.field_production_date'
-        - 'config:field.storage.media.image'
-  page_2:
-    display_plugin: page
-    id: page_2
-    display_title: 'Article - Page'
-    position: 5
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      path: media-gallery/article/%mid
-      relationships:
-        field_articles:
-          id: field_articles
-          table: media__field_articles
-          field: field_articles
-          relationship: none
-          group_type: group
-          admin_label: 'field_articles: Content'
-          required: false
-          plugin_id: standard
-      defaults:
-        relationships: false
-        arguments: false
-      arguments:
-        field_articles_target_id:
-          id: field_articles_target_id
-          table: media__field_articles
-          field: field_articles_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          default_action: summary
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_argument_type: fixed
-          default_argument_options:
-            argument: ''
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            items_per_page: 25
-            override: false
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: true
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          break_phrase: false
-          not: false
-          plugin_id: numeric
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user.permissions
-      tags:
-        - 'config:field.storage.media.field_photographer'
-        - 'config:field.storage.media.field_production_date'
+        - 'config:field.storage.media.field_author'
+        - 'config:field.storage.media.field_create_date'
         - 'config:field.storage.media.image'

@@ -1,0 +1,21 @@
+uuid: a8203981-c703-44c5-b969-9079cd1af249
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_create_date
+    - media_entity.bundle.video
+  module:
+    - datetime
+id: media.video.field_create_date
+field_name: field_create_date
+entity_type: media
+bundle: video
+label: 'Create Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,14 @@
+uuid: 0dc3cbc4-3308-4939-9649-a23c0896e242
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.atomizer_creator
+  module:
+    - user
+id: user_remove_role_action.atomizer_creator
+label: 'Remove the Atomizer Creator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: atomizer_creator

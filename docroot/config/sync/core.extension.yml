@@ -3,6 +3,8 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   atomizer: 0
+  az_article: 0
+  az_media: 0
   better_exposed_filters: 0
   block: 0
   block_content: 0
@@ -30,7 +32,9 @@ module:
   entity_embed: 0
   entity_reference: 0
   entity_reference_revisions: 0
+  examples: 0
   exif: 0
+  fapi_example: 0
   field: 0
   field_collection: 0
   field_group: 0
@@ -42,6 +46,7 @@ module:
   geolocation: 0
   glossify: 0
   gnode: 0
+  grolesync: 0
   group: 0
   group_test_views: 0
   help: 0
@@ -64,6 +69,7 @@ module:
   lightning_media_video: 0
   lightning_workflow: 0
   link: 0
+  masquerade: 0
   media_entity: 0
   media_entity_browser: 0
   media_entity_document: 0
@@ -119,7 +125,6 @@ theme:
   sa_seven: 0
   neato: 0
   sa_neato: 0
-  zircon: 0
   sa_zircon: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU

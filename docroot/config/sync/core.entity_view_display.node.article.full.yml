@@ -40,16 +40,16 @@ third_party_settings:
             region: contentmain
             uuid: cbf647ba-1a3d-4a9e-ac9f-7b53d3c347ec
             weight: 1
-          0c7804c9-0091-4af1-8a64-f84b82b4fba3:
-            id: 'views_block:az_media_block-block_2'
-            label: Media
+          3b107c60-3e91-41de-82dd-e0df7882fb5a:
+            id: 'views_block:az_media_block-media_block_article'
+            label: 'Media - Article'
             provider: views
             label_display: visible
-            views_label: Media
+            views_label: 'Media - Article'
             items_per_page: none
             context_mapping: {  }
             region: sidebar
-            uuid: 0c7804c9-0091-4af1-8a64-f84b82b4fba3
+            uuid: 3b107c60-3e91-41de-82dd-e0df7882fb5a
             weight: 1
         id: panels_variant
         label: Default

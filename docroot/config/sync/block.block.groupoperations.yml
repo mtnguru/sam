@@ -9,7 +9,7 @@ dependencies:
     - sa_neato
 id: groupoperations
 theme: sa_neato
-region: sidebar_second
+region: sidebar_first
 weight: -9
 provider: null
 plugin: group_operations

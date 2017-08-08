@@ -1,0 +1,22 @@
+uuid: 7f350adf-c353-44e0-bf3f-67075ad82740
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_description
+    - media_entity.bundle.document
+  module:
+    - text
+id: media.document.field_description
+field_name: field_description
+entity_type: media
+bundle: document
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

@@ -1,0 +1,17 @@
+uuid: 742b3f82-0785-4d2f-a7f0-4e9197960931
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.advisor
+id: theories-6ee827f25
+label: Advisor
+weight: -11
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

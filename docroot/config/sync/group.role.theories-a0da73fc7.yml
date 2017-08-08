@@ -1,0 +1,17 @@
+uuid: 8e6f8bf9-03ab-4695-a629-e22fde41cfe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.theories
+  enforced:
+    config:
+      - user.role.page_reviewer
+id: theories-a0da73fc7
+label: 'Page Reviewer'
+weight: 10
+internal: true
+audience: outsider
+group_type: theories
+permissions_ui: false
+permissions: {  }

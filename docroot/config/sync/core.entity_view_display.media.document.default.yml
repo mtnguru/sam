@@ -3,17 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.document.field_articles
     - field.field.media.document.field_author
+    - field.field.media.document.field_create_date
+    - field.field.media.document.field_description
     - field.field.media.document.field_document
     - field.field.media.document.field_document_size
+    - field.field.media.document.field_groups
     - field.field.media.document.field_media_in_library
     - field.field.media.document.field_mime_type
+    - field.field.media.document.field_topics
     - image.style.thumbnail_100x100
     - media_entity.bundle.document
   module:
+    - datetime
     - file
     - image
-    - user
+    - text
 _core:
   default_config_hash: RB_e7jnyg4lW5G9VkkpsZn1zR6EwiEPtd5OM3_5FqQk
 id: media.document.default
@@ -21,26 +27,40 @@ targetEntityType: media
 bundle: document
 mode: default
 content:
-  created:
-    label: hidden
-    type: timestamp
-    weight: 0
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-    region: content
-  field_author:
-    weight: 5
-    label: above
+  field_articles:
+    weight: 9
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_author:
+    weight: 6
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_create_date:
+    weight: 5
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_document:
-    weight: 2
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -48,45 +68,56 @@ content:
     region: content
   field_document_size:
     weight: 4
-    label: above
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
     region: content
+  field_groups:
+    weight: 7
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_mime_type:
     weight: 3
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_topics:
+    weight: 8
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   name:
     label: hidden
     type: string
-    weight: -5
+    weight: 0
     settings:
       link_to_entity: false
     third_party_settings: {  }
     region: content
   thumbnail:
     type: image
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       image_style: thumbnail_100x100
       image_link: ''
     third_party_settings: {  }
     region: content
-  uid:
-    label: hidden
-    type: author
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
+  created: true
   field_media_in_library: true
   langcode: true
+  uid: true
