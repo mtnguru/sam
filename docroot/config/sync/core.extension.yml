@@ -4,6 +4,7 @@ module:
   admin_toolbar_tools: 0
   atomizer: 0
   az_article: 0
+  az_groups: 0
   az_media: 0
   better_exposed_filters: 0
   block: 0

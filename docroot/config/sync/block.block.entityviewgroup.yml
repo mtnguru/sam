@@ -9,7 +9,7 @@ dependencies:
 id: entityviewgroup
 theme: sa_neato
 region: header
-weight: 0
+weight: -10
 provider: null
 plugin: 'entity_view:group'
 settings:

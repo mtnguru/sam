@@ -1,0 +1,24 @@
+uuid: 1147b77a-bfca-48c9-9def-da56705dce6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.eu-geology
+  module:
+    - system
+  theme:
+    - sa_neato
+id: eugeology
+theme: sa_neato
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:eu-geology'
+settings:
+  id: 'system_menu_block:eu-geology'
+  label: 'EU Geology'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

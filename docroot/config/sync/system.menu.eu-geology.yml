@@ -1,0 +1,8 @@
+uuid: fb9bc308-9ce4-42cd-8a1f-fadbad7ed50f
+langcode: en
+status: true
+dependencies: {  }
+id: eu-geology
+label: 'Top - EU Geology'
+description: 'Articles pertaining to how electricity has shaped the geology of Earth and the Planets.'
+locked: false

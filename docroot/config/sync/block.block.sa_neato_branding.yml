@@ -11,7 +11,7 @@ _core:
 id: sa_neato_branding
 theme: sa_neato
 region: header
-weight: -8
+weight: -13
 provider: null
 plugin: system_branding_block
 settings:

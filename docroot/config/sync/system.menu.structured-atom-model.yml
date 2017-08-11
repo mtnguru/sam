@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: structured-atom-model
-label: 'Structured Atom Model'
-description: ''
+label: 'Top - Structured Atom Model'
+description: Geometry
 locked: false

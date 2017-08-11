@@ -1,0 +1,20 @@
+uuid: 161d6746-6257-443d-9e63-4568acdbe22e
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_groups
+  theme:
+    - sa_neato
+id: aztopnav
+theme: sa_neato
+region: header
+weight: 0
+provider: null
+plugin: az_top_nav
+settings:
+  id: az_top_nav
+  label: 'AZ top nav'
+  provider: az_groups
+  label_display: '0'
+visibility: {  }
