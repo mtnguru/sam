@@ -11,7 +11,7 @@ dependencies:
 id: structuredatommodel
 theme: sa_neato
 region: sidebar_first
-weight: -10
+weight: -12
 provider: null
 plugin: 'system_menu_block:structured-atom-model'
 settings:

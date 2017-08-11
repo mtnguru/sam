@@ -12,7 +12,7 @@ dependencies:
 id: sa_neato_booknavigation
 theme: sa_neato
 region: sidebar_first
-weight: -11
+weight: -13
 provider: null
 plugin: book_navigation
 settings:

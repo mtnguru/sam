@@ -19,12 +19,12 @@ use Drupal\Core\Menu;
  * Provides a 'Next Previous' block.
  *
  * @Block(
- *   id = "az_top_nav",
- *   admin_label = @Translation("AZ top nav"),
- *   category = @Translation("Atomizer")
+ *   id = "az_topnav",
+ *   admin_label = @Translation("AZ TopNav"),
+ *   category = @Translation("Atomizer"),
  * )
  */
-class az_groups extends BlockBase {
+class TopNav extends BlockBase {
 
   // @TODO move this into database with config form
   protected $sites = [
@@ -59,7 +59,7 @@ class az_groups extends BlockBase {
 
   public function build() {
     $currentMenu = NULL;
-    $host = str_replace('.', '-', \Drupal::request()->getHttpHost());
+    $host = \Drupal::request()->getHttpHost();
     foreach ($this->sites as $sitename => $site) {
       foreach ($site['hosts'] as $hostname) {
         if ($host == $hostname) {
@@ -72,7 +72,7 @@ class az_groups extends BlockBase {
           reset($expandedParents);
           $root = current($expandedParents);
           $parameters = new \Drupal\Core\Menu\MenuTreeParameters();
-          $parameters->setRoot($root);
+//        $parameters->setRoot($root);
           $parameters->setMaxDepth(3);
           $parameters->setMinDepth(1);
 
@@ -101,45 +101,3 @@ class az_groups extends BlockBase {
     return ['#markup' => 'No match to host: ' . $host];
   }
 }
-
-    /**** Original example
-    //Get node IDs from menu
-    $nids = array();
-    foreach($tree as $item){
-      $nids[] = $item->link->getUrlObject()->getRouteParameters()['node'];
-    }
-
-    //Load nodes & generate content from nodes
-    $nodes = (!empty($nids)) ? entity_load_multiple('node', $nids) : array();
-    if (!empty($nodes) && is_array($nodes)){
-      foreach($nodes as $key=>$val) {
-        $nodeContent = array(
-          '#prefix' => '<div class="block-child-page-menu">',
-          '#suffix' => '</div>'
-        );
-        $url = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$key);
-
-        //Get image thumbnail from content & use specified image style
-        if(null !== $val->get('field_thumbnail')->entity){
-          $imgPath = ($val->get('field_thumbnail')->entity->uri->value);
-          $imgCroppedPath = \Drupal\image\Entity\ImageStyle::load('basic_page_thumbnail')->buildUrl($imgPath);
-          $img = ($imgPath != '') ? '<img src="' . $imgCroppedPath . '" />' : '';
-        }
-        else {
-          $img = "";
-        }
-        $nodeContent['#markup'] = '<a href="'.$url.'">' .
-            '<h2>' . $val->getTitle() . '</h2>' .
-            $img .
-          '</a>';
-        $content[] = $nodeContent;
-      }
-    }else{
-      //Menu has no nodes
-      $content['#markup'] = '';
-    }
-    //Add cache & css library to block
-    $content['#cache'] = $cache;
-    $content["#attached"] = array('library' => array('child_pages_display/child_pages_display_css'));
-    return $content;
-  }  */
