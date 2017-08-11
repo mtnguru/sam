@@ -20,36 +20,72 @@
 #}
 {% import _self as menus %}
 
+{% if menu_name == 'eu-geology' or
+      menu_name == 'structured-atom-model' or
+      menu_name == 'ethereal-matters' %}
+  {% set topnav = true %}
+{% else %}
+  {% set topnav = false %}
+{% endif %}
+
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
+{{ menus.menu_links(items, attributes, 0, topnav) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level, topnav) %}
   {% import _self as menus %}
   {% if items %}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu') }}>
-    {% else %}
-      <ul class="menu">
-    {% endif %}
-    {% for item in items %}
-      {%
-        set classes = [
-          'menu-item',
-          item.is_expanded ? 'menu-item--expanded',
-          item.is_collapsed ? 'menu-item--collapsed',
-          item.in_active_trail ? 'menu-item--active-trail',
-        ]
-      %}
-      <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url) }}
+
+    {% if topnav %}
+      {% if menu_level == 0 %}
+        {% set classes = ['nav-link'] %}
+        <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+      {% else %}
+        {% set classes = [] %}
+        <ul class="submenu">
+      {% endif %}
+      {% for item in items %}
         {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          <li{{ item.attributes.addClass(classes | merge(['more'])).setAttribute('id', 'js-centered-more') }}>
+            {{ link(item.title, item.url) }}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, topnav) }}
+          </li>
+        {% else %}
+          <li{{ item.attributes.addClass(classes) }}>
+            {{ link(item.title, item.url) }}
+          </li>
         {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
+      {% endfor %}
+      </ul>
+
+    {% else %}
+
+      {% if menu_level == 0 %}
+        <ul{{ attributes.addClass('menu') }}>
+      {% else %}
+        <ul class="menu">
+      {% endif %}
+
+      {% for item in items %}
+        {%
+          set classes = [
+            'menu-item',
+            item.is_expanded ? 'menu-item--expanded',
+            item.is_collapsed ? 'menu-item--collapsed',
+            item.in_active_trail ? 'menu-item--active-trail',
+          ]
+        %}
+        <li{{ item.attributes.addClass(classes) }}>
+          {{ link(item.title, item.url) }}
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, topnav) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+
+      </ul>
+    {% endif %}
   {% endif %}
 {% endmacro %}

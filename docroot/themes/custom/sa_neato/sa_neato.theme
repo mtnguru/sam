@@ -5,6 +5,7 @@
  * Functions to support theming in the sa_neato theme.
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
@@ -37,6 +38,7 @@ function sa_neato_preprocess_html(&$variables) {
   else {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
+
 }
 
 /**
@@ -61,12 +63,105 @@ function sa_neato_preprocess(&$variables) {
 
 /**
  * Implements template_preprocess_page.
+ *
  * @param array $variables
  */
 function sa_neato_preprocess_page(&$variables) {
   $site_name = \Drupal::configFactory()->get('system.site')->get('name');
-  $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
-  $variables['em_linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
+  $variables['linked_site_name'] = [
+    '#type' => 'link',
+    '#title' => $site_name,
+    '#url' => Url::fromRoute('<front>')
+  ];
+  $variables['em_linked_site_name'] = [
+    '#type' => 'link',
+    '#title' => $site_name,
+    '#url' => Url::fromRoute('<front>')
+  ];
+}
+
+/**
+ * @param $variables
+ */
+function sa_neato_system_menu_block_top(&$variables) {
+  $sites = [
+    'em' => [
+      'hosts' => [
+        'etherealmatters.org',
+        'em',
+      ],
+      'name' => 'Ethereal Matters',
+      'theme' => 'ethereal-matters',
+      'menu' => 'ethereal-matters',
+    ],
+    'sam' => [
+      'hosts' => [
+        'structuredatom.org',
+        'atom',
+      ],
+      'name' => 'Structured Atom Model',
+      'theme' => 'structured-atom-model',
+      'menu' => 'structured-atom-model',
+    ],
+    'geo' => [
+      'hosts' => [
+        'eugeology.rocks',
+        'eg',
+      ],
+      'name' => 'EU Geology',
+      'theme' => 'eu-geology',
+      'menu' => 'eu-geology',
+    ],
+  ];
+
+  $currentMenu = null;
+  $host = str_replace('.','-',\Drupal::request()->getHttpHost());
+  foreach ($sites as $sitename => $site) {
+    foreach ($site['hosts'] as $hostname) {
+      if ($host == $hostname) {
+        // Apply a subtheme
+
+        // Load the appropriate menu
+        $menu_parameters = new \Drupal\Core\Menu\MenuTreeParameters();
+        $menu_parameters->setMaxDepth(2);
+//      $menu_parameters->setRoot($root_menu_item->getPluginId());
+//      $menu_parameters->excludeRoot();
+        // Get the tree.
+        $menu_tree_service = \Drupal::service('menu.link_tree');
+        $tree = $menu_tree_service->load($site['menu'], $menu_parameters);
+        // Apply some manipulators (checking the access, sorting).
+        $manipulators = [
+          ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
+          ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+          ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+        ];
+        $tree = $menu_tree_service->transform($tree, $manipulators);
+        // And the last step is to actually build the tree.
+        $variables['top_menu'] = $menu_tree_service->build($tree);
+        break;
+      }
+    }
+  }
+
+//$route_args = explode('/', str_replace('.','-',\Drupal::request()->getRequestUri()));
+//if ($route_args[1]) {
+//  switch ($route_args[1]) {
+//    case 'dashboard':
+//      break;
+//  }
+//}
+}
+
+/**
+ * Implements template_preprocess_page.
+ *
+ * @param array $variables
+ */
+function sa_neato_preprocess_block(&$variables) {
+  // Set top nav bar based on URL - structuredatom.org, eugeology.rocks, etc.
+  if ($variables['plugin_id'] == 'system_menu_block:top') {
+//  sa_neato_system_menu_block_top($variables);
+  }
 }
 
 /**
