@@ -1,0 +1,33 @@
+uuid: 40f69c83-6f33-4086-9ad5-a677b07b8cd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_members
+  module:
+    - ctools
+    - views
+  theme:
+    - sa_zircon
+id: sa_zircon_views_block__group_members_group_members
+theme: sa_zircon
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_block:group_members-group_members'
+settings:
+  id: 'views_block:group_members-group_members'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    bundles:
+      theories: theories
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

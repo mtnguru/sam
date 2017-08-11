@@ -1,0 +1,29 @@
+uuid: cc11a6cc-2fa9-4de7-a36f-03149e98901c
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - sa_zircon
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: sa_zircon_local_actions
+theme: sa_zircon
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

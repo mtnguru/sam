@@ -1,0 +1,32 @@
+uuid: e994fdb5-4964-4672-9699-63b3671d24b8
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.top
+  module:
+    - system
+    - user
+  theme:
+    - sa_zircon
+id: sa_zircon_topnavigation
+theme: sa_zircon
+region: header
+weight: -11
+provider: null
+plugin: 'system_menu_block:top'
+settings:
+  id: 'system_menu_block:top'
+  label: 'Top Navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

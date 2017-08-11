@@ -126,6 +126,8 @@ theme:
   sa_seven: 0
   neato: 0
   sa_neato: 0
+  zircon: 0
+  sa_zircon: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 profile: lightning

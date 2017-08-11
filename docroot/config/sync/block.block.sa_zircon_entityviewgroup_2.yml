@@ -1,0 +1,30 @@
+uuid: 9d78bcb7-d57a-45ce-b12d-702b7c25b674
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - sa_zircon
+id: sa_zircon_entityviewgroup_2
+theme: sa_zircon
+region: content
+weight: -10
+provider: null
+plugin: 'entity_view:group'
+settings:
+  id: 'entity_view:group'
+  label: 'Entity view (Group)'
+  provider: ctools
+  label_display: '0'
+  view_mode: hero
+  context_mapping:
+    entity: '@group.group_route_context:group'
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    bundles:
+      theories: theories
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

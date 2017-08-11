@@ -1,0 +1,24 @@
+uuid: 13e55332-0c40-4e63-b274-ee1fe3563bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.structured-atom-model
+  module:
+    - system
+  theme:
+    - sa_zircon
+id: sa_zircon_structuredatommodel_2
+theme: sa_zircon
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:structured-atom-model'
+settings:
+  id: 'system_menu_block:structured-atom-model'
+  label: 'Structured Atom Model'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

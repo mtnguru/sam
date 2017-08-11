@@ -1,0 +1,31 @@
+uuid: bbcc5616-2a05-4c5f-9974-0a597484772c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.az_my_groups
+  module:
+    - system
+    - views
+  theme:
+    - sa_zircon
+id: sa_zircon_views_block__az_my_groups_group_user
+theme: sa_zircon
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:az_my_groups-group_user'
+settings:
+  id: 'views_block:az_my_groups-group_user'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,43 @@
+uuid: c6a1a8e6-e16f-42b9-a795-32655776375b
+langcode: en
+status: true
+dependencies:
+  module:
+    - book
+    - ctools
+    - system
+    - user
+  theme:
+    - sa_zircon
+id: sa_zircon_booknavigation
+theme: sa_zircon
+region: sidebar_first
+weight: -11
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Structured Atom Model Theory'
+  provider: book
+  label_display: visible
+  block_mode: 'all pages'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: /sam
+    negate: false
+    context_mapping: {  }
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    bundles:
+      theories: theories
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

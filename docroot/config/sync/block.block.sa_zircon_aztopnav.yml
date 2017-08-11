@@ -1,0 +1,20 @@
+uuid: 85e4774c-24c2-46ea-be47-98c3ceec5d30
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_groups
+  theme:
+    - sa_zircon
+id: sa_zircon_aztopnav
+theme: sa_zircon
+region: header
+weight: 0
+provider: null
+plugin: az_top_nav
+settings:
+  id: az_top_nav
+  label: 'AZ top nav'
+  provider: az_groups
+  label_display: '0'
+visibility: {  }

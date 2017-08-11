@@ -1,0 +1,37 @@
+uuid: 98ef630f-e57c-4977-8c87-dd07978d6552
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - group
+  theme:
+    - sa_zircon
+id: sa_zircon_groupoperations
+theme: sa_zircon
+region: sidebar_first
+weight: -9
+provider: null
+plugin: group_operations
+settings:
+  id: group_operations
+  label: 'Group operations'
+  provider: group
+  label_display: visible
+  context_mapping:
+    group: '@group.group_route_context:group'
+visibility:
+  group_type:
+    id: group_type
+    group_types:
+      theories: theories
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    bundles:
+      theories: theories
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

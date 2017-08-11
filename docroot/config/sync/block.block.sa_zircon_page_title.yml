@@ -1,0 +1,20 @@
+uuid: d6764d11-add6-43ba-89a1-a96aa3b3b029
+langcode: en
+status: true
+dependencies:
+  theme:
+    - sa_zircon
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: sa_zircon_page_title
+theme: sa_zircon
+region: content
+weight: -9
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

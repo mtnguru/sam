@@ -1,0 +1,24 @@
+uuid: 4aa7a780-fb73-481d-b4b4-416115ef1d49
+langcode: en
+status: false
+dependencies:
+  module:
+    - atomizer
+  theme:
+    - sa_zircon
+id: sa_zircon_atom_builder
+theme: sa_zircon
+region: header
+weight: 0
+provider: null
+plugin: atomizer_block
+settings:
+  id: atomizer_block
+  label: 'Atom Builder'
+  provider: atomizer
+  label_display: '0'
+  atomizer_id: Atomizer
+  control_file: controls_atom_builder.yml
+  atomizer_file: atom_builder.yml
+  atomizer_config: atomizer_atom_builder.yml
+visibility: {  }

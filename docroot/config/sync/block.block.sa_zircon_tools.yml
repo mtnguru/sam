@@ -1,0 +1,24 @@
+uuid: da6596d5-1118-4acf-bd01-bef501de74d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - sa_zircon
+id: sa_zircon_tools
+theme: sa_zircon
+region: header
+weight: -9
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

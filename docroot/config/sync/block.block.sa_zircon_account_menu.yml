@@ -1,0 +1,26 @@
+uuid: 68b1f9ed-788b-4207-8236-729763089213
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - sa_zircon
+_core:
+  default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
+id: sa_zircon_account_menu
+theme: sa_zircon
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: Membership
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+visibility: {  }

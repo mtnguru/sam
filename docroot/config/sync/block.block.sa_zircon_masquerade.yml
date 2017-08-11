@@ -1,0 +1,20 @@
+uuid: 9b5dc221-6ae7-45d3-a250-504461a1102b
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - sa_zircon
+id: sa_zircon_masquerade
+theme: sa_zircon
+region: header
+weight: -10
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  provider: masquerade
+  label_display: visible
+visibility: {  }

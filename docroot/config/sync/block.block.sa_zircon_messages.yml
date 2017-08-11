@@ -1,0 +1,30 @@
+uuid: 17b43e1d-652b-4c89-8db8-6b180ceb0556
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - sa_zircon
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: sa_zircon_messages
+theme: sa_zircon
+region: featured
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
