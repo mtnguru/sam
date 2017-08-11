@@ -59,7 +59,7 @@ class az_groups extends BlockBase {
 
   public function build() {
     $currentMenu = NULL;
-    $host = str_replace('.', '-', \Drupal::request()->getHttpHost());
+    $host = \Drupal::request()->getHttpHost();
     foreach ($this->sites as $sitename => $site) {
       foreach ($site['hosts'] as $hostname) {
         if ($host == $hostname) {
