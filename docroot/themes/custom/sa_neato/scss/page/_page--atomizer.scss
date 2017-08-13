@@ -7,7 +7,7 @@ body.page-node-type-atomizer {
     padding: 10px 20px;
     border: 1px solid $base-border-color;
     display: none;
-    width: 40%;
+    width: 35%;
     max-width: 600px;
     background: #fff5e0;
 
@@ -56,36 +56,6 @@ body.page-node-type-atomizer {
     }
   }
 
-  .control-block {
-    &::before {
-      content: '';
-      display: block;
-      margin: 5px 0;
-      border-top: 2px solid #aaa;
-    }
-  }
-
-  #blocks--buttons {
-    display: flex;
-    justify-content: space-around;
-    font-size: 115%;
-
-    hr {
-      clear: both;
-    }
-
-    .az-control {
-      padding: 3px;
-      @include transition-3d;
-      color: $color-button-inactive;
-      &.az-selected {
-        color: $color-button-selected;
-      }
-      &:hover {
-        color: $color-button-hover;
-      }
-    }
-  }
 
   .field--name-field-configuration {
     textarea {
