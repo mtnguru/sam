@@ -3,8 +3,8 @@ name: 'Ethereal Matters'
 mail: sam@ecosleuth.com
 slogan: 'A new understanding of the Universe'
 page:
-  403: ''
-  404: ''
+  403: /node/313
+  404: /node/313
   front: /node/121
 admin_compact_mode: false
 weight_select_max: 100

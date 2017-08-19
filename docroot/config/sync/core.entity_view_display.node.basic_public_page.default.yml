@@ -4,10 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.node.basic_public_page.body
+    - field.field.node.basic_public_page.field_image
+    - image.style.xx_large_1280x960
     - node.type.basic_public_page
   module:
+    - image
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.basic_public_page.default
 targetEntityType: node
 bundle: basic_public_page
@@ -16,12 +26,23 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: xx_large_1280x960
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

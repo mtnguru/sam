@@ -12,12 +12,12 @@ dependencies:
 id: sa_neato_booknavigation
 theme: sa_neato
 region: sidebar_first
-weight: -13
+weight: -11
 provider: null
 plugin: book_navigation
 settings:
   id: book_navigation
-  label: 'Structured Atom Model Theory'
+  label: 'The Theory'
   provider: book
   label_display: visible
   block_mode: 'all pages'

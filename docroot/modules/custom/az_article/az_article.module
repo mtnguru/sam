@@ -55,7 +55,7 @@ function az_article_group_content_alter($group_content_entity, $entity) {
 //     Add the article to the media
 //     Add group to the media
 //     Add topics - or should that come from the article
-  $gid = $group_content_entity->gid->value;
-  $media = $entity->get('field_media');
-  return;
+//$gid = $group_content_entity->gid->value;
+//$media = $entity->get('field_media');
+//return;
 }

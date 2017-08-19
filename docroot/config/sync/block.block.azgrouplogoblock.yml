@@ -1,0 +1,28 @@
+uuid: 0c20ab65-b4b1-4b16-a586-c98952fddbb1
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_groups
+    - user
+  theme:
+    - sa_neato
+id: azgrouplogoblock
+theme: sa_neato
+region: header
+weight: 0
+provider: null
+plugin: az_group_logo_block
+settings:
+  id: az_group_logo_block
+  label: 'AZ Group Logo Block'
+  provider: az_groups
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -36,6 +36,7 @@ hidden:
   created: true
   field_articles: true
   field_author: true
+  field_create_date: true
   field_description: true
   field_dimensions: true
   field_geo_location: true

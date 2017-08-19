@@ -110,4 +110,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_title: true
   langcode: true

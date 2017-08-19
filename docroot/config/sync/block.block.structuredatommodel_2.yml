@@ -1,6 +1,6 @@
 uuid: 405e24a7-fe83-4063-9a1f-3f1868cb56fc
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.structured-atom-model

@@ -42,6 +42,7 @@ hidden:
   field_last_name: true
   field_linkedin: true
   field_phone: true
+  field_title: true
   field_website: true
   langcode: true
   masquerade: true

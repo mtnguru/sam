@@ -1,6 +1,6 @@
 uuid: 1147b77a-bfca-48c9-9def-da56705dce6c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.eu-geology

@@ -1,0 +1,15 @@
+uuid: 3a01c8af-acf1-444e-aea8-a45972fbe9e3
+langcode: en
+status: true
+dependencies: {  }
+name: xx_large_1280x960
+label: 'XX-large 1280x960'
+effects:
+  ecd66e97-5056-4b2f-bfb0-60bff65c4d02:
+    uuid: ecd66e97-5056-4b2f-bfb0-60bff65c4d02
+    id: image_scale
+    weight: 1
+    data:
+      width: 1280
+      height: 960
+      upscale: true

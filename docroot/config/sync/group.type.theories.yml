@@ -5,7 +5,7 @@ dependencies: {  }
 id: theories
 label: Theories
 description: 'A group built around a theory - SAM, Arc Blasts, Velikovsky, etc.'
-creator_roles:
-  - theories-admin
 creator_membership: true
 creator_wizard: true
+creator_roles:
+  - theories-admin

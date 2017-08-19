@@ -20,9 +20,13 @@
       a {
         font-size: 50px;
         color: $page-title-color;
+        text-shadow: 1px 1px 1px #303;
+        body.geo & {
+          color: cornsilk;
+        }
       } // a
     } // h1
-    @include position(absolute, 20px null null 30px);
+    @include position(absolute, 30px null null 35px);
   } // .title-wrapper
 
   .field--name-field-short-description {

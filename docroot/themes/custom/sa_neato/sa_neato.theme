@@ -5,10 +5,12 @@
  * Functions to support theming in the sa_neato theme.
  */
 
+use Drupal\az_groups\azGroupConfig;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements template_preprocess_html().
@@ -39,6 +41,9 @@ function sa_neato_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
 
+  $host = \Drupal::request()->getHttpHost();
+  $site = azGroupConfig::getConfig($host);
+  $variables['attributes']['class'][] = $site['class'];
 }
 
 /**
@@ -80,6 +85,7 @@ function sa_neato_preprocess_page(&$variables) {
   ];
 }
 
+
 /**
  * @param $variables
  */
@@ -93,6 +99,7 @@ function sa_neato_system_menu_block_top(&$variables) {
       'name' => 'Ethereal Matters',
       'theme' => 'ethereal-matters',
       'menu' => 'ethereal-matters',
+      'icon' => 'public://icons/sam_carbon.png'
     ],
     'sam' => [
       'hosts' => [
@@ -102,15 +109,17 @@ function sa_neato_system_menu_block_top(&$variables) {
       'name' => 'Structured Atom Model',
       'theme' => 'structured-atom-model',
       'menu' => 'structured-atom-model',
+      'icon' => 'public://icons/sam_carbon.gif'
     ],
     'geo' => [
       'hosts' => [
         'eugeology.rocks',
         'eg',
       ],
-      'name' => 'EU Geology',
+      'name' => 'EUGeology.rocks',
       'theme' => 'eu-geology',
       'menu' => 'eu-geology',
+      'icon' => 'public://icons/geo.png'
     ],
   ];
 
@@ -119,7 +128,7 @@ function sa_neato_system_menu_block_top(&$variables) {
   foreach ($sites as $sitename => $site) {
     foreach ($site['hosts'] as $hostname) {
       if ($host == $hostname) {
-        // Apply a subtheme
+        $variables['az'] = $site;
 
         // Load the appropriate menu
         $menu_parameters = new \Drupal\Core\Menu\MenuTreeParameters();
@@ -137,7 +146,9 @@ function sa_neato_system_menu_block_top(&$variables) {
         ];
         $tree = $menu_tree_service->transform($tree, $manipulators);
         // And the last step is to actually build the tree.
-        $variables['top_menu'] = $menu_tree_service->build($tree);
+        $variables['az']['top_menu'] = $menu_tree_service->build($tree);
+
+        $variables['az']['icon_url'] = file_create_url($site['icon']);
         break;
       }
     }
@@ -159,9 +170,6 @@ function sa_neato_system_menu_block_top(&$variables) {
  */
 function sa_neato_preprocess_block(&$variables) {
   // Set top nav bar based on URL - structuredatom.org, eugeology.rocks, etc.
-  if ($variables['plugin_id'] == 'system_menu_block:top') {
-//  sa_neato_system_menu_block_top($variables);
-  }
 }
 
 /**

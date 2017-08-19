@@ -15,30 +15,37 @@ $color-sunset: #985e6d;
 $color-purple: #220044;
 $color-evening: #192231;
 
+$color-imperial-blue: #084865;
+$color-papaya: #fcf0d0;
+$color-dutch-white: #f0e0c0;
+$color-lapis-lazuli: #247ba0;
+$color-green-sheen: #70c1b3;
+$color-cornsilk: #ffe74b;
+
 $transparent-captions-color: rgba($color-black, 0.56);
 $accent-line-color: $color-sunset;
 
 // Headers
-$header-background: $color-stormy;
-$header-color: #BBFFFF;
+$header-background: $color-lapis-lazuli;
+$header-color: cornsilk;
 
 // Top Navigation
-$topnav-background: $color-stormy;
+$topnav-background: $color-lapis-lazuli;
 // $topnav-color: #CCFFDD;
-$topnav-color: #BBFFFF;
+$topnav-color: $color-cornsilk;
 
 // Base colors.
 $base-background-color: white !default;
 $base-font-color: $color-dark-grey !default;
 $base-border-color: gainsboro !default;
-$base-accent-color: #477DCA !default;
+$base-accent-color: $color-lapis-lazuli !default;
 $base-link-color: $base-accent-color !default;
 
 $base-header-bar-color: $color-purple;
 $base-main-nav-color: $color-purple;
 $base-date-color: $color-medium-grey;
 
-$page-title-color: #729f98;
+$page-title-color: #ac57ed;
 
 // Hero colors.
 $hero-color: white;

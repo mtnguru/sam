@@ -59,7 +59,7 @@
     border: 1px solid $color-light-grey;
     border-radius: $base-border-radius;;
     width: 100%;
-    @include fixed-aspect(32/22 * 100%, '.field-content');
+    @include fixed-aspect(28/22 * 100%, '.field-content');
     padding: 2px;
   } // .views-field
 

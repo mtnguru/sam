@@ -7,14 +7,18 @@
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
   $centered-navigation-background: $topnav-background;
-  $centered-navigation-color: transparentize($topnav-color, 0.3);
+  $centered-navigation-color: lighten($topnav-color, 25%);
   $centered-navigation-color-hover: $topnav-color;
-  $centered-navigation-height: 50px;
+  $centered-navigation-height: 65px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
-  $centered-navigation-submenu-width: 16em;
+  $centered-navigation-submenu-width: 18em;
   $centered-navigation-item-nudge: 2.2em;
   $horizontal-bar-mode: $large-screen;
+
+  position: relative;
+
+  font-weight: bold;
 
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6%);
@@ -27,21 +31,68 @@
     display: none;
   }
 
-  #block-sa-neato-branding {
-    display: inline-block;
+  #block-azgrouplogoblock {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    background: #70c1b3;
+    height: 54px;
+    border-radius: 5px;
+    border: 1px solid #006;
+    box-shadow: 0px 0px 15px #138;
+    @include clearfix;
 
-    a {
-      padding: 10px 10px;
-    } // a
+    .content-container {
+      > div {
+        padding: 8px;
+      }
+    }
 
     img {
-      @include size(40px);
-      vertical-align: middle;
-    } // img
-  } // #block-sa-neato-branding
+      float: left;
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin-top: -2px;
+      border-radius: 5px;
+    }
 
-  #block-aztopnav {
+    .name {
+      font-size: 16px;
+      float: left;
+      max-width: 100px;
+      margin-left: 12px;
+      line-height: 1.1;
+    }
+
+    &.geo {
+      overflow: hidden;
+      border: 3px solid #541;
+
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        width: auto;
+        height: auto;
+      }
+
+      .name {
+        color: cornsilk;
+        position: relative;
+        color: cornsilk;
+        font-size: 130%;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  #block-aztopnavblock {
     display: inline-block;
+    margin-left: 180px;
   } // nav
 
 // Mobile view
@@ -130,6 +181,7 @@
     overflow: hidden;
     padding-right: $centered-navigation-submenu-padding;
     text-align: right;
+    text-shadow: 1px 1px 1px #138;
     width: 100%;
     z-index: 10;
 

@@ -1,0 +1,26 @@
+content_access_roles_gids:
+  anonymous: 1
+  authenticated: 2
+  advisor: 3
+  ninja: 4
+  administrator: 5
+  media_creator: 6
+  media_manager: 7
+  book_creator: 8
+  book_reviewer: 9
+  article_creator: 10
+  article_reviewer: 11
+  page_creator: 12
+  page_reviewer: 13
+  atomizer_creator: 14
+  atomizer_reviewer: 15
+_core:
+  default_config_hash: 7LkiviGITIpniIOOIzpuxR7r4XzqqYN_cwu0fb0kx1M
+content_access_node_type:
+  article: 'a:2:{s:8:"view_own";a:1:{i:0;s:13:"authenticated";}s:4:"view";a:1:{i:0;s:13:"authenticated";}}'
+  page: 'a:2:{s:8:"view_own";a:1:{i:0;s:13:"authenticated";}s:4:"view";a:1:{i:0;s:13:"authenticated";}}'
+  landing_page: 'a:2:{s:8:"view_own";a:1:{i:0;s:13:"authenticated";}s:4:"view";a:1:{i:0;s:13:"authenticated";}}'
+  element: 'a:2:{s:8:"view_own";a:1:{i:0;s:13:"authenticated";}s:4:"view";a:1:{i:0;s:13:"authenticated";}}'
+  book: 'a:2:{s:8:"view_own";a:1:{i:0;s:13:"authenticated";}s:4:"view";a:1:{i:0;s:13:"authenticated";}}'
+  atomizer: 'a:2:{s:8:"view_own";a:1:{i:0;s:13:"authenticated";}s:4:"view";a:1:{i:0;s:13:"authenticated";}}'
+  atom: 'a:2:{s:8:"view_own";a:1:{i:0;s:13:"authenticated";}s:4:"view";a:1:{i:0;s:13:"authenticated";}}'

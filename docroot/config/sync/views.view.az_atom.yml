@@ -59,7 +59,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 24
+          items_per_page: 40
           offset: 0
           id: 0
           total_pages: null
@@ -69,9 +69,9 @@ display:
             first: '« First'
             last: 'Last »'
           expose:
-            items_per_page: false
+            items_per_page: true
             items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50,100'
+            items_per_page_options: '20,40,60,100'
             items_per_page_options_all: true
             items_per_page_options_all_label: '- All -'
             offset: false

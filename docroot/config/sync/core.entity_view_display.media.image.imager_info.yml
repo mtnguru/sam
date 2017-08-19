@@ -50,6 +50,7 @@ hidden:
   created: true
   field_articles: true
   field_author: true
+  field_create_date: true
   field_geo_location: true
   field_groups: true
   field_media_in_library: true

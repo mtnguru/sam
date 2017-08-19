@@ -26,4 +26,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_configuration_file: true
   langcode: true
+  panelizer: true

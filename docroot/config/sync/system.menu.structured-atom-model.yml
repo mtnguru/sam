@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: structured-atom-model
 label: 'Top - Structured Atom Model'
-description: Geometry
+description: ''
 locked: false

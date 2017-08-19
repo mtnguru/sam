@@ -111,6 +111,7 @@ content:
 hidden:
   created: true
   field_author: true
+  field_create_date: true
   field_media_in_library: true
   langcode: true
   thumbnail: true

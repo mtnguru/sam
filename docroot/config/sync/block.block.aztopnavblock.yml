@@ -1,0 +1,28 @@
+uuid: 5b9fb547-3857-464e-b88a-8a201f8475c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_groups
+    - user
+  theme:
+    - sa_neato
+id: aztopnavblock
+theme: sa_neato
+region: header
+weight: 0
+provider: null
+plugin: az_top_nav_block
+settings:
+  id: az_top_nav_block
+  label: 'AZ Top Nav Block'
+  provider: az_groups
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
