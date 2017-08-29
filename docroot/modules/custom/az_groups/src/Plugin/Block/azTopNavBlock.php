@@ -39,22 +39,22 @@ class azTopNavBlock extends BlockBase {
     $menu_tree_service = \Drupal::service('menu.link_tree');
 
     // Build the typical default set of menu tree parameters.
-    $parameters = $menu_tree_service->getCurrentRouteMenuTreeParameters($menuName);
-    $expandedParents = $parameters->expandedParents;
-    reset($expandedParents);
-    $root = current($expandedParents);
+//  $parameters = $menu_tree_service->getCurrentRouteMenuTreeParameters($menuName);
+//  $expandedParents = $parameters->expandedParents;
+//  reset($expandedParents);
+//  $root = current($expandedParents);
     $parameters = new \Drupal\Core\Menu\MenuTreeParameters();
-    $parameters->setRoot($root);
+//  $parameters->setRoot($root);
     $parameters->setMaxDepth(3);
     $parameters->setMinDepth(1);
 
     // Load the tree based on this set of parameters.
     $tree = $menu_tree_service->load($menuName, $parameters);
 
-    //Set Cache for block
-    $cache['max-age'] = 3600;
-    $cache['contexts'][] = 'url.path';
-    $cache['tags'][] = $root;
+//  //Set Cache for block
+//  $cache['max-age'] = 3600;
+//  $cache['contexts'][] = 'url.path';
+//  $cache['tags'][] = $root;
 
     // Apply some manipulators (checking the access, sorting).
     $manipulators = [

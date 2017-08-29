@@ -5,5 +5,5 @@ dependencies: {  }
 name: Topics
 vid: topics
 description: 'Grouping to break branches into smaller units'
-hierarchy: 0
+hierarchy: 1
 weight: 0

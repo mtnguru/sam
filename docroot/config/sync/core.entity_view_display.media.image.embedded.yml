@@ -6,17 +6,15 @@ dependencies:
     - core.entity_view_mode.media.embedded
     - field.field.media.image.field_articles
     - field.field.media.image.field_author
+    - field.field.media.image.field_create_date
     - field.field.media.image.field_description
     - field.field.media.image.field_dimensions
     - field.field.media.image.field_geo_location
-    - field.field.media.image.field_groups
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.field_topics
     - field.field.media.image.image
-    - image.style.medium
     - media_entity.bundle.image
   module:
-    - image
+    - imager
 _core:
   default_config_hash: Iue5dWz40odYIvQZXHxNgusvUZVuCXr8InfPe5atT6A
 id: media.image.embedded
@@ -25,12 +23,12 @@ bundle: image
 mode: embedded
 content:
   image:
-    type: image
+    type: imager_formatter
     weight: 0
     label: hidden
     settings:
-      image_style: medium
-      image_link: ''
+      imager_style: medium
+      imager_mode: popup
     third_party_settings: {  }
     region: content
 hidden:
@@ -41,9 +39,7 @@ hidden:
   field_description: true
   field_dimensions: true
   field_geo_location: true
-  field_groups: true
   field_media_in_library: true
-  field_topics: true
   langcode: true
   name: true
   thumbnail: true

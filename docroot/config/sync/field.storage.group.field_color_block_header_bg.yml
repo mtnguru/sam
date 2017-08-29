@@ -1,0 +1,20 @@
+uuid: 6231cfbd-293f-4aef-ac01-149936a696c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - group
+id: group.field_color_block_header_bg
+field_name: field_color_block_header_bg
+entity_type: group
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

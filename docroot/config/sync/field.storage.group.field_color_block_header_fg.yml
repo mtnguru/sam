@@ -1,0 +1,20 @@
+uuid: aae5b020-cd70-4a6e-8d5a-6cb716379c22
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - group
+id: group.field_color_block_header_fg
+field_name: field_color_block_header_fg
+entity_type: group
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

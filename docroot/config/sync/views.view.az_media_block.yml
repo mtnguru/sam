@@ -550,7 +550,7 @@ display:
           entity_type: media
           entity_field: created
           plugin_id: date
-      title: 'Media - Article'
+      title: Media
       header: {  }
       footer: {  }
       empty: {  }

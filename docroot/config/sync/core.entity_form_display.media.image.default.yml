@@ -9,9 +9,7 @@ dependencies:
     - field.field.media.image.field_description
     - field.field.media.image.field_dimensions
     - field.field.media.image.field_geo_location
-    - field.field.media.image.field_groups
     - field.field.media.image.field_media_in_library
-    - field.field.media.image.field_topics
     - field.field.media.image.image
     - image.style.thumbnail_100x100
     - media_entity.bundle.image
@@ -97,24 +95,6 @@ content:
       target_address_field: null
     third_party_settings: {  }
     type: geolocation_googlegeocoder
-    region: content
-  field_groups:
-    weight: 8
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_topics:
-    weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   image:
     type: image_image

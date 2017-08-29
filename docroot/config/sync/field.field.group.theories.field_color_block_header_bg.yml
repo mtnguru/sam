@@ -1,0 +1,25 @@
+uuid: eb281e11-66b3-48ea-bdac-b4040953fcdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_color_block_header_bg
+    - group.type.theories
+  module:
+    - color_field
+id: group.theories.field_color_block_header_bg
+field_name: field_color_block_header_bg
+entity_type: group
+bundle: theories
+label: 'Color - Block Header BG'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    color: '#00ffff'
+    opacity: '1'
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

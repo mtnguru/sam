@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.article.field_body
     - field.field.node.article.field_media
     - field.field.node.article.field_node_comments
-    - field.field.node.article.field_short_description
     - field.field.node.article.field_topics
     - field.field.node.article.panelizer
     - node.type.article
@@ -189,7 +188,7 @@ bundle: article
 mode: default
 content:
   field_body:
-    weight: 3
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -214,7 +213,7 @@ content:
     type: comment_default
     region: content
   field_topics:
-    weight: 2
+    weight: 1
     label: inline
     settings:
       link: true
@@ -222,7 +221,7 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 1
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -230,6 +229,5 @@ hidden:
   field_allow_comments: true
   field_allow_subscribing: true
   field_allow_voting: true
-  field_short_description: true
   langcode: true
   panelizer: true

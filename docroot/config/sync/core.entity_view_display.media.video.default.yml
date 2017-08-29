@@ -7,10 +7,8 @@ dependencies:
     - field.field.media.video.field_author
     - field.field.media.video.field_create_date
     - field.field.media.video.field_description
-    - field.field.media.video.field_groups
     - field.field.media.video.field_media_in_library
     - field.field.media.video.field_media_video_embed_field
-    - field.field.media.video.field_topics
     - media_entity.bundle.video
   module:
     - datetime
@@ -66,14 +64,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_groups:
-    weight: 6
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_media_video_embed_field:
     type: video_embed_field_video
     weight: 1
@@ -84,14 +74,6 @@ content:
       height: 480
       autoplay: true
     third_party_settings: {  }
-    region: content
-  field_topics:
-    weight: 7
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   name:
     label: hidden

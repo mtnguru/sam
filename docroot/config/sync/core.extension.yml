@@ -98,6 +98,7 @@ module:
   search_api: 0
   search_api_db: 0
   shortcut: 0
+  shs: 0
   special_menu_items: 0
   statistics: 0
   statistics_test_views: 0

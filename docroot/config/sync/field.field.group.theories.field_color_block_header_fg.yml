@@ -1,0 +1,25 @@
+uuid: e0d6ff9b-9b34-4c3b-9b70-39c82b689e5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_color_block_header_fg
+    - group.type.theories
+  module:
+    - color_field
+id: group.theories.field_color_block_header_fg
+field_name: field_color_block_header_fg
+entity_type: group
+bundle: theories
+label: 'Color - Block Header FG'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    color: '#0000ff'
+    opacity: '1'
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

@@ -8,9 +8,7 @@ dependencies:
     - field.field.media.tweet.field_author
     - field.field.media.tweet.field_create_date
     - field.field.media.tweet.field_description
-    - field.field.media.tweet.field_groups
     - field.field.media.tweet.field_media_in_library
-    - field.field.media.tweet.field_topics
     - media_entity.bundle.tweet
   module:
     - datetime
@@ -62,22 +60,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_groups:
-    weight: 5
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_topics:
-    weight: 6
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   name:
     type: string

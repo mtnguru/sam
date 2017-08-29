@@ -5,6 +5,10 @@ section.field--type-comment {
     border-bottom: 1px solid $base-border-color;
   }
 
+  .field--name-subject {
+    display: none;
+  }
+
   > article.comment {
     padding: 20px 0;
     border-bottom: 1px solid $base-border-color;

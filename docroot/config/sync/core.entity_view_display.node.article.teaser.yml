@@ -10,8 +10,8 @@ dependencies:
     - field.field.node.article.field_body
     - field.field.node.article.field_media
     - field.field.node.article.field_node_comments
-    - field.field.node.article.field_short_description
     - field.field.node.article.field_topics
+    - field.field.node.article.panelizer
     - node.type.article
   module:
     - user
@@ -30,6 +30,6 @@ hidden:
   field_body: true
   field_media: true
   field_node_comments: true
-  field_short_description: true
   field_topics: true
   langcode: true
+  panelizer: true

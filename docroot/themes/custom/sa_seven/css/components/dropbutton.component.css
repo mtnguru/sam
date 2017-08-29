@@ -31,6 +31,10 @@
   border-radius: 0 0 1em 0;
 }
 
+.dropbutton .dropbutton-action > input {
+  height: 40px;
+}
+
 /**
  * Overwrite Sevens button styling.
  */

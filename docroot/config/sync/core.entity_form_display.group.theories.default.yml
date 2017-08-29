@@ -5,6 +5,10 @@ dependencies:
   config:
     - entity_browser.browser.media_browser
     - field.field.group.theories.field_allow_comments
+    - field.field.group.theories.field_color_block_header_bg
+    - field.field.group.theories.field_color_block_header_fg
+    - field.field.group.theories.field_color_header_bg
+    - field.field.group.theories.field_color_header_fg
     - field.field.group.theories.field_comments
     - field.field.group.theories.field_description
     - field.field.group.theories.field_display_navigation
@@ -13,6 +17,7 @@ dependencies:
     - field.field.group.theories.field_topics
     - group.type.theories
   module:
+    - color_field
     - comment
     - entity_browser
     - paragraphs
@@ -24,14 +29,46 @@ bundle: theories
 mode: default
 content:
   field_allow_comments:
-    weight: 5
+    weight: 10
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  field_comments:
+  field_color_block_header_bg:
+    weight: 8
+    settings:
+      placeholder_color: '#ff0973'
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_color_block_header_fg:
     weight: 7
+    settings:
+      placeholder_color: '#ff0973'
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_color_header_bg:
+    weight: 5
+    settings:
+      placeholder_color: '#ff0973'
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_color_header_fg:
+    weight: 6
+    settings:
+      placeholder_color: '#ff0973'
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  field_comments:
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -49,7 +86,7 @@ content:
     third_party_settings: {  }
     region: content
   field_display_navigation:
-    weight: 6
+    weight: 9
     settings:
       display_label: true
     third_party_settings: {  }
@@ -95,7 +132,7 @@ content:
     region: content
   path:
     type: path
-    weight: 8
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     region: content

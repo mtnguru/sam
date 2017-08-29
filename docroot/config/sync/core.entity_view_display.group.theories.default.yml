@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.group.theories.field_allow_comments
+    - field.field.group.theories.field_color_block_header_bg
+    - field.field.group.theories.field_color_block_header_fg
+    - field.field.group.theories.field_color_header_bg
+    - field.field.group.theories.field_color_header_fg
     - field.field.group.theories.field_comments
     - field.field.group.theories.field_description
     - field.field.group.theories.field_display_navigation
@@ -20,6 +24,10 @@ hidden:
   changed: true
   created: true
   field_allow_comments: true
+  field_color_block_header_bg: true
+  field_color_block_header_fg: true
+  field_color_header_bg: true
+  field_color_header_fg: true
   field_comments: true
   field_description: true
   field_display_navigation: true
